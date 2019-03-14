@@ -1,0 +1,12 @@
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\bin\Debug\CartagenaServidores.exe.config
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\bin\Debug\CartagenaServidores.exe
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\bin\Debug\CartagenaServidores.pdb
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\bin\Debug\CartagenaServer.dll
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.csprojAssemblyReference.cache
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.Form1.resources
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.Properties.Resources.resources
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.csproj.GenerateResource.cache
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.csproj.CoreCompileInputs.cache
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.csproj.CopyComplete
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.exe
+C:\Users\caio.bsilva8\source\repos\CartagenaServidores\CartagenaServidores\obj\Debug\CartagenaServidores.pdb

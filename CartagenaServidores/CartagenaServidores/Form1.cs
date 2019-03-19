@@ -18,21 +18,18 @@ namespace CartagenaServidores
             InitializeComponent();
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
-        {
+        private void btnListar_Click(object sender, EventArgs e){
+
             string lista = Jogo.ListarPartidas("T");
             string[] linha;
             linha = lista.Split('\n');
 
-            for (int i = 0; i < linha.Length; i++)
-            {
-                linha[i].Replace("\r","");
-            }
-
-            for (int i = 0; i < linha.Length; i++)
-            {
+            lsbPartidas.Items.Clear();
+            for (int i = 0; i < linha.Length; i++){
+                linha[i].Replace("\r", "");
                 lsbPartidas.Items.Add(linha[i]);
             }
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)

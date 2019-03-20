@@ -13,7 +13,7 @@ namespace Cartagena
 {
     public partial class Form1 : Form
     {
-        static string[] jogador;
+        string[] jogador;
         int partidaID;
         public Form1()
         {
@@ -39,6 +39,7 @@ namespace Cartagena
 
             txtJogadorID.Text = jogador[0].ToString();
             txtJogadorSenha.Text = jogador[1].ToString();
+            //jogador[2] é a cor do jogador na partida.
         }
 
         //Método de criação de Partida.

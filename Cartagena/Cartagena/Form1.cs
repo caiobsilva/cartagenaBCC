@@ -14,20 +14,22 @@ namespace Cartagena
     public partial class Form1 : Form
     {
         static string[] jogador;
-        int salaID;
+        int partidaID;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void btnIniciarPartida_Click(object sender, EventArgs e)
+        //Método de 
+        private void btnPartidaIniciar_Click(object sender, EventArgs e)
         {
             String jogadorIniciador;
-            //O método IniciarPartida retorna o id do jogador que iniciou a partida. 
-            jogadorIniciador = Jogo.IniciarPartida(Convert.ToInt32(txtIDJogador.Text), txtSenhaJogador.Text);
-            MessageBox.Show("O jogador de ID: " + jogadorIniciador + "iniciou a partida.");
+            //O método IniciarPartida (padrão da biblioteca) retorna o id do jogador que iniciou a partida. 
+            jogadorIniciador = Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text);
+            MessageBox.Show("O jogador de ID: " + jogadorIniciador + " iniciou a partida.");
         }
 
+        //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
         private void btnPartidaEntrar_Click(object sender, EventArgs e)
         {
             string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaId.Text), txtJogadorNome.Text, txtPartidaSenha.Text);
@@ -35,19 +37,19 @@ namespace Cartagena
             jogador = entradaRetorno.Split(',');
             MessageBox.Show(entradaRetorno);
 
-            foreach (string info in jogador)
-            {
-                Console.WriteLine(info);
-            }
+            txtJogadorID.Text = jogador[0].ToString();
+            txtJogadorSenha.Text = jogador[1].ToString();
         }
 
-        private void btnSalaCriar_Click(object sender, EventArgs e)
-        {
-            salaID = Convert.ToInt32(Jogo.CriarPartida(txtSalaNome.Text, txtPartidaSenha.Text));
-            MessageBox.Show(salaID.ToString());
+        //Método de criação de Partida.
+        private void btnPartidaCriar_Click(object sender, EventArgs e)
+        {   
+            partidaID = Convert.ToInt32(Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text));
+            MessageBox.Show(partidaID.ToString());
         }
 
-        private void btnListar_Click(object sender, EventArgs e)
+        //Método de listagem de Partidas.
+        private void btnPartidaListar_Click(object sender, EventArgs e)
         {
             string lista = Jogo.ListarPartidas("T");
             string[] linha;

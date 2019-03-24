@@ -63,5 +63,24 @@ namespace Cartagena
                 lsbPartidas.Items.Add(linha[i]);
             }
         }
+
+        //Método de listagem de cartas
+        private void btnCartasListar_Click(object sender, EventArgs e)
+        {
+            int idJogador = Convert.ToInt32(txtJogadorID.Text);
+            string senhaJogador = txtJogadorSenha.Text;
+
+            string cartas = Jogo.ConsultarMao(idJogador, senhaJogador);
+            lsbPartidas.Items.Add(cartas);
+        }
+
+        //Método de listagem de jogadores
+        private void btnJogadoresListar_Click(object sender, EventArgs e)
+        {
+            partidaID = Convert.ToInt32(txtPartidaId.Text);
+            string jogadores = Jogo.ListarJogadores(partidaID);
+
+            lsbPartidas.Items.Add(jogadores);
+        }
     }
 }

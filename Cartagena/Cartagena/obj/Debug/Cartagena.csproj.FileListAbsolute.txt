@@ -22,3 +22,15 @@ D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompil
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

@@ -61,10 +61,13 @@ namespace Cartagena{
             string jogadorSenha = txtJogadorSenha.Text;
 
             string cartas = Jogo.ConsultarMao(jogadorID, jogadorSenha);
-            string[] jogadorCartas = cartas.Split(',');
+            string[] jogadorCartas = cartas.Split('\n');
 
             lsbCartas.Items.Clear();
-            lsbCartas.Items.Add(cartas);
+            for (int i = 0; i < jogadorCartas.Length; i++) {
+                jogadorCartas[i].Replace("\r", "");
+                lsbCartas.Items.Add(jogadorCartas[i]);
+            }
         }
 
         //Método de listagem de jogadores
@@ -83,6 +86,8 @@ namespace Cartagena{
             string carta = cboCartas.SelectedItem.ToString();
             string jogadorSenha = txtJogadorSenha.Text.ToString();
             int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+
+            string[] jogadas;
 
             switch (carta){
                 case "Chave":
@@ -103,8 +108,12 @@ namespace Cartagena{
             }
 
             lsbJogadas.Items.Clear();
-            lsbJogadas.Items.Add(Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta));
+            jogadas = Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta).Split('\n');
 
+            for (int i = 0; i < jogadas.Length; i++) {
+                jogadas[i].Replace("\r", "");
+                lsbJogadas.Items.Add(jogadas[i]);
+            }
         }
     }
 }

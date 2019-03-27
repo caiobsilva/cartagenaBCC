@@ -9,30 +9,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CartagenaServer;
 
-namespace Cartagena
-{
-    public partial class Form1 : Form
-    {
-        string[] jogador;
-        int partidaID;
-        public Form1()
-        {
+namespace Cartagena{
+    public partial class Form1 : Form{
+        public Form1(){
             InitializeComponent();
         }
 
-        //Método de 
-        private void btnPartidaIniciar_Click(object sender, EventArgs e)
-        {
-            String jogadorIniciador;
-            //O método IniciarPartida (padrão da biblioteca) retorna o id do jogador que iniciou a partida. 
-            jogadorIniciador = Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text);
-            MessageBox.Show("O jogador de ID: " + jogadorIniciador + " iniciou a partida.");
+        //Método de início de partida.
+        private void btnPartidaIniciar_Click(object sender, EventArgs e){
+            String iniciadorID;
+            //O método IniciarPartida do Jogo retorna o id do jogador que iniciou a partida. 
+            iniciadorID = Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text);
+            MessageBox.Show("O jogador de ID " + iniciadorID + " iniciou a partida.");
         }
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
-        private void btnPartidaEntrar_Click(object sender, EventArgs e)
-        {
+        private void btnPartidaEntrar_Click(object sender, EventArgs e){
             string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaId.Text), txtJogadorNome.Text, txtPartidaSenha.Text);
+            string[] jogador;
 
             jogador = entradaRetorno.Split(',');
             MessageBox.Show(entradaRetorno);
@@ -43,44 +37,74 @@ namespace Cartagena
         }
 
         //Método de criação de Partida.
-        private void btnPartidaCriar_Click(object sender, EventArgs e)
-        {   
-            partidaID = Convert.ToInt32(Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text));
-            MessageBox.Show(partidaID.ToString());
+        private void btnPartidaCriar_Click(object sender, EventArgs e){   
+            int partidaID = Convert.ToInt32(Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text));
+            txtPartidaId.Text = partidaID.ToString();
         }
 
         //Método de listagem de Partidas.
-        private void btnPartidaListar_Click(object sender, EventArgs e)
-        {
+        private void btnPartidaListar_Click(object sender, EventArgs e){
             string lista = Jogo.ListarPartidas("T");
             string[] linha;
             linha = lista.Split('\n');
 
             lsbPartidas.Items.Clear();
-            for (int i = 0; i < linha.Length; i++)
-            {
+            for (int i = 0; i < linha.Length; i++){
                 linha[i].Replace("\r", "");
                 lsbPartidas.Items.Add(linha[i]);
             }
         }
 
         //Método de listagem de cartas
-        private void btnCartasListar_Click(object sender, EventArgs e)
-        {
-            int idJogador = Convert.ToInt32(txtJogadorID.Text);
-            string senhaJogador = txtJogadorSenha.Text;
+        private void btnCartasListar_Click(object sender, EventArgs e){
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+            string jogadorSenha = txtJogadorSenha.Text;
 
-            string cartas = Jogo.ConsultarMao(idJogador, senhaJogador);
-            lsbPartidas.Items.Add(cartas);
+            string cartas = Jogo.ConsultarMao(jogadorID, jogadorSenha);
+            string[] jogadorCartas = cartas.Split(',');
+
+            lsbCartas.Items.Clear();
+            lsbCartas.Items.Add(cartas);
         }
 
         //Método de listagem de jogadores
-        private void btnJogadoresListar_Click(object sender, EventArgs e)
-        {
-            partidaID = Convert.ToInt32(txtPartidaId.Text);
+        private void btnJogadoresListar_Click(object sender, EventArgs e){
+            int partidaID = Convert.ToInt32(txtPartidaId.Text);
             string jogadores = Jogo.ListarJogadores(partidaID);
 
-            lsbPartidas.Items.Add(jogadores);
+            lsbJogadores.Items.Clear();
+            lsbJogadores.Items.Add(jogadores);
+        }
+
+        //Método de jogada. Jogar pra frente.
+        private void btnAndar_Click(object sender, EventArgs e){
+            //Posição do pirata. Carta a ser jogada. Senha do jogador. id do jogador.
+            int pirata = Convert.ToInt32(txtPirataPosicao.Text);
+            string carta = cboCartas.SelectedItem.ToString();
+            string jogadorSenha = txtJogadorSenha.Text.ToString();
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+
+            switch (carta){
+                case "Chave":
+                    carta = "C";
+                    break;
+                case "Esqueleto":
+                    carta = "E";
+                    break;
+                case "Faca":
+                    carta = "F";
+                    break;
+                case "Garrafa":
+                    carta = "G";
+                    break;
+                case "Pistola":
+                    carta = "P";
+                    break;
+            }
+
+            lsbJogadas.Items.Clear();
+            lsbJogadas.Items.Add(Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta));
+
         }
     }
 }

@@ -115,5 +115,19 @@ namespace Cartagena{
                 lsbJogadas.Items.Add(jogadas[i]);
             }
         }
+
+        private void btnMostrarTabuleiro_Click(object sender, EventArgs e)
+        {
+            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(tbxIdTabuleiro.Text));
+            string[] linha;
+            linha = tabuleiro.Split('\r');
+
+            lsbTabuleiro.Items.Clear();
+            for (int i = 0; i < linha.Length; i++)
+            {
+                linha[i] = linha[i].Replace("\n","");
+                lsbTabuleiro.Items.Add(linha[i]);
+            }
+        }
     }
 }

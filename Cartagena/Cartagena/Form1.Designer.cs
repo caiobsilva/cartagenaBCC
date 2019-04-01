@@ -56,6 +56,10 @@
             this.lsbJogadores = new System.Windows.Forms.ListBox();
             this.lsbCartas = new System.Windows.Forms.ListBox();
             this.lsbJogadas = new System.Windows.Forms.ListBox();
+            this.btnMostrarTabuleiro = new System.Windows.Forms.Button();
+            this.lsbTabuleiro = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbxIdTabuleiro = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -305,11 +309,50 @@
             this.lsbJogadas.Size = new System.Drawing.Size(239, 121);
             this.lsbJogadas.TabIndex = 27;
             // 
+            // btnMostrarTabuleiro
+            // 
+            this.btnMostrarTabuleiro.AllowDrop = true;
+            this.btnMostrarTabuleiro.Location = new System.Drawing.Point(862, 22);
+            this.btnMostrarTabuleiro.Name = "btnMostrarTabuleiro";
+            this.btnMostrarTabuleiro.Size = new System.Drawing.Size(98, 32);
+            this.btnMostrarTabuleiro.TabIndex = 28;
+            this.btnMostrarTabuleiro.Text = "Mostrar Tabuleiro";
+            this.btnMostrarTabuleiro.UseVisualStyleBackColor = true;
+            this.btnMostrarTabuleiro.Click += new System.EventHandler(this.btnMostrarTabuleiro_Click);
+            // 
+            // lsbTabuleiro
+            // 
+            this.lsbTabuleiro.FormattingEnabled = true;
+            this.lsbTabuleiro.Location = new System.Drawing.Point(980, 21);
+            this.lsbTabuleiro.Name = "lsbTabuleiro";
+            this.lsbTabuleiro.Size = new System.Drawing.Size(209, 368);
+            this.lsbTabuleiro.TabIndex = 29;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(859, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "ID da partida";
+            // 
+            // tbxIdTabuleiro
+            // 
+            this.tbxIdTabuleiro.Location = new System.Drawing.Point(862, 75);
+            this.tbxIdTabuleiro.Name = "tbxIdTabuleiro";
+            this.tbxIdTabuleiro.Size = new System.Drawing.Size(98, 20);
+            this.tbxIdTabuleiro.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 426);
+            this.ClientSize = new System.Drawing.Size(1218, 426);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbxIdTabuleiro);
+            this.Controls.Add(this.lsbTabuleiro);
+            this.Controls.Add(this.btnMostrarTabuleiro);
             this.Controls.Add(this.lsbJogadas);
             this.Controls.Add(this.lsbCartas);
             this.Controls.Add(this.lsbJogadores);
@@ -377,6 +420,10 @@
         private System.Windows.Forms.ListBox lsbJogadores;
         private System.Windows.Forms.ListBox lsbCartas;
         private System.Windows.Forms.ListBox lsbJogadas;
+        private System.Windows.Forms.Button btnMostrarTabuleiro;
+        private System.Windows.Forms.ListBox lsbTabuleiro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbxIdTabuleiro;
     }
 }
 

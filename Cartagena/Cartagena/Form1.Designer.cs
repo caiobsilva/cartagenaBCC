@@ -61,6 +61,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tbxIdTabuleiro = new System.Windows.Forms.TextBox();
             this.btnPular = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -239,7 +240,7 @@
             // 
             this.btnAndar.Location = new System.Drawing.Point(465, 49);
             this.btnAndar.Name = "btnAndar";
-            this.btnAndar.Size = new System.Drawing.Size(98, 32);
+            this.btnAndar.Size = new System.Drawing.Size(42, 32);
             this.btnAndar.TabIndex = 20;
             this.btnAndar.Text = "Jogar";
             this.btnAndar.UseVisualStyleBackColor = true;
@@ -347,19 +348,30 @@
             // 
             // btnPular
             // 
-            this.btnPular.Location = new System.Drawing.Point(606, 49);
+            this.btnPular.Location = new System.Drawing.Point(513, 48);
             this.btnPular.Name = "btnPular";
-            this.btnPular.Size = new System.Drawing.Size(98, 32);
+            this.btnPular.Size = new System.Drawing.Size(92, 32);
             this.btnPular.TabIndex = 32;
             this.btnPular.Text = "Pular Jogada";
             this.btnPular.UseVisualStyleBackColor = true;
             this.btnPular.Click += new System.EventHandler(this.btnPular_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Location = new System.Drawing.Point(611, 48);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(93, 32);
+            this.btnVoltar.TabIndex = 33;
+            this.btnVoltar.Text = "Mover para trás";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 426);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPular);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxIdTabuleiro);
@@ -437,6 +449,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxIdTabuleiro;
         private System.Windows.Forms.Button btnPular;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }
 

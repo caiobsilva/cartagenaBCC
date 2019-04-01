@@ -60,6 +60,7 @@
             this.lsbTabuleiro = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbxIdTabuleiro = new System.Windows.Forms.TextBox();
+            this.btnPular = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -344,11 +345,22 @@
             this.tbxIdTabuleiro.Size = new System.Drawing.Size(98, 20);
             this.tbxIdTabuleiro.TabIndex = 30;
             // 
+            // btnPular
+            // 
+            this.btnPular.Location = new System.Drawing.Point(606, 49);
+            this.btnPular.Name = "btnPular";
+            this.btnPular.Size = new System.Drawing.Size(98, 32);
+            this.btnPular.TabIndex = 32;
+            this.btnPular.Text = "Pular Jogada";
+            this.btnPular.UseVisualStyleBackColor = true;
+            this.btnPular.Click += new System.EventHandler(this.btnPular_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 426);
+            this.Controls.Add(this.btnPular);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbxIdTabuleiro);
             this.Controls.Add(this.lsbTabuleiro);
@@ -424,6 +436,7 @@
         private System.Windows.Forms.ListBox lsbTabuleiro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbxIdTabuleiro;
+        private System.Windows.Forms.Button btnPular;
     }
 }
 

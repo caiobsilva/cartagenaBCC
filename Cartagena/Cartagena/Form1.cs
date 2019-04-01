@@ -129,5 +129,15 @@ namespace Cartagena{
                 lsbTabuleiro.Items.Add(linha[i]);
             }
         }
+
+        private void btnPular_Click(object sender, EventArgs e)
+        {
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+            string jogadorSenha = txtJogadorSenha.Text;
+
+            Jogo.Jogar(jogadorID, jogadorSenha);
+
+            lsbJogadas.Items.Add("Jogada pulada!");
+        }
     }
 }

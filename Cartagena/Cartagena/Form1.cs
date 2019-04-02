@@ -73,10 +73,14 @@ namespace Cartagena{
         //Método de listagem de jogadores
         private void btnJogadoresListar_Click(object sender, EventArgs e){
             int partidaID = Convert.ToInt32(txtPartidaId.Text);
-            string jogadores = Jogo.ListarJogadores(partidaID);
+            string[] jogadores = Jogo.ListarJogadores(partidaID).ToString().Split('\r');
 
             lsbJogadores.Items.Clear();
-            lsbJogadores.Items.Add(jogadores);
+            for(int i = 0; i < jogadores.Length; i++)
+            {
+                jogadores[i].Replace("\r","");
+                lsbJogadores.Items.Add(jogadores[i]);
+            }
         }
 
         //Método de jogada. Jogar pra frente.
@@ -149,6 +153,18 @@ namespace Cartagena{
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, posicao).Split('\n');
 
             for (int i = 0; i < jogadas.Length; i++) {
+                jogadas[i].Replace("\r", "");
+                lsbJogadas.Items.Add(jogadas[i]);
+            }
+        }
+
+        private void btnVerificarVez_Click(object sender, EventArgs e)
+        {
+           string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaId.Text));
+           string[] jogadas = vez.Split('\r');
+            lsbJogadas.Items.Clear();
+            for (int i = 0; i < jogadas.Length; i++)
+            {
                 jogadas[i].Replace("\r", "");
                 lsbJogadas.Items.Add(jogadas[i]);
             }

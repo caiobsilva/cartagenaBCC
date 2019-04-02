@@ -62,6 +62,7 @@
             this.tbxIdTabuleiro = new System.Windows.Forms.TextBox();
             this.btnPular = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnVerificarVez = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -230,7 +231,7 @@
             // 
             this.btnJogadoresListar.Location = new System.Drawing.Point(271, 5);
             this.btnJogadoresListar.Name = "btnJogadoresListar";
-            this.btnJogadoresListar.Size = new System.Drawing.Size(120, 32);
+            this.btnJogadoresListar.Size = new System.Drawing.Size(174, 32);
             this.btnJogadoresListar.TabIndex = 19;
             this.btnJogadoresListar.Text = "Listar Jogadores";
             this.btnJogadoresListar.UseVisualStyleBackColor = true;
@@ -292,7 +293,7 @@
             this.lsbJogadores.FormattingEnabled = true;
             this.lsbJogadores.Location = new System.Drawing.Point(271, 43);
             this.lsbJogadores.Name = "lsbJogadores";
-            this.lsbJogadores.Size = new System.Drawing.Size(120, 186);
+            this.lsbJogadores.Size = new System.Drawing.Size(177, 186);
             this.lsbJogadores.TabIndex = 25;
             // 
             // lsbCartas
@@ -366,11 +367,22 @@
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // btnVerificarVez
+            // 
+            this.btnVerificarVez.Location = new System.Drawing.Point(513, 214);
+            this.btnVerificarVez.Name = "btnVerificarVez";
+            this.btnVerificarVez.Size = new System.Drawing.Size(92, 32);
+            this.btnVerificarVez.TabIndex = 34;
+            this.btnVerificarVez.Text = "Verificar Vez";
+            this.btnVerificarVez.UseVisualStyleBackColor = true;
+            this.btnVerificarVez.Click += new System.EventHandler(this.btnVerificarVez_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1218, 426);
+            this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPular);
             this.Controls.Add(this.label2);
@@ -450,6 +462,7 @@
         private System.Windows.Forms.TextBox tbxIdTabuleiro;
         private System.Windows.Forms.Button btnPular;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnVerificarVez;
     }
 }
 

@@ -33,16 +33,16 @@
             this.lblIDJogador = new System.Windows.Forms.Label();
             this.lblSenhaJogador = new System.Windows.Forms.Label();
             this.btnPartidaIniciar = new System.Windows.Forms.Button();
-            this.txtPartidaId = new System.Windows.Forms.TextBox();
+            this.txtPartidaID = new System.Windows.Forms.TextBox();
             this.txtPartidaSenha = new System.Windows.Forms.TextBox();
             this.lblPartidaID = new System.Windows.Forms.Label();
             this.lblPartidaSenha = new System.Windows.Forms.Label();
-            this.btnPartidaEntrar = new System.Windows.Forms.Button();
+            this.btnEntrarPartida = new System.Windows.Forms.Button();
             this.txtJogadorNome = new System.Windows.Forms.TextBox();
             this.lblJogadorNome = new System.Windows.Forms.Label();
             this.lblPartidaNome = new System.Windows.Forms.Label();
             this.txtPartidaNome = new System.Windows.Forms.TextBox();
-            this.btnPartidaCriar = new System.Windows.Forms.Button();
+            this.btnCriarPartida = new System.Windows.Forms.Button();
             this.btnPartidaListar = new System.Windows.Forms.Button();
             this.lsbPartidas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,8 +58,6 @@
             this.lsbJogadas = new System.Windows.Forms.ListBox();
             this.btnMostrarTabuleiro = new System.Windows.Forms.Button();
             this.lsbTabuleiro = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbxIdTabuleiro = new System.Windows.Forms.TextBox();
             this.btnPular = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnVerificarVez = new System.Windows.Forms.Button();
@@ -107,12 +105,12 @@
             this.btnPartidaIniciar.UseVisualStyleBackColor = true;
             this.btnPartidaIniciar.Click += new System.EventHandler(this.btnPartidaIniciar_Click);
             // 
-            // txtPartidaId
+            // txtPartidaID
             // 
-            this.txtPartidaId.Location = new System.Drawing.Point(141, 316);
-            this.txtPartidaId.Name = "txtPartidaId";
-            this.txtPartidaId.Size = new System.Drawing.Size(114, 20);
-            this.txtPartidaId.TabIndex = 5;
+            this.txtPartidaID.Location = new System.Drawing.Point(141, 316);
+            this.txtPartidaID.Name = "txtPartidaID";
+            this.txtPartidaID.Size = new System.Drawing.Size(114, 20);
+            this.txtPartidaID.TabIndex = 5;
             // 
             // txtPartidaSenha
             // 
@@ -139,15 +137,15 @@
             this.lblPartidaSenha.TabIndex = 8;
             this.lblPartidaSenha.Text = "Senha da partida";
             // 
-            // btnPartidaEntrar
+            // btnEntrarPartida
             // 
-            this.btnPartidaEntrar.Location = new System.Drawing.Point(271, 252);
-            this.btnPartidaEntrar.Name = "btnPartidaEntrar";
-            this.btnPartidaEntrar.Size = new System.Drawing.Size(120, 32);
-            this.btnPartidaEntrar.TabIndex = 9;
-            this.btnPartidaEntrar.Text = "Entrar Partida";
-            this.btnPartidaEntrar.UseVisualStyleBackColor = true;
-            this.btnPartidaEntrar.Click += new System.EventHandler(this.btnPartidaEntrar_Click);
+            this.btnEntrarPartida.Location = new System.Drawing.Point(271, 252);
+            this.btnEntrarPartida.Name = "btnEntrarPartida";
+            this.btnEntrarPartida.Size = new System.Drawing.Size(120, 32);
+            this.btnEntrarPartida.TabIndex = 9;
+            this.btnEntrarPartida.Text = "Entrar Partida";
+            this.btnEntrarPartida.UseVisualStyleBackColor = true;
+            this.btnEntrarPartida.Click += new System.EventHandler(this.btnPartidaEntrar_Click);
             // 
             // txtJogadorNome
             // 
@@ -181,15 +179,15 @@
             this.txtPartidaNome.Size = new System.Drawing.Size(114, 20);
             this.txtPartidaNome.TabIndex = 12;
             // 
-            // btnPartidaCriar
+            // btnCriarPartida
             // 
-            this.btnPartidaCriar.Location = new System.Drawing.Point(271, 304);
-            this.btnPartidaCriar.Name = "btnPartidaCriar";
-            this.btnPartidaCriar.Size = new System.Drawing.Size(120, 32);
-            this.btnPartidaCriar.TabIndex = 14;
-            this.btnPartidaCriar.Text = "Criar Partida";
-            this.btnPartidaCriar.UseVisualStyleBackColor = true;
-            this.btnPartidaCriar.Click += new System.EventHandler(this.btnPartidaCriar_Click);
+            this.btnCriarPartida.Location = new System.Drawing.Point(271, 304);
+            this.btnCriarPartida.Name = "btnCriarPartida";
+            this.btnCriarPartida.Size = new System.Drawing.Size(120, 32);
+            this.btnCriarPartida.TabIndex = 14;
+            this.btnCriarPartida.Text = "Criar Partida";
+            this.btnCriarPartida.UseVisualStyleBackColor = true;
+            this.btnCriarPartida.Click += new System.EventHandler(this.btnPartidaCriar_Click);
             // 
             // btnPartidaListar
             // 
@@ -331,22 +329,6 @@
             this.lsbTabuleiro.Size = new System.Drawing.Size(209, 368);
             this.lsbTabuleiro.TabIndex = 29;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(859, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "ID da partida";
-            // 
-            // tbxIdTabuleiro
-            // 
-            this.tbxIdTabuleiro.Location = new System.Drawing.Point(862, 75);
-            this.tbxIdTabuleiro.Name = "tbxIdTabuleiro";
-            this.tbxIdTabuleiro.Size = new System.Drawing.Size(98, 20);
-            this.tbxIdTabuleiro.TabIndex = 30;
-            // 
             // btnPular
             // 
             this.btnPular.Location = new System.Drawing.Point(513, 48);
@@ -385,8 +367,6 @@
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPular);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbxIdTabuleiro);
             this.Controls.Add(this.lsbTabuleiro);
             this.Controls.Add(this.btnMostrarTabuleiro);
             this.Controls.Add(this.lsbJogadas);
@@ -402,16 +382,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lsbPartidas);
             this.Controls.Add(this.btnPartidaListar);
-            this.Controls.Add(this.btnPartidaCriar);
+            this.Controls.Add(this.btnCriarPartida);
             this.Controls.Add(this.lblPartidaNome);
             this.Controls.Add(this.txtPartidaNome);
             this.Controls.Add(this.lblJogadorNome);
             this.Controls.Add(this.txtJogadorNome);
-            this.Controls.Add(this.btnPartidaEntrar);
+            this.Controls.Add(this.btnEntrarPartida);
             this.Controls.Add(this.lblPartidaSenha);
             this.Controls.Add(this.lblPartidaID);
             this.Controls.Add(this.txtPartidaSenha);
-            this.Controls.Add(this.txtPartidaId);
+            this.Controls.Add(this.txtPartidaID);
             this.Controls.Add(this.btnPartidaIniciar);
             this.Controls.Add(this.lblSenhaJogador);
             this.Controls.Add(this.lblIDJogador);
@@ -433,16 +413,16 @@
         private System.Windows.Forms.Label lblIDJogador;
         private System.Windows.Forms.Label lblSenhaJogador;
         private System.Windows.Forms.Button btnPartidaIniciar;
-        private System.Windows.Forms.TextBox txtPartidaId;
+        private System.Windows.Forms.TextBox txtPartidaID;
         private System.Windows.Forms.TextBox txtPartidaSenha;
         private System.Windows.Forms.Label lblPartidaID;
         private System.Windows.Forms.Label lblPartidaSenha;
-        private System.Windows.Forms.Button btnPartidaEntrar;
+        private System.Windows.Forms.Button btnEntrarPartida;
         private System.Windows.Forms.TextBox txtJogadorNome;
         private System.Windows.Forms.Label lblJogadorNome;
         private System.Windows.Forms.Label lblPartidaNome;
         private System.Windows.Forms.TextBox txtPartidaNome;
-        private System.Windows.Forms.Button btnPartidaCriar;
+        private System.Windows.Forms.Button btnCriarPartida;
         private System.Windows.Forms.Button btnPartidaListar;
         private System.Windows.Forms.ListBox lsbPartidas;
         private System.Windows.Forms.Label label1;
@@ -458,8 +438,6 @@
         private System.Windows.Forms.ListBox lsbJogadas;
         private System.Windows.Forms.Button btnMostrarTabuleiro;
         private System.Windows.Forms.ListBox lsbTabuleiro;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbxIdTabuleiro;
         private System.Windows.Forms.Button btnPular;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnVerificarVez;

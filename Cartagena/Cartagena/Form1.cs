@@ -25,7 +25,7 @@ namespace Cartagena{
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
         private void btnPartidaEntrar_Click(object sender, EventArgs e){
-            string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaId.Text), txtJogadorNome.Text, txtPartidaSenha.Text);
+            string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaID.Text), txtJogadorNome.Text, txtPartidaSenha.Text);
             string[] jogador;
 
             jogador = entradaRetorno.Split(',');
@@ -39,7 +39,7 @@ namespace Cartagena{
         //Método de criação de Partida.
         private void btnPartidaCriar_Click(object sender, EventArgs e){   
             int partidaID = Convert.ToInt32(Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text));
-            txtPartidaId.Text = partidaID.ToString();
+            txtPartidaID.Text = partidaID.ToString();
         }
 
         //Método de listagem de Partidas.
@@ -64,7 +64,7 @@ namespace Cartagena{
             string[] jogadorCartas = cartas.Split('\n');
 
             lsbCartas.Items.Clear();
-            for (int i = 0; i < jogadorCartas.Length; i++) {
+            for (int i = 0; i < jogadorCartas.Length; i++){
                 jogadorCartas[i].Replace("\r", "");
                 lsbCartas.Items.Add(jogadorCartas[i]);
             }
@@ -72,12 +72,11 @@ namespace Cartagena{
 
         //Método de listagem de jogadores
         private void btnJogadoresListar_Click(object sender, EventArgs e){
-            int partidaID = Convert.ToInt32(txtPartidaId.Text);
+            int partidaID = Convert.ToInt32(txtPartidaID.Text);
             string[] jogadores = Jogo.ListarJogadores(partidaID).ToString().Split('\r');
 
             lsbJogadores.Items.Clear();
-            for(int i = 0; i < jogadores.Length; i++)
-            {
+            for(int i = 0; i < jogadores.Length; i++){
                 jogadores[i].Replace("\r","");
                 lsbJogadores.Items.Add(jogadores[i]);
             }
@@ -86,10 +85,10 @@ namespace Cartagena{
         //Método de jogada. Jogar pra frente.
         private void btnAndar_Click(object sender, EventArgs e){
             //Posição do pirata. Carta a ser jogada. Senha do jogador. id do jogador.
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+            string jogadorSenha = txtJogadorSenha.Text;
             int pirata = Convert.ToInt32(txtPirataPosicao.Text);
             string carta = cboCartas.SelectedItem.ToString();
-            string jogadorSenha = txtJogadorSenha.Text.ToString();
-            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
 
             string[] jogadas;
 
@@ -114,28 +113,29 @@ namespace Cartagena{
             lsbJogadas.Items.Clear();
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta).Split('\n');
 
-            for (int i = 0; i < jogadas.Length; i++) {
+            for (int i = 0; i < jogadas.Length; i++){
                 jogadas[i].Replace("\r", "");
                 lsbJogadas.Items.Add(jogadas[i]);
             }
         }
 
-        private void btnMostrarTabuleiro_Click(object sender, EventArgs e)
-        {
-            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(tbxIdTabuleiro.Text));
-            string[] linha;
-            linha = tabuleiro.Split('\r');
+        //Método de jogada. Jogar pra trás.
+        private void btnVoltar_Click(object sender, EventArgs e){
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+            string jogadorSenha = txtJogadorSenha.Text;
+            int posicao = Convert.ToInt32(txtPirataPosicao.Text);
+            string[] jogadas;
 
-            lsbTabuleiro.Items.Clear();
-            for (int i = 0; i < linha.Length; i++)
-            {
-                linha[i] = linha[i].Replace("\n","");
-                lsbTabuleiro.Items.Add(linha[i]);
+            jogadas = Jogo.Jogar(jogadorID, jogadorSenha, posicao).Split('\n');
+
+            for (int i = 0; i < jogadas.Length; i++){
+                jogadas[i].Replace("\r", "");
+                lsbJogadas.Items.Add(jogadas[i]);
             }
         }
 
-        private void btnPular_Click(object sender, EventArgs e)
-        {
+        //Método jogada. Pular vez. 
+        private void btnPular_Click(object sender, EventArgs e){
             int jogadorID = Convert.ToInt32(txtJogadorID.Text);
             string jogadorSenha = txtJogadorSenha.Text;
 
@@ -144,27 +144,25 @@ namespace Cartagena{
             lsbJogadas.Items.Add("Jogada pulada!");
         }
 
-        private void btnVoltar_Click(object sender, EventArgs e) {
-            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
-            string jogadorSenha = txtJogadorSenha.Text;
-            int posicao = Convert.ToInt32(txtPirataPosicao.Text);
-            string[] jogadas;
+        //Método de exibição de tabuleiro.
+        private void btnMostrarTabuleiro_Click(object sender, EventArgs e){
+            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
+            string[] linha;
+            linha = tabuleiro.Split('\r');
 
-            jogadas = Jogo.Jogar(jogadorID, jogadorSenha, posicao).Split('\n');
-
-            for (int i = 0; i < jogadas.Length; i++) {
-                jogadas[i].Replace("\r", "");
-                lsbJogadas.Items.Add(jogadas[i]);
+            lsbTabuleiro.Items.Clear();
+            for (int i = 0; i < linha.Length; i++){
+                linha[i] = linha[i].Replace("\n","");
+                lsbTabuleiro.Items.Add(linha[i]);
             }
         }
 
-        private void btnVerificarVez_Click(object sender, EventArgs e)
-        {
-           string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaId.Text));
+        //Método de verificar vez.
+        private void btnVerificarVez_Click(object sender, EventArgs e){
+           string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
            string[] jogadas = vez.Split('\r');
             lsbJogadas.Items.Clear();
-            for (int i = 0; i < jogadas.Length; i++)
-            {
+            for (int i = 0; i < jogadas.Length; i++){
                 jogadas[i].Replace("\r", "");
                 lsbJogadas.Items.Add(jogadas[i]);
             }

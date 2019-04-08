@@ -48,10 +48,10 @@ namespace Cartagena{
             string[] linha;
             linha = lista.Split('\n');
 
-            lsbPartidas.Items.Clear();
+            lsbLog.Items.Clear();
             for (int i = 0; i < linha.Length; i++){
                 linha[i].Replace("\r", "");
-                lsbPartidas.Items.Add(linha[i]);
+                lsbLog.Items.Add(linha[i]);
             }
         }
 
@@ -63,10 +63,10 @@ namespace Cartagena{
             string cartas = Jogo.ConsultarMao(jogadorID, jogadorSenha);
             string[] jogadorCartas = cartas.Split('\n');
 
-            lsbCartas.Items.Clear();
+            lsbLog.Items.Clear();
             for (int i = 0; i < jogadorCartas.Length; i++){
                 jogadorCartas[i].Replace("\r", "");
-                lsbCartas.Items.Add(jogadorCartas[i]);
+                lsbLog.Items.Add(jogadorCartas[i]);
             }
         }
 
@@ -75,10 +75,10 @@ namespace Cartagena{
             int partidaID = Convert.ToInt32(txtPartidaID.Text);
             string[] jogadores = Jogo.ListarJogadores(partidaID).ToString().Split('\r');
 
-            lsbJogadores.Items.Clear();
+            lsbLog.Items.Clear();
             for(int i = 0; i < jogadores.Length; i++){
                 jogadores[i].Replace("\r","");
-                lsbJogadores.Items.Add(jogadores[i]);
+                lsbLog.Items.Add(jogadores[i]);
             }
         }
 
@@ -110,12 +110,12 @@ namespace Cartagena{
                     break;
             }
 
-            lsbJogadas.Items.Clear();
+            lsbLog.Items.Clear();
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta).Split('\n');
 
             for (int i = 0; i < jogadas.Length; i++){
                 jogadas[i].Replace("\r", "");
-                lsbJogadas.Items.Add(jogadas[i]);
+                lsbLog.Items.Add(jogadas[i]);
             }
         }
 
@@ -130,7 +130,7 @@ namespace Cartagena{
 
             for (int i = 0; i < jogadas.Length; i++){
                 jogadas[i].Replace("\r", "");
-                lsbJogadas.Items.Add(jogadas[i]);
+                lsbLog.Items.Add(jogadas[i]);
             }
         }
 
@@ -141,19 +141,20 @@ namespace Cartagena{
 
             Jogo.Jogar(jogadorID, jogadorSenha);
 
-            lsbJogadas.Items.Add("Jogada pulada!");
+            lsbLog.Items.Add("Jogada pulada!");
         }
 
         //Método de exibição de tabuleiro.
+        //Quando o tabuleiro for implementado, deve ser removido e trocado por um timer que executa o método automaticamente.
         private void btnMostrarTabuleiro_Click(object sender, EventArgs e){
             string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
             string[] linha;
             linha = tabuleiro.Split('\r');
 
-            lsbTabuleiro.Items.Clear();
+            lsbLog.Items.Clear();
             for (int i = 0; i < linha.Length; i++){
                 linha[i] = linha[i].Replace("\n","");
-                lsbTabuleiro.Items.Add(linha[i]);
+                lsbLog.Items.Add(linha[i]);
             }
         }
 
@@ -161,10 +162,10 @@ namespace Cartagena{
         private void btnVerificarVez_Click(object sender, EventArgs e){
            string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
            string[] jogadas = vez.Split('\r');
-            lsbJogadas.Items.Clear();
+            lsbLog.Items.Clear();
             for (int i = 0; i < jogadas.Length; i++){
                 jogadas[i].Replace("\r", "");
-                lsbJogadas.Items.Add(jogadas[i]);
+                lsbLog.Items.Add(jogadas[i]);
             }
         }
     }

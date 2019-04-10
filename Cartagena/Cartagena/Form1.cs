@@ -18,33 +18,25 @@ namespace Cartagena{
         //Funcao para pegar a posicao dos piratas e mostra-los no mapa
         private void pirates()
         {
-            string index; string id; int nPiratas;
-            string[] tabuleiro = new string[38]; // Banco de posicoes
-            
+            int[,] tabuleiro = new int[38,2]; // Banco de posicoes
+            int posicao1, posicao2;
+            string posicao, id, nPiratas;
+
             string statusPosicoes = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
             string[] posicaoPiratas = statusPosicoes.Split('\n');
-            string vez = posicaoPiratas[0];
 
-            lsbLog.Items.Clear();
-            foreach (string posicao in posicaoPiratas) {
-                posicao.Replace("\r", "");
-                string[] linha = posicao.Split(',');
-
-                lsbLog.Items.Add(linha[1]);
-                /*
-                id = linha[1];
-                nPiratas = Convert.ToInt32(linha[2]);
-                tabuleiro[Convert.ToInt32(index)] = id + "--" + nPiratas.ToString();
-                */
-            }
-            /*
-            lsbLog.Items.Clear();
-
-            for (int i = 0; i < tabuleiro.Length; i++)
+            for (int i = 1; i < posicaoPiratas.Length-1; i++)
             {
-                lsbLog.Items.Add(tabuleiro[i]);
+                posicao1 = posicaoPiratas[i].IndexOf(',');
+                posicao2 = posicaoPiratas[i].IndexOf(',', posicao1 + 1);
+                posicao = posicaoPiratas[i].Substring(0,posicao1);
+                id = posicaoPiratas[i].Substring(posicao1+1, posicao2-2);
+                nPiratas = posicaoPiratas[i].Substring(posicao2+1);
+                //OLA MEU GORDINHO LINDO, conseguimos pegar os dados, agr precisa armazena-los.
+                //Pensamos no seguinte, colocar uma classe com o tabuleiro, mas caso vc queira armazene na matriz
+                //, mas lembre-se que nao serao so dois jogadores, leve em consideracao a quantidade de jogadores.
+                //BOA SORTE LINDO ;D
             }
-            */
         }
 
         //Método de início de partida.

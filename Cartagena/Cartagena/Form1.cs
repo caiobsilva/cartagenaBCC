@@ -15,6 +15,38 @@ namespace Cartagena{
             InitializeComponent();
         }
 
+        //Funcao para pegar a posicao dos piratas e mostra-los no mapa
+        private void pirates()
+        {
+            string index; string id; int nPiratas;
+            string[] tabuleiro = new string[38]; // Banco de posicoes
+            
+            string statusPosicoes = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
+            string[] posicaoPiratas = statusPosicoes.Split('\n');
+            string vez = posicaoPiratas[0];
+
+            lsbLog.Items.Clear();
+            foreach (string posicao in posicaoPiratas) {
+                posicao.Replace("\r", "");
+                string[] linha = posicao.Split(',');
+
+                lsbLog.Items.Add(linha[1]);
+                /*
+                id = linha[1];
+                nPiratas = Convert.ToInt32(linha[2]);
+                tabuleiro[Convert.ToInt32(index)] = id + "--" + nPiratas.ToString();
+                */
+            }
+            /*
+            lsbLog.Items.Clear();
+
+            for (int i = 0; i < tabuleiro.Length; i++)
+            {
+                lsbLog.Items.Add(tabuleiro[i]);
+            }
+            */
+        }
+
         //Método de início de partida.
         private void btnPartidaIniciar_Click(object sender, EventArgs e){
             String iniciadorID;
@@ -156,6 +188,7 @@ namespace Cartagena{
                 linha[i] = linha[i].Replace("\n","");
                 lsbLog.Items.Add(linha[i]);
             }
+            pirates();
         }
 
         //Método de verificar vez.
@@ -164,7 +197,7 @@ namespace Cartagena{
            string[] jogadas = vez.Split('\r');
             lsbLog.Items.Clear();
             for (int i = 0; i < jogadas.Length; i++){
-                jogadas[i].Replace("\r", "");
+                jogadas[i].Replace("\n", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
         }

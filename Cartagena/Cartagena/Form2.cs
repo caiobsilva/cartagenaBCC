@@ -14,49 +14,71 @@ namespace Cartagena {
             InitializeComponent();
         }
 
+        private Brush retornaCor(string id) {
+            //Ordem das cores:
+            //Vermelho, Verde, Amarelo, Azul, Marrom. Do primeiro ao último (menor id para o maior).
+            if (id == Form1.idJogadores[0])
+                return Brushes.Red;
+            else if (id == Form1.idJogadores[1])
+                return Brushes.Green;
+            else if (id == Form1.idJogadores[2])
+                return Brushes.Yellow;
+            else if (id == Form1.idJogadores[3])
+                return Brushes.Blue;
+            else
+                return Brushes.Brown;
+
+        }
+
         public void Tabuleiro() {
-            Form1 form1 = new Form1();
+            PictureBox[] pictureTabuleiro = new PictureBox[38];
 
-            PictureBox[] posicoesTabuleiro = new PictureBox[38];
-
-            string[] cartasTabuleiro = new string[38];
-            cartasTabuleiro = Form1.tabuleiroCartasPosicoes;
+            string[] cartas = Form1.cartasTabuleiro;
 
             string[] piratasTabuleiro = new string[38];
+            
+            for (int i = 0; i < pictureTabuleiro.Length; i++) {
+                pictureTabuleiro[i] = new PictureBox();
+                pictureTabuleiro[i].Height = 50;
+                pictureTabuleiro[i].Width = 50;
 
-
-            for (int i = 0; i < posicoesTabuleiro.Length; i++) {
-                posicoesTabuleiro[i] = new PictureBox();
-                posicoesTabuleiro[i].Height = 50;
-                posicoesTabuleiro[i].Width = 50;
-
-                switch (cartasTabuleiro[i]) {
+                switch (cartas[i]) {
                     case "C":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/chave.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/chave.png");
                         break;
                     case "E":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/esqueleto.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/esqueleto.png");
                         break;
                     case "F":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/faca.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/faca.png");
                         break;
                     case "G":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/garrafa.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/garrafa.png");
                         break;
                     case "P":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/pistola.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/pistola.png");
                         break;
                     case "T":
-                        posicoesTabuleiro[i].Image = Image.FromFile(@"../../res/tricornio.png");
+                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/tricornio.png");
                         break;
                     default:
-                        posicoesTabuleiro[i].BackColor = Color.Black;
+                        pictureTabuleiro[i].BackColor = Color.Black;
                         break;
                 }
 
-                flpTabuleiro.Controls.Add(posicoesTabuleiro[i]);
-            }
-        }
+                flpTabuleiro.Controls.Add(pictureTabuleiro[i]);
+                //Tratar o Form1.tabuleiro
+                //Primeiro, divida os ids e os passes (um a um) como parâmetro para a função "retornaCor".
+                //Brush pincel = retornaCor("0");
+                //Segundo, desenhar a quantidade de piratas na posição atual (com a cor do jogador) no pictureTabuleiro[i]. Um código exemplo abaixo (ele está funcionando):
 
+            }
+            pictureTabuleiro[0].Paint += new PaintEventHandler((sender, e) =>
+            {
+                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                e.Graphics.DrawString("1", Font, Brushes.Red, 0, 0);
+                e.Graphics.DrawString("\n2", Font, Brushes.Red, 0, 0);
+            });
+        }
     }
 }

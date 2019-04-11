@@ -11,28 +11,29 @@ using CartagenaServer;
 
 namespace Cartagena{
     public partial class Form1 : Form{
-        public static string[] tabuleiroCartasPosicoes;
+        public static string[] cartasTabuleiro = new string[38];
+        public static string[] idJogadores = new string[5];
+        public static string[] tabuleiro = new string[38];
+
         public Form1(){
             InitializeComponent();
         }
 
-        //Método de quebra de linha e caracteres do posicionamento dos piratas no mapa.
+        //Método de quebra das linhas de posicionamento dos piratas no mapa.
         public void quebraLinhaPosicoes(){
             //Armazena o id do jogador e quantidade de piratas num determinado indice-posição.
-            string[] tabuleiro = new string[38];
             string posicao, id, quantidadePiratas;
             string temp;
 
+            string[] idJogadores = new string[5];
+
+            //Recebe a vez e as jogadas.
             temp = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
             string[] posicoesPiratas = temp.Split('\n');
 
+            //Recebe as distribuições de cartas no tabuleiro.
             temp = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linhasTabuleiro = temp.Split('\n');
-
-            for (int i = 0 ; i < linhasTabuleiro.Length-1; i++){
-                linhasTabuleiro[i] = linhasTabuleiro[i].Replace("\n","");
-                tabuleiro[i] = linhasTabuleiro[i];
-            }
+            string[] linha = temp.Split('\n');
 
             for (int i = 1; i < posicoesPiratas.Length-1; i++){
                 int index1 = posicoesPiratas[i].IndexOf(',');
@@ -41,35 +42,48 @@ namespace Cartagena{
                 id = posicoesPiratas[i].Substring(index1+1, index2-2);
                 quantidadePiratas = posicoesPiratas[i].Substring(index2+1);
 
-                tabuleiro[Convert.ToInt32(posicao)] += " | " + " O jogador " + id + " tem " + quantidadePiratas + " aqui.";
-
+                tabuleiro[Convert.ToInt32(posicao)] += id + "," + quantidadePiratas + "|";
             }
-            lsbLog.Items.Clear();
 
-            for (int k = 0; k < tabuleiro.Length - 1; k++){
-                lsbLog.Items.Add(tabuleiro[k]);
+            for (int i = 0; i < tabuleiro.Length - 1; i++){
+                if(tabuleiro[i] != null)
+                    lsbLog.Items.Add(tabuleiro[i]);
             }
         }
+
         public string[] mostrarCartasTabuleiro(){
             string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
             string[] linhaTabuleiro = statusTabuleiro.Split('\n');
-            tabuleiroCartasPosicoes = new string[38];
             for (int k = 0; k < linhaTabuleiro.Length - 1; k++){
                 linhaTabuleiro[k] = linhaTabuleiro[k].Replace("\n", "");
             }
-            //percorrer somente da 1 ate a 36
+            //Percorre o vetor de 1 até 36.
             for (int i = 1; i < linhaTabuleiro.Length - 2; i++){
                 int index = linhaTabuleiro[i].IndexOf(',');
                 string temp = linhaTabuleiro[i].Substring(index, index+1);
                 temp = temp.Replace(",", "");
                 temp = temp.Replace("\r", "");
-                tabuleiroCartasPosicoes[i] = temp;
+                cartasTabuleiro[i] = temp;
             }
 
-            return tabuleiroCartasPosicoes;
+            return cartasTabuleiro;
         }
 
-        //Método de início de partida.
+        //Método de recebimento dos identificadores dos jogadores.
+        public void quebraCaracteresIdJogadores() {
+            string[] tempJogadores = Jogo.ListarJogadores(78).Split('\n');
+            for (int i = 0; i < tempJogadores.Length; i++) {
+                tempJogadores[i] = tempJogadores[i].Replace("\r", "");
+                tempJogadores[i] = tempJogadores[i].Replace("\n", "");
+                int index1 = tempJogadores[i].IndexOf(',');
+                //O conteúdo de tempJogadores[1] é vazio.
+                if (index1 != -1) {
+                    idJogadores[i] = tempJogadores[i].Substring(0, index1);
+                }
+            }
+        }
+
+        //Método de inicialização de partida.
         private void btnPartidaIniciar_Click(object sender, EventArgs e){
             String iniciadorID;
             //O método IniciarPartida do Jogo retorna o id do jogador que iniciou a partida. 
@@ -104,7 +118,7 @@ namespace Cartagena{
 
             lsbLog.Items.Clear();
             for (int i = 0; i < linha.Length; i++){
-                linha[i].Replace("\r", "");
+                linha[i] = linha[i].Replace("\r", "");
                 lsbLog.Items.Add(linha[i]);
             }
         }
@@ -127,7 +141,7 @@ namespace Cartagena{
         //Método de listagem de jogadores
         private void btnJogadoresListar_Click(object sender, EventArgs e){
             int partidaID = Convert.ToInt32(txtPartidaID.Text);
-            string[] jogadores = Jogo.ListarJogadores(partidaID).ToString().Split('\r');
+            string[] jogadores = Jogo.ListarJogadores(partidaID).Split('\r');
 
             lsbLog.Items.Clear();
             for(int i = 0; i < jogadores.Length; i++){
@@ -168,7 +182,7 @@ namespace Cartagena{
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, posicao).Split('\n');
 
             for (int i = 0; i < jogadas.Length; i++){
-                jogadas[i].Replace("\r", "");
+                jogadas[i] = jogadas[i].Replace("\r", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
         }
@@ -195,13 +209,13 @@ namespace Cartagena{
                 linha[i] = linha[i].Replace("\n","");
                 lsbLog.Items.Add(linha[i]);
             }*/
-            /*lsbLog.Items.Clear();
+            lsbLog.Items.Clear();
             mostrarCartasTabuleiro();
+            quebraCaracteresIdJogadores();
+            quebraLinhaPosicoes();
             Form2 formDois = new Form2();
             formDois.Tabuleiro();
             formDois.Show();
-            */
-            quebraLinhaPosicoes();
         }
 
         //Método de verificar vez.

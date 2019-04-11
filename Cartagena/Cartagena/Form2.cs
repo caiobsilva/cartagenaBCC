@@ -22,6 +22,9 @@ namespace Cartagena {
             string[] cartasTabuleiro = new string[38];
             cartasTabuleiro = Form1.tabuleiroCartasPosicoes;
 
+            string[] piratasTabuleiro = new string[38];
+
+
             for (int i = 0; i < posicoesTabuleiro.Length; i++) {
                 posicoesTabuleiro[i] = new PictureBox();
                 posicoesTabuleiro[i].Height = 50;

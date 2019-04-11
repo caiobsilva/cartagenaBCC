@@ -16,37 +16,36 @@ namespace Cartagena{
             InitializeComponent();
         }
 
-        //Funcao para pegar a posicao dos piratas e mostra-los no mapa
+        //Método de quebra de linha e caracteres do posicionamento dos piratas no mapa.
         public void quebraLinhaPosicoes(){
-            string[] tabuleiro = new string[38]; // Banco de posicoes
+            //Armazena o id do jogador e quantidade de piratas num determinado indice-posição.
+            string[] tabuleiro = new string[38];
             string posicao, id, nPiratas;
+            string temp;
 
-            string statusPosicoes = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
-            string[] posicaoPiratas = statusPosicoes.Split('\n');
+            temp = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
+            string[] posicoesPiratas = temp.Split('\n');
 
-            //Para limpar o array, evitar repeticoes.
-            for (int j=0; j < tabuleiro.Length - 1; j++){
-                tabuleiro[j] = "";
+            temp = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
+            string[] linhasTabuleiro = temp.Split('\n');
+
+            for (int i = 0 ; i < linhasTabuleiro.Length-1; i++){
+                linhasTabuleiro[i] = linhasTabuleiro[i].Replace("\n","");
+                tabuleiro[i] = linhasTabuleiro[i];
             }
 
-            string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linha;
-            linha = statusTabuleiro.Split('\n');
-            for (int k = 0 ; k < linha.Length-1; k++){
-                linha[k] = linha[k].Replace("\n","");
-                tabuleiro[k] = linha[k];
-            }
+            for (int i = 1; i < posicoesPiratas.Length-1; i++){
+                int index1 = posicoesPiratas[i].IndexOf(',');
+                int index2 = posicoesPiratas[i].IndexOf(',', index1 + 1);
+                posicao = posicoesPiratas[i].Substring(0,index1);
+                id = posicoesPiratas[i].Substring(index1+1, index2-2);
+                nPiratas = posicoesPiratas[i].Substring(index2+1);
 
-            for (int i = 1; i < posicaoPiratas.Length-1; i++){
-                int index1 = posicaoPiratas[i].IndexOf(',');
-                int index2 = posicaoPiratas[i].IndexOf(',', index1 + 1);
-                posicao = posicaoPiratas[i].Substring(0,index1);
-                id = posicaoPiratas[i].Substring(index1+1, index2-2);
-                nPiratas = posicaoPiratas[i].Substring(index2+1);
-
-                tabuleiro[Convert.ToInt32(posicao)] += " --> " + "id:" + id + "-" + "p:" + nPiratas + " ";
+                tabuleiro[Convert.ToInt32(posicao)] += " | " + " O jogador " + id + " tem " + nPiratas + " aqui.";
 
             }
+            lsbLog.Items.Clear();
+
             for (int k = 0; k < tabuleiro.Length - 1; k++){
                 lsbLog.Items.Add(tabuleiro[k]);
             }
@@ -147,26 +146,8 @@ namespace Cartagena{
 
             string[] jogadas;
 
-            switch (carta){
-                case "Chave":
-                    carta = "C";
-                    break;
-                case "Esqueleto":
-                    carta = "E";
-                    break;
-                case "Faca":
-                    carta = "F";
-                    break;
-                case "Garrafa":
-                    carta = "G";
-                    break;
-                case "Pistola":
-                    carta = "P";
-                    break;
-                case "Tricórnio":
-                    carta = "T";
-                    break;
-            }
+            //Pega apenas o primeiro caractere do item selecionado.
+            carta = carta.Substring(0, 1);
 
             lsbLog.Items.Clear();
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta).Split('\n');
@@ -214,11 +195,13 @@ namespace Cartagena{
                 linha[i] = linha[i].Replace("\n","");
                 lsbLog.Items.Add(linha[i]);
             }*/
-            lsbLog.Items.Clear();
+            /*lsbLog.Items.Clear();
             mostrarCartasTabuleiro();
             Form2 formDois = new Form2();
             formDois.Tabuleiro();
             formDois.Show();
+            */
+            quebraLinhaPosicoes();
         }
 
         //Método de verificar vez.

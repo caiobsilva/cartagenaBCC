@@ -68,7 +68,7 @@ namespace Cartagena {
 
                 flpTabuleiro.Controls.Add(pictureTabuleiro[i]);
                 //Tratar o Form1.tabuleiro
-                //Primeiro, divida os ids e os passes (um a um) como parâmetro para a função "retornaCor".
+                //Primeiro, divida os ids e os passe (um a um) como parâmetro para a função "retornaCor".
                 //Brush pincel = retornaCor("0");
                 //Segundo, desenhar a quantidade de piratas na posição atual (com a cor do jogador) no pictureTabuleiro[i]. Um código exemplo abaixo (ele está funcionando):
 

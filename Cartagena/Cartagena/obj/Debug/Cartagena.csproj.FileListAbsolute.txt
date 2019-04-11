@@ -67,3 +67,15 @@ C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.c
 C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

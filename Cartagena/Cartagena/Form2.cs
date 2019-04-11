@@ -105,10 +105,12 @@ namespace Cartagena {
                     pincel = Brushes.DarkRed;
                 }
                 else {
-                    pincel = Brushes.DarkGreen;
+                    pincel = Brushes.White;
                 }
                 pictureTabuleiro[i].Paint += new PaintEventHandler((sender, e) =>
                 {
+                    //gr.Dispose()
+                    //https://social.msdn.microsoft.com/Forums/en-US/4756ef0a-87bf-4d57-b5d3-a0651c4a41c9/drawstring-delete?forum=Vsexpressvb
                     e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
                     e.Graphics.DrawString(temp, Font, pincel, 0, 0);
                 });

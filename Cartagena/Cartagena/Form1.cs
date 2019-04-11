@@ -18,24 +18,61 @@ namespace Cartagena{
         //Funcao para pegar a posicao dos piratas e mostra-los no mapa
         private void pirates()
         {
-            int[,] tabuleiro = new int[38,2]; // Banco de posicoes
-            int posicao1, posicao2;
+            string[] tabuleiro = new string[38]; // Banco de posicoes
+            int index1, index2; //Usado para obter a posicao das virgulas.
             string posicao, id, nPiratas;
 
             string statusPosicoes = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
             string[] posicaoPiratas = statusPosicoes.Split('\n');
 
+            for(int j=0; j < tabuleiro.Length - 1; j++)//Para limpar o array, evitar repeticoes.
+            {
+                tabuleiro[j] = "";
+            }
+
+            string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
+            string[] linha;
+            linha = statusTabuleiro.Split('\n');
+            for(int k = 0 ; k < linha.Length-1; k++)
+            {
+                linha[k] = linha[k].Replace("\n","");
+                tabuleiro[k] = linha[k];
+            }
+
             for (int i = 1; i < posicaoPiratas.Length-1; i++)
             {
-                posicao1 = posicaoPiratas[i].IndexOf(',');
-                posicao2 = posicaoPiratas[i].IndexOf(',', posicao1 + 1);
-                posicao = posicaoPiratas[i].Substring(0,posicao1);
-                id = posicaoPiratas[i].Substring(posicao1+1, posicao2-2);
-                nPiratas = posicaoPiratas[i].Substring(posicao2+1);
-                //OLA MEU GORDINHO LINDO, conseguimos pegar os dados, agr precisa armazena-los.
-                //Pensamos no seguinte, colocar uma classe com o tabuleiro, mas caso vc queira armazene na matriz
-                //, mas lembre-se que nao serao so dois jogadores, leve em consideracao a quantidade de jogadores.
-                //BOA SORTE LINDO ;D
+                index1 = posicaoPiratas[i].IndexOf(',');
+                index2 = posicaoPiratas[i].IndexOf(',', index1 + 1);
+                posicao = posicaoPiratas[i].Substring(0,index1);
+                id = posicaoPiratas[i].Substring(index1+1, index2-2);
+                nPiratas = posicaoPiratas[i].Substring(index2+1);
+
+                tabuleiro[Convert.ToInt32(posicao)] += " --> " + "id:" + id + "-" + "p:" + nPiratas + " ";
+
+            }
+            for(int k = 0; k < tabuleiro.Length - 1; k++)
+            {
+                lsbLog.Items.Add(tabuleiro[k]);
+            }
+        }
+        private void mapaTabuleiro()
+        {
+            string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
+            string[] linhaTab = statusTabuleiro.Split('\n');
+            int index; string temp;
+            string[] tabuleiroPosicoes = new string[38];
+            for (int k = 0; k < linhaTab.Length - 1; k++)
+            {
+                linhaTab[k] = linhaTab[k].Replace("\n", "");
+            }
+            for (int i = 1; i < linhaTab.Length - 2; i++) //percorrer somente da 1 ate a 36
+            {
+                index = linhaTab[i].IndexOf(',');
+                temp = linhaTab[i].Substring(index, index+1);
+                temp = temp.Replace(",", "");
+                temp = temp.Replace("\r", "");
+                tabuleiroPosicoes[i] = temp;
+                Console.WriteLine(tabuleiroPosicoes[i]);
             }
         }
 
@@ -171,7 +208,7 @@ namespace Cartagena{
         //Método de exibição de tabuleiro.
         //Quando o tabuleiro for implementado, deve ser removido e trocado por um timer que executa o método automaticamente.
         private void btnMostrarTabuleiro_Click(object sender, EventArgs e){
-            string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
+            /*string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
             string[] linha;
             linha = tabuleiro.Split('\r');
 
@@ -179,8 +216,9 @@ namespace Cartagena{
             for (int i = 0; i < linha.Length; i++){
                 linha[i] = linha[i].Replace("\n","");
                 lsbLog.Items.Add(linha[i]);
-            }
-            pirates();
+            }*/
+            lsbLog.Items.Clear();
+            mapaTabuleiro();
         }
 
         //Método de verificar vez.

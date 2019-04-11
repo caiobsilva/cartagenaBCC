@@ -331,7 +331,7 @@
             this.pcbTabuleiro.Image = ((System.Drawing.Image)(resources.GetObject("pcbTabuleiro.Image")));
             this.pcbTabuleiro.Location = new System.Drawing.Point(344, 12);
             this.pcbTabuleiro.Name = "pcbTabuleiro";
-            this.pcbTabuleiro.Size = new System.Drawing.Size(501, 293);
+            this.pcbTabuleiro.Size = new System.Drawing.Size(501, 286);
             this.pcbTabuleiro.TabIndex = 35;
             this.pcbTabuleiro.TabStop = false;
             // 
@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 426);
+            this.ClientSize = new System.Drawing.Size(1336, 692);
             this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);

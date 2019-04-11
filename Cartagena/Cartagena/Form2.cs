@@ -71,6 +71,7 @@ namespace Cartagena {
                 //Primeiro, divida os ids e os passe (um a um) como parâmetro para a função "retornaCor".
                 //Brush pincel = retornaCor("0");
                 //Segundo, desenhar a quantidade de piratas na posição atual (com a cor do jogador) no pictureTabuleiro[i]. Um código exemplo abaixo (ele está funcionando):
+                Console.WriteLine("A" + Form1.tabuleiro[i]);
 
             }
             pictureTabuleiro[0].Paint += new PaintEventHandler((sender, e) =>

@@ -14,6 +14,34 @@ namespace Cartagena {
             InitializeComponent();
         }
 
+        private string[] jogadorID(string[] tabuleiro)
+        {
+            int index1, index2,runTime = 0;
+            int tempIndex2;
+            string[] id = new string[5];
+            if(tabuleiro[0] != "")
+            {
+                tabuleiro[0] = tabuleiro[0].Replace("\r", "");
+                //Console.WriteLine(tabuleiro[0]); 
+                index1 = tabuleiro[0].IndexOf(',');
+                index2 = tabuleiro[0].IndexOf(';');
+                id[runTime] = tabuleiro[0].Substring(0, index1);
+                runTime+=1; //ate aqui ta OK
+                //Console.WriteLine(id[runTime]);
+                while (tabuleiro[0].IndexOf(';', index2+1) != -1 && runTime!=4)
+                    {
+                        tempIndex2 = index2 + 1;
+                        index1 = tabuleiro[0].IndexOf(',',index1+1);
+                        index2 = tabuleiro[0].IndexOf(';', index2 + 1);
+                        id[runTime] = tabuleiro[0].Substring(tempIndex2, index1-1);
+                        //Console.WriteLine(id[runTime]);
+                        runTime+=1;
+                    }
+            }
+            Console.WriteLine(id[0],id[1],id[2],id[3],id[4]);
+            return id;
+        }
+
         private Brush retornaCor(string id) {
             //Ordem das cores:
             //Vermelho, Verde, Amarelo, Azul, Marrom. Do primeiro ao último (menor id para o maior).
@@ -71,15 +99,20 @@ namespace Cartagena {
                 //Primeiro, divida os ids e os passe (um a um) como parâmetro para a função "retornaCor".
                 //Brush pincel = retornaCor("0");
                 //Segundo, desenhar a quantidade de piratas na posição atual (com a cor do jogador) no pictureTabuleiro[i]. Um código exemplo abaixo (ele está funcionando):
-                Console.WriteLine("A" + Form1.tabuleiro[i]);
-
+                string temp = Form1.tabuleiro[i];
+                Brush pincel;
+                if (i == 0 || i == 37) {
+                    pincel = Brushes.DarkRed;
+                }
+                else {
+                    pincel = Brushes.DarkGreen;
+                }
+                pictureTabuleiro[i].Paint += new PaintEventHandler((sender, e) =>
+                {
+                    e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+                    e.Graphics.DrawString(temp, Font, pincel, 0, 0);
+                });
             }
-            pictureTabuleiro[0].Paint += new PaintEventHandler((sender, e) =>
-            {
-                e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
-                e.Graphics.DrawString("1", Font, Brushes.Red, 0, 0);
-                e.Graphics.DrawString("\n2", Font, Brushes.Red, 0, 0);
-            });
         }
     }
 }

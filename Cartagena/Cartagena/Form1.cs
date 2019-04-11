@@ -42,7 +42,7 @@ namespace Cartagena{
                 id = posicoesPiratas[i].Substring(index1+1, index2-2);
                 quantidadePiratas = posicoesPiratas[i].Substring(index2+1);
 
-                tabuleiro[Convert.ToInt32(posicao)] += id + "," + quantidadePiratas + "|";
+                tabuleiro[Convert.ToInt32(posicao)] += id + "," + quantidadePiratas + "\n";
             }
 
             for (int i = 0; i < tabuleiro.Length - 1; i++){

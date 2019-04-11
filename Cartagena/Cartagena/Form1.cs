@@ -20,7 +20,7 @@ namespace Cartagena{
         public void quebraLinhaPosicoes(){
             //Armazena o id do jogador e quantidade de piratas num determinado indice-posição.
             string[] tabuleiro = new string[38];
-            string posicao, id, nPiratas;
+            string posicao, id, quantidadePiratas;
             string temp;
 
             temp = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
@@ -39,9 +39,9 @@ namespace Cartagena{
                 int index2 = posicoesPiratas[i].IndexOf(',', index1 + 1);
                 posicao = posicoesPiratas[i].Substring(0,index1);
                 id = posicoesPiratas[i].Substring(index1+1, index2-2);
-                nPiratas = posicoesPiratas[i].Substring(index2+1);
+                quantidadePiratas = posicoesPiratas[i].Substring(index2+1);
 
-                tabuleiro[Convert.ToInt32(posicao)] += " | " + " O jogador " + id + " tem " + nPiratas + " aqui.";
+                tabuleiro[Convert.ToInt32(posicao)] += " | " + " O jogador " + id + " tem " + quantidadePiratas + " aqui.";
 
             }
             lsbLog.Items.Clear();

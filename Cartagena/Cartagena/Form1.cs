@@ -11,38 +11,35 @@ using CartagenaServer;
 
 namespace Cartagena{
     public partial class Form1 : Form{
+        public static string[] tabuleiroCartasPosicoes;
         public Form1(){
             InitializeComponent();
         }
 
         //Funcao para pegar a posicao dos piratas e mostra-los no mapa
-        private void pirates()
-        {
+        public void quebraLinhaPosicoes(){
             string[] tabuleiro = new string[38]; // Banco de posicoes
-            int index1, index2; //Usado para obter a posicao das virgulas.
             string posicao, id, nPiratas;
 
             string statusPosicoes = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
             string[] posicaoPiratas = statusPosicoes.Split('\n');
 
-            for(int j=0; j < tabuleiro.Length - 1; j++)//Para limpar o array, evitar repeticoes.
-            {
+            //Para limpar o array, evitar repeticoes.
+            for (int j=0; j < tabuleiro.Length - 1; j++){
                 tabuleiro[j] = "";
             }
 
             string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
             string[] linha;
             linha = statusTabuleiro.Split('\n');
-            for(int k = 0 ; k < linha.Length-1; k++)
-            {
+            for (int k = 0 ; k < linha.Length-1; k++){
                 linha[k] = linha[k].Replace("\n","");
                 tabuleiro[k] = linha[k];
             }
 
-            for (int i = 1; i < posicaoPiratas.Length-1; i++)
-            {
-                index1 = posicaoPiratas[i].IndexOf(',');
-                index2 = posicaoPiratas[i].IndexOf(',', index1 + 1);
+            for (int i = 1; i < posicaoPiratas.Length-1; i++){
+                int index1 = posicaoPiratas[i].IndexOf(',');
+                int index2 = posicaoPiratas[i].IndexOf(',', index1 + 1);
                 posicao = posicaoPiratas[i].Substring(0,index1);
                 id = posicaoPiratas[i].Substring(index1+1, index2-2);
                 nPiratas = posicaoPiratas[i].Substring(index2+1);
@@ -50,30 +47,27 @@ namespace Cartagena{
                 tabuleiro[Convert.ToInt32(posicao)] += " --> " + "id:" + id + "-" + "p:" + nPiratas + " ";
 
             }
-            for(int k = 0; k < tabuleiro.Length - 1; k++)
-            {
+            for (int k = 0; k < tabuleiro.Length - 1; k++){
                 lsbLog.Items.Add(tabuleiro[k]);
             }
         }
-        private void mapaTabuleiro()
-        {
+        public string[] mostrarCartasTabuleiro(){
             string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linhaTab = statusTabuleiro.Split('\n');
-            int index; string temp;
-            string[] tabuleiroPosicoes = new string[38];
-            for (int k = 0; k < linhaTab.Length - 1; k++)
-            {
-                linhaTab[k] = linhaTab[k].Replace("\n", "");
+            string[] linhaTabuleiro = statusTabuleiro.Split('\n');
+            tabuleiroCartasPosicoes = new string[38];
+            for (int k = 0; k < linhaTabuleiro.Length - 1; k++){
+                linhaTabuleiro[k] = linhaTabuleiro[k].Replace("\n", "");
             }
-            for (int i = 1; i < linhaTab.Length - 2; i++) //percorrer somente da 1 ate a 36
-            {
-                index = linhaTab[i].IndexOf(',');
-                temp = linhaTab[i].Substring(index, index+1);
+            //percorrer somente da 1 ate a 36
+            for (int i = 1; i < linhaTabuleiro.Length - 2; i++){
+                int index = linhaTabuleiro[i].IndexOf(',');
+                string temp = linhaTabuleiro[i].Substring(index, index+1);
                 temp = temp.Replace(",", "");
                 temp = temp.Replace("\r", "");
-                tabuleiroPosicoes[i] = temp;
-                Console.WriteLine(tabuleiroPosicoes[i]);
+                tabuleiroCartasPosicoes[i] = temp;
             }
+
+            return tabuleiroCartasPosicoes;
         }
 
         //Método de início de partida.
@@ -169,6 +163,9 @@ namespace Cartagena{
                 case "Pistola":
                     carta = "P";
                     break;
+                case "Tricórnio":
+                    carta = "T";
+                    break;
             }
 
             lsbLog.Items.Clear();
@@ -218,7 +215,10 @@ namespace Cartagena{
                 lsbLog.Items.Add(linha[i]);
             }*/
             lsbLog.Items.Clear();
-            mapaTabuleiro();
+            mostrarCartasTabuleiro();
+            Form2 formDois = new Form2();
+            formDois.Tabuleiro();
+            formDois.Show();
         }
 
         //Método de verificar vez.

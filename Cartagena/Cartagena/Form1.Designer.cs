@@ -339,7 +339,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1336, 692);
+            this.ClientSize = new System.Drawing.Size(857, 426);
             this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);

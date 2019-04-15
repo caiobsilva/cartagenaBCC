@@ -15,6 +15,8 @@ namespace Cartagena{
         public static string[] idJogadores = new string[5];
         public static string[] tabuleiro = new string[38];
 
+        Partida partidaAtiva;
+
         public Form1(){
             InitializeComponent();
             lblVersao.Text += Jogo.Versao;
@@ -118,7 +120,7 @@ namespace Cartagena{
             linha = lista.Split('\n');
 
             lsbLog.Items.Clear();
-            for (int i = 0; i < linha.Length; i++){
+            for (int i = 0; i < linha.Length - 1; i++){
                 linha[i] = linha[i].Replace("\r", "");
                 lsbLog.Items.Add(linha[i]);
             }
@@ -133,7 +135,7 @@ namespace Cartagena{
             string[] jogadorCartas = cartas.Split('\n');
 
             lsbLog.Items.Clear();
-            for (int i = 0; i < jogadorCartas.Length; i++){
+            for (int i = 0; i < jogadorCartas.Length - 1; i++){
                 jogadorCartas[i].Replace("\r", "");
                 lsbLog.Items.Add(jogadorCartas[i]);
             }
@@ -145,7 +147,7 @@ namespace Cartagena{
             string[] jogadores = Jogo.ListarJogadores(partidaID).Split('\r');
 
             lsbLog.Items.Clear();
-            for(int i = 0; i < jogadores.Length; i++){
+            for(int i = 0; i < jogadores.Length - 1; i++){
                 jogadores[i].Replace("\r","");
                 lsbLog.Items.Add(jogadores[i]);
             }
@@ -167,7 +169,7 @@ namespace Cartagena{
             lsbLog.Items.Clear();
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, pirata, carta).Split('\n');
 
-            for (int i = 0; i < jogadas.Length; i++){
+            for (int i = 0; i < jogadas.Length - 1; i++){
                 jogadas[i].Replace("\r", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
@@ -182,7 +184,7 @@ namespace Cartagena{
 
             jogadas = Jogo.Jogar(jogadorID, jogadorSenha, posicao).Split('\n');
 
-            for (int i = 0; i < jogadas.Length; i++){
+            for (int i = 0; i < jogadas.Length - 1; i++){
                 jogadas[i] = jogadas[i].Replace("\r", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
@@ -215,7 +217,7 @@ namespace Cartagena{
            string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
            string[] jogadas = vez.Split('\r');
             lsbLog.Items.Clear();
-            for (int i = 0; i < jogadas.Length; i++){
+            for (int i = 0; i < jogadas.Length-1; i++){
                 jogadas[i].Replace("\n", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
@@ -224,6 +226,16 @@ namespace Cartagena{
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
         {
             // Iniciar todas as variaveis aqui
+            partidaAtiva = new Partida(
+               Convert.ToInt32(txtPartidaID.Text), // ID partida
+               txtPartidaNome.Text, // Nome da partida
+               txtPartidaSenha.Text, // Senha da partida
+               Convert.ToInt32(txtJogadorID.Text), // ID jogador
+               txtJogadorNome.Text, // Nome do jogador
+               txtJogadorSenha.Text, // Senha do jogador
+               "Vermelho" // Cor do jogador
+            );
+            // Iniciando timer
             timerVerificarVez.Enabled = true;
         }
 
@@ -232,10 +244,13 @@ namespace Cartagena{
             string[] dadosVerificarVez;
             string status, vez;
             int numeroJogadas, idJogador;
+
             dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
             vez = dadosVerificarVez[0].Replace("\r","");
+
             lsbLog.Items.Clear();
 
+            // Verifica se a partida começou 
             if (vez == "Erro:Partida não está em andamento") return;
 
             dadosVerificarVez = vez.Split(',');
@@ -244,10 +259,26 @@ namespace Cartagena{
             idJogador = Convert.ToInt16(dadosVerificarVez[1]);
             numeroJogadas = Convert.ToInt16(dadosVerificarVez[2]);
 
+            // Verifica se é nossa vez
+            if (idJogador != Convert.ToInt16(txtJogadorID.Text)) return;
+
+            lsbLog.Items.Add("ID da partida: " + partidaAtiva.id);
+            lsbLog.Items.Add("Nome da partida: " + partidaAtiva.nome);
+            lsbLog.Items.Add("Senha da partida: " + partidaAtiva.senha);
+
+            for(int i = 0;  i < partidaAtiva.tabuleiro.Posicoes.Length; i++)
+            {
+                lsbLog.Items.Add("Tipo na posição : " + i + ": " + partidaAtiva.tabuleiro.Posicoes[i].tipo);
+
+                foreach (Pirata p in partidaAtiva.tabuleiro.Posicoes[i].piratas)
+                {
+                    lsbLog.Items.Add("Pirtas da cor " + p.cor + "na posição" + p.local);
+                }
+            }
+
             lsbLog.Items.Add("Status: " + status);
             lsbLog.Items.Add("Id do jogador: " + idJogador.ToString());
             lsbLog.Items.Add("Número de jogadas: " + numeroJogadas.ToString());
-
         }
     }
 }

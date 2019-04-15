@@ -1,93 +1,108 @@
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\Matheus Eiji\Desktop\Coding\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\Lucas\Desktop\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\Matheus Eiji\Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\MatheusEiji\CODE\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\juan.vsuman\Desktop\cartagenaBCC-master\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
-C:\Users\Lucas\Desktop\pi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
+<<<<<<< Updated upstream
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/CartagenaServer.dll
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/bin/Debug/CartagenaServer.dll
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/Caio/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/Lucas/Desktop/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/Matheus Eiji/Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/MatheusEiji/CODE/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+D:/!Ostok/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form2.resources
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.Form2.resources
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/juan.vsuman/Desktop/cartagenaBCC-master/cartagenaBCC-master/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form2.resources
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+=======
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.exe
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form1.resources
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Properties.Resources.resources
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
+>>>>>>> Stashed changes
+/home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form2.resources

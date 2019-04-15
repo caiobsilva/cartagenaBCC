@@ -17,6 +17,7 @@ namespace Cartagena{
 
         public Form1(){
             InitializeComponent();
+            lblVersao.Text += Jogo.Versao;
         }
 
         //Método de quebra das linhas de posicionamento dos piratas no mapa.
@@ -200,15 +201,6 @@ namespace Cartagena{
         //Método de exibição de tabuleiro.
         //Quando o tabuleiro for implementado, deve ser removido e trocado por um timer que executa o método automaticamente.
         private void btnMostrarTabuleiro_Click(object sender, EventArgs e){
-            /*string tabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linha;
-            linha = tabuleiro.Split('\r');
-
-            lsbLog.Items.Clear();
-            for (int i = 0; i < linha.Length; i++){
-                linha[i] = linha[i].Replace("\n","");
-                lsbLog.Items.Add(linha[i]);
-            }*/
             lsbLog.Items.Clear();
             mostrarCartasTabuleiro();
             quebraCaracteresIdJogadores();
@@ -227,6 +219,35 @@ namespace Cartagena{
                 jogadas[i].Replace("\n", "");
                 lsbLog.Items.Add(jogadas[i]);
             }
+        }
+
+        private void btnIniciarKuriso_Click(object sender, EventArgs e)
+        {
+            // Iniciar todas as variaveis aqui
+            timerVerificarVez.Enabled = true;
+        }
+
+        private void timerVerificarVez_Tick(object sender, EventArgs e)
+        {
+            string[] dadosVerificarVez;
+            string status, vez;
+            int numeroJogadas, idJogador;
+            dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
+            vez = dadosVerificarVez[0].Replace("\r","");
+            lsbLog.Items.Clear();
+
+            if (vez == "Erro:Partida não está em andamento") return;
+
+            dadosVerificarVez = vez.Split(',');
+
+            status = dadosVerificarVez[0];
+            idJogador = Convert.ToInt16(dadosVerificarVez[1]);
+            numeroJogadas = Convert.ToInt16(dadosVerificarVez[2]);
+
+            lsbLog.Items.Add("Status: " + status);
+            lsbLog.Items.Add("Id do jogador: " + idJogador.ToString());
+            lsbLog.Items.Add("Número de jogadas: " + numeroJogadas.ToString());
+
         }
     }
 }

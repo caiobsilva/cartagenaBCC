@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.txtJogadorID = new System.Windows.Forms.TextBox();
             this.txtJogadorSenha = new System.Windows.Forms.TextBox();
@@ -59,6 +60,9 @@
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnVerificarVez = new System.Windows.Forms.Button();
             this.pcbTabuleiro = new System.Windows.Forms.PictureBox();
+            this.btnIniciarKuriso = new System.Windows.Forms.Button();
+            this.lblVersao = new System.Windows.Forms.Label();
+            this.timerVerificarVez = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
@@ -236,7 +240,7 @@
             // 
             // btnAndar
             // 
-            this.btnAndar.Location = new System.Drawing.Point(700, 322);
+            this.btnAndar.Location = new System.Drawing.Point(632, 322);
             this.btnAndar.Name = "btnAndar";
             this.btnAndar.Size = new System.Drawing.Size(82, 55);
             this.btnAndar.TabIndex = 20;
@@ -255,7 +259,7 @@
             "Garrafa",
             "Pistola",
             "Tricórnio"});
-            this.cboCartas.Location = new System.Drawing.Point(585, 393);
+            this.cboCartas.Location = new System.Drawing.Point(517, 393);
             this.cboCartas.Name = "cboCartas";
             this.cboCartas.Size = new System.Drawing.Size(100, 21);
             this.cboCartas.TabIndex = 21;
@@ -263,7 +267,7 @@
             // lblCartas
             // 
             this.lblCartas.AutoSize = true;
-            this.lblCartas.Location = new System.Drawing.Point(582, 377);
+            this.lblCartas.Location = new System.Drawing.Point(514, 377);
             this.lblCartas.Name = "lblCartas";
             this.lblCartas.Size = new System.Drawing.Size(32, 13);
             this.lblCartas.TabIndex = 22;
@@ -272,7 +276,7 @@
             // lblPosicao
             // 
             this.lblPosicao.AutoSize = true;
-            this.lblPosicao.Location = new System.Drawing.Point(582, 322);
+            this.lblPosicao.Location = new System.Drawing.Point(514, 322);
             this.lblPosicao.Name = "lblPosicao";
             this.lblPosicao.Size = new System.Drawing.Size(45, 13);
             this.lblPosicao.TabIndex = 23;
@@ -280,7 +284,7 @@
             // 
             // txtPirataPosicao
             // 
-            this.txtPirataPosicao.Location = new System.Drawing.Point(585, 338);
+            this.txtPirataPosicao.Location = new System.Drawing.Point(517, 338);
             this.txtPirataPosicao.Name = "txtPirataPosicao";
             this.txtPirataPosicao.Size = new System.Drawing.Size(100, 20);
             this.txtPirataPosicao.TabIndex = 24;
@@ -298,7 +302,7 @@
             // 
             // btnPular
             // 
-            this.btnPular.Location = new System.Drawing.Point(700, 383);
+            this.btnPular.Location = new System.Drawing.Point(632, 383);
             this.btnPular.Name = "btnPular";
             this.btnPular.Size = new System.Drawing.Size(145, 31);
             this.btnPular.TabIndex = 32;
@@ -308,7 +312,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(788, 322);
+            this.btnVoltar.Location = new System.Drawing.Point(720, 322);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(57, 55);
             this.btnVoltar.TabIndex = 33;
@@ -335,11 +339,37 @@
             this.pcbTabuleiro.TabIndex = 35;
             this.pcbTabuleiro.TabStop = false;
             // 
+            // btnIniciarKuriso
+            // 
+            this.btnIniciarKuriso.Location = new System.Drawing.Point(796, 351);
+            this.btnIniciarKuriso.Name = "btnIniciarKuriso";
+            this.btnIniciarKuriso.Size = new System.Drawing.Size(57, 39);
+            this.btnIniciarKuriso.TabIndex = 36;
+            this.btnIniciarKuriso.Text = "Iniciar Kuriso";
+            this.btnIniciarKuriso.UseVisualStyleBackColor = true;
+            this.btnIniciarKuriso.Click += new System.EventHandler(this.btnIniciarKuriso_Click);
+            // 
+            // lblVersao
+            // 
+            this.lblVersao.AutoSize = true;
+            this.lblVersao.Location = new System.Drawing.Point(789, 430);
+            this.lblVersao.Name = "lblVersao";
+            this.lblVersao.Size = new System.Drawing.Size(46, 13);
+            this.lblVersao.TabIndex = 37;
+            this.lblVersao.Text = "Versão: ";
+            // 
+            // timerVerificarVez
+            // 
+            this.timerVerificarVez.Interval = 4000;
+            this.timerVerificarVez.Tick += new System.EventHandler(this.timerVerificarVez_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(857, 426);
+            this.ClientSize = new System.Drawing.Size(865, 456);
+            this.Controls.Add(this.lblVersao);
+            this.Controls.Add(this.btnIniciarKuriso);
             this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);
@@ -412,6 +442,9 @@
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnVerificarVez;
         private System.Windows.Forms.PictureBox pcbTabuleiro;
+        private System.Windows.Forms.Button btnIniciarKuriso;
+        private System.Windows.Forms.Label lblVersao;
+        private System.Windows.Forms.Timer timerVerificarVez;
     }
 }
 

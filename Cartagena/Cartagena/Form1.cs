@@ -248,8 +248,6 @@ namespace Cartagena{
             dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
             vez = dadosVerificarVez[0].Replace("\r","");
 
-            lsbLog.Items.Clear();
-
             // Verifica se a partida começou 
             if (vez == "Erro:Partida não está em andamento") return;
 
@@ -260,25 +258,93 @@ namespace Cartagena{
             numeroJogadas = Convert.ToInt16(dadosVerificarVez[2]);
 
             // Verifica se é nossa vez
-            if (idJogador != Convert.ToInt16(txtJogadorID.Text)) return;
+            if (idJogador != partidaAtiva.Kuriso.id) return;
 
-            lsbLog.Items.Add("ID da partida: " + partidaAtiva.id);
-            lsbLog.Items.Add("Nome da partida: " + partidaAtiva.nome);
-            lsbLog.Items.Add("Senha da partida: " + partidaAtiva.senha);
 
-            for(int i = 0;  i < partidaAtiva.tabuleiro.Posicoes.Length; i++)
+            foreach (Pirata p in partidaAtiva.Kuriso.piratas)
             {
-                lsbLog.Items.Add("Tipo na posição : " + i + ": " + partidaAtiva.tabuleiro.Posicoes[i].tipo);
-
-                foreach (Pirata p in partidaAtiva.tabuleiro.Posicoes[i].piratas)
-                {
-                    lsbLog.Items.Add("Pirtas da cor " + p.cor + "na posição" + p.local);
-                }
+                Console.Write(p.local.ToString() + " ");
             }
+            Console.WriteLine();
+            
+            moverAleatoriamente();
 
-            lsbLog.Items.Add("Status: " + status);
-            lsbLog.Items.Add("Id do jogador: " + idJogador.ToString());
-            lsbLog.Items.Add("Número de jogadas: " + numeroJogadas.ToString());
         }
+
+        void moverAleatoriamente()
+        {
+
+            Random r = new Random();
+
+            int x = r.Next(0,6);
+            int y = r.Next(0,partidaAtiva.Kuriso.cartas.Count);
+
+
+            if (partidaAtiva.Kuriso.cartas.Count > 0)
+            {
+                int i;
+                string carta = partidaAtiva.Kuriso.cartas[y];
+                partidaAtiva.Kuriso.cartas.RemoveAt(y); 
+                
+                lsbLog.Items.Add(Jogo.Jogar(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha,
+                partidaAtiva.Kuriso.piratas[x].local,carta));
+
+                
+                
+                for (i = partidaAtiva.Kuriso.piratas[x].local; x < partidaAtiva.tabuleiro.Posicoes.Length-1; i++)
+                {
+                    if (carta == partidaAtiva.tabuleiro.Posicoes[i].tipo && partidaAtiva.tabuleiro.Posicoes[i].piratas.Count == 0) break;
+                }
+                
+                partidaAtiva.tabuleiro.Posicoes[partidaAtiva.Kuriso.piratas[x].local].piratas.Remove(partidaAtiva.Kuriso.piratas[x]);
+                
+                partidaAtiva.Kuriso.piratas[x].local = i;
+                
+                partidaAtiva.tabuleiro.Posicoes[partidaAtiva.Kuriso.piratas[x].local].piratas.Add(partidaAtiva.Kuriso.piratas[x]);
+                
+            }
+            
+            else
+            {
+                int max = 0, secMax = 0;
+                Pirata pirata;
+
+                for ( int i = 36; i > 0; i--)
+                {
+                    if (partidaAtiva.tabuleiro.Posicoes[i].piratas.Count > 0)
+                    {
+                        max = i;
+                        break;
+                    }
+                }
+                
+                for ( int i = max-1; i > 0; i--)
+                {
+                    if (partidaAtiva.tabuleiro.Posicoes[i].piratas.Count > 0 && partidaAtiva.tabuleiro.Posicoes[i].piratas.Count < 3)
+                    {
+                        secMax = i;
+                        break;
+                    }
+                }
+                
+                Console.WriteLine(max);
+                Console.WriteLine(secMax);
+                
+                lsbLog.Items.Add(Jogo.Jogar(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha, max));
+
+                pirata = partidaAtiva.tabuleiro.Posicoes[max].piratas[0];
+                
+                partidaAtiva.tabuleiro.Posicoes[max].piratas.Remove(pirata);
+                pirata.local = secMax;
+                partidaAtiva.tabuleiro.Posicoes[secMax].piratas.Add(pirata);
+                
+            
+                string[] jogadorCartas = Jogo.ConsultarMao(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha).Split('\n');
+                string[] cartas = jogadorCartas[0].Replace("\r", "").Split(',');
+                partidaAtiva.Kuriso.cartas.Add(cartas[0]);               
+                
+            }
+        }
+        
     }
 }

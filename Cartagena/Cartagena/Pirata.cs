@@ -12,5 +12,7 @@ namespace Cartagena
             _cor = cor;
             local = 0;
         }
+        
+        
     }
 }

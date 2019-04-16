@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{8185F625-EBC2-4E43-96F6-5448A21E46B2}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Cartagena/Form1.cs">
     <Files>
-      <File FileName="Cartagena/Form1.cs" Line="233" Column="36" />
-      <File FileName="Cartagena/Partida.cs" Line="30" Column="45" />
-      <File FileName="Cartagena/Tabuleiro.cs" Line="26" Column="31" />
+      <File FileName="Cartagena/Form1.cs" Line="268" Column="13" />
+      <File FileName="Cartagena/Partida.cs" Line="31" Column="10" />
+      <File FileName="Cartagena/Tabuleiro.cs" Line="46" Column="1" />
       <File FileName="Cartagena/Pirata.cs" Line="13" Column="23" />
-      <File FileName="Cartagena/Jogador.cs" Line="35" Column="2" />
+      <File FileName="Cartagena/Jogador.cs" Line="27" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Cartagena PreferredExecutionTarget="MonoDevelop.Default" />

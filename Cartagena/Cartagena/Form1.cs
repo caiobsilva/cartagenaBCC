@@ -282,25 +282,26 @@ namespace Cartagena{
 
             if (partidaAtiva.Kuriso.cartas.Count > 0)
             {
-                int i;
+                int localNovo, localAntigo = partidaAtiva.Kuriso.piratas[x].local;
                 string carta = partidaAtiva.Kuriso.cartas[y];
+                
                 partidaAtiva.Kuriso.cartas.RemoveAt(y); 
                 
+                // Joga o pirata
                 lsbLog.Items.Add(Jogo.Jogar(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha,
-                partidaAtiva.Kuriso.piratas[x].local,carta));
+                    localAntigo,carta));
 
                 
-                
-                for (i = partidaAtiva.Kuriso.piratas[x].local; x < partidaAtiva.tabuleiro.Posicoes.Length-1; i++)
+                // Acha o novo local do pirata
+                for (localNovo = localAntigo ; x < partidaAtiva.tabuleiro.Posicoes.Length-1; localNovo++)
                 {
-                    if (carta == partidaAtiva.tabuleiro.Posicoes[i].tipo && partidaAtiva.tabuleiro.Posicoes[i].piratas.Count == 0) break;
+                    if (carta == partidaAtiva.tabuleiro.Posicoes[localNovo].tipo && partidaAtiva.tabuleiro.Posicoes[localNovo].piratas.Count == 0) break;
                 }
-                
-                partidaAtiva.tabuleiro.Posicoes[partidaAtiva.Kuriso.piratas[x].local].piratas.Remove(partidaAtiva.Kuriso.piratas[x]);
-                
-                partidaAtiva.Kuriso.piratas[x].local = i;
-                
-                partidaAtiva.tabuleiro.Posicoes[partidaAtiva.Kuriso.piratas[x].local].piratas.Add(partidaAtiva.Kuriso.piratas[x]);
+
+                // Remove o pirata do lugar antigo e coloca no novo.
+                partidaAtiva.tabuleiro.Posicoes[localAntigo].piratas.Remove(partidaAtiva.Kuriso.piratas[x]);
+                partidaAtiva.Kuriso.piratas[x].local = localNovo;
+                partidaAtiva.tabuleiro.Posicoes[localNovo].piratas.Add(partidaAtiva.Kuriso.piratas[x]);
                 
             }
             

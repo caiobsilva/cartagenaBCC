@@ -327,9 +327,6 @@ namespace Cartagena{
                     }
                 }
                 
-                Console.WriteLine(max);
-                Console.WriteLine(secMax);
-                
                 lsbLog.Items.Add(Jogo.Jogar(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha, max));
 
                 pirata = partidaAtiva.tabuleiro.Posicoes[max].piratas[0];
@@ -339,9 +336,16 @@ namespace Cartagena{
                 partidaAtiva.tabuleiro.Posicoes[secMax].piratas.Add(pirata);
                 
             
+            
+
                 string[] jogadorCartas = Jogo.ConsultarMao(partidaAtiva.Kuriso.id, partidaAtiva.Kuriso.senha).Split('\n');
-                string[] cartas = jogadorCartas[0].Replace("\r", "").Split(',');
-                partidaAtiva.Kuriso.cartas.Add(cartas[0]);               
+                for (int i = 0; i < jogadorCartas.Length - 1; i++){
+                    string[] cartas = jogadorCartas[i].Replace("\r", "").Split(',');
+                    for (int j = 0; j < Convert.ToInt32(cartas[1]); j++)
+                    {
+                        partidaAtiva.Kuriso.cartas.Add(cartas[0]);               
+                    }                
+                }
                 
             }
         }

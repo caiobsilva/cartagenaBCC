@@ -13,40 +13,103 @@ namespace Cartagena
         int _id { get; set; }
         string _senha { get; set; }
         Tabuleiro _tabuleiro { get; set; }
-        Jogador _Kuriso { get; set; }
+        Kurisu _Kurisu { get; set; }
+        List<Inimigo> _inimigos { get; set; }
 
         public string nome { get { return _nome; } }
         public int id { get { return _id; } }
         public string senha { get { return _senha; } }
         public Tabuleiro tabuleiro { get { return _tabuleiro; } }
-        public Jogador Kuriso{ get { return _Kuriso; } }
+        public Kurisu Kurisu{ get { return _Kurisu; } }
+        public List<Inimigo> inimigos{ get { return _inimigos; } }
 
-        public Partida(int id, string nome, string senha, int idJogador, string nomeJogador, string senhaJogador, string corJogador)
+        
+        public Partida(int id, string nome, string senha, int idJogador, string nomeJogador, string senhaJogador)
         {
             _id = id;
             _nome = nome;
             _senha = senha;
-            _Kuriso = new Jogador(idJogador,nomeJogador,corJogador,senhaJogador);
-            _tabuleiro = new Tabuleiro(_id,_Kuriso.piratas);
+            _inimigos = new List<Inimigo>();
+            
+            string[] listaJogadores = Jogo.ListarJogadores(id).Split('\n');
+            // Criando todos os jogadores
+            for (int i = 0 ; i < listaJogadores.Length - 1 ; i++)
+            {
+                // ID, NOME, COR
+                string[] atributosJogador = listaJogadores[i].Replace("\r", "").Split(',');
+                
+                int idInimigo = Convert.ToInt16(atributosJogador[0]);
+                string nomeInimigo = atributosJogador[1];
+                string cor = atributosJogador[2];
+                
+                if (idInimigo != idJogador)
+                {
+                    Inimigo inimigo = new Inimigo(idInimigo, nomeInimigo, cor);
+                    _inimigos.Add(inimigo);                    
+                }
+                else
+                {
+                    _Kurisu = new Kurisu(idJogador,nomeJogador,cor,senhaJogador);
+                }
+            }
+            
+            _tabuleiro = new Tabuleiro(_id,_Kurisu.piratas,_inimigos);
         }
 
         /*
-            Retorna uma lista com todos os piratas em uma determinada posição
+            Atualiza os dados do tabuleiro
         */
-        public List<Pirata> piratasEm(int posicao)
-        {
-            List<Pirata> piratasNaPosicao = new List<Pirata>();
 
-            foreach ( Pirata pirata in _Kuriso.piratas)
+        public void atualizarDados()
+        {
+            
+            // Limpando os piratas das posições
+            foreach (Posicao posicao in tabuleiro.Posicoes)
             {
-                if(pirata.local == posicao)
+                posicao.piratas = new List<Pirata>();
+            }
+            
+            // Colocando os piratas da Kurisu de volta
+            foreach (Pirata pirata in Kurisu.piratas)
+            {
+                int local = pirata.local;
+                tabuleiro.Posicoes[local].piratas.Add(pirata);
+            }
+            
+            // Atualizando os piratas
+            foreach (Inimigo inimigo in inimigos)
+            {
+                int index = 0;
+                inimigo.piratas = new Pirata[6];
+                
+                string[] posicoes, jogadas;
+                string vez = Jogo.VerificarVez(id);
+                jogadas = vez.Split('\r');
+                
+                for (int i = 1; i < jogadas.Length - 1; i++)
                 {
-                    piratasNaPosicao.Add(pirata);
+                    
+                    jogadas[i] = jogadas[i].Replace("\n", "");
+                    
+                    posicoes = jogadas[i].Split(',');
+                    
+                    int posicao  = Convert.ToInt16(posicoes[0]),
+                        idJogador = Convert.ToInt16(posicoes[1]),
+                        numeroPiratas = Convert.ToInt16(posicoes[2]);
+
+                    if (idJogador != inimigo.id) { break; }
+                    
+                    for (int j = 0; j <  numeroPiratas ; j++)
+                    {
+                        Pirata pirata = new Pirata(inimigo.cor, posicao);
+                        inimigo.piratas[index] = pirata;
+                        index++;
+                        tabuleiro.Posicoes[posicao].piratas.Add(pirata);
+                    }
+                    
                 }
             }
-
-            return piratasNaPosicao;
         }
-
+        
     }
 }

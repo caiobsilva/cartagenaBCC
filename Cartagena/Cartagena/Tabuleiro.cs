@@ -9,14 +9,14 @@ namespace Cartagena
 
         public Posicao[] Posicoes;
 
-        public Tabuleiro(int id, Pirata[] piratasKuriso)
+        public Tabuleiro(int id, Pirata[] piratasKuriso, List<Inimigo> inimigos)
         {
             Posicoes = new Posicao[38];
             string output = Jogo.ExibirTabuleiro(Convert.ToInt32(id));
 
             string[] linha = output.Split('\r');
 
-            Posicoes[0] = new Posicao("Prisão", piratasKuriso);
+            Posicoes[0] = new Posicao("Prisão", piratasKuriso, inimigos);
             for (int i = 1; i < 37; i++)
             {
                 linha[i] = linha[i].Replace("\n", "");
@@ -35,14 +35,24 @@ namespace Cartagena
         string _tipo { get; set; }
         public string tipo { get { return _tipo; } }
 
-        public Posicao(string tipo, Pirata[] piratasKuriso)
+        public Posicao(string tipo, Pirata[] piratasKuriso, List<Inimigo> inimigos)
         {
+            
             _tipo = tipo;
             piratas = new List<Pirata>();
             foreach (Pirata p in piratasKuriso)
             {
                 piratas.Add(p);
             }
+            foreach (Inimigo inimigo in inimigos)
+            {
+                foreach (Pirata p in inimigo.piratas)
+                {
+                    piratas.Add(p);
+                    
+                }
+            }
+            
         }
 
         public Posicao(string tipo)

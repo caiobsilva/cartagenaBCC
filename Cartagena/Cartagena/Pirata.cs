@@ -13,6 +13,10 @@ namespace Cartagena
             local = 0;
         }
         
-        
+        public Pirata(string cor, int local)
+        {
+            _cor = cor;
+            this.local = local;
+        }
     }
 }

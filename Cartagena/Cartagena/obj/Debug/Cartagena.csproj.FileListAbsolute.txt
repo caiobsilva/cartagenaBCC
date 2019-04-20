@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.exe.config
 C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.exe
 C:/Users/Matheus Eiji/Desktop/Coding/Cartagena/Cartagena/bin/Debug/Cartagena.pdb
@@ -106,3 +105,16 @@ C:/Users/Lucas/Desktop/pi/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.p
 /home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
 >>>>>>> Stashed changes
 /home/lucas/Documents/PI-3/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Form2.resources
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form1.resources
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

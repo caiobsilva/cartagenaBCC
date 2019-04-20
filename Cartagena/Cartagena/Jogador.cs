@@ -168,19 +168,29 @@ namespace Cartagena
             {
                 switch (estagioAvaliacao)
                 {
-                    case 0: //Inicia estágio de avaliação de movimentos;
-                        //avaliarMovimento(tabuleiro);
+                    case 0: //Inicia estágio de simualação de jogadas;
+                        //jogada = simularJogada(tabuleiro)
+                        estagioAvaliacao += 1;
+                        break; 
+                    case 1: //Inicia estágio de avaliação de jogada;
+                        //avaliarJogada(jogada);
                         estagioAvaliacao += 1;
                         break;
-                    case 1: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
+                    case 2: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
                         //adicionarPrioridades();
                         estagioAvaliacao += 1;
                         break;
-                    case 2: //Inicia estágio de ordenação da Fila de Prioridades.
+                    case 3: //Inicia estágio de ordenação da Fila de Prioridades.
                         //ordenarPrioridades();
+
+                        //Fazer uma verificação se todas as jogadas foram implementadas. Se for:
                         estagioAvaliacao += 1;
+
+                        //Do contrário:
+                        //estagioAvaliação = 0;
+                        
                         break;
-                    case 3: //Inicia o estágio de movimentação com a jogada prioritária.
+                    case 4: //Inicia o estágio de movimentação com a jogada prioritária.
                         //mover();
                         avaliacao = true;
                         break;

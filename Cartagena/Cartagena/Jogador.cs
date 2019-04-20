@@ -158,6 +158,43 @@ namespace Cartagena
                 }                
             }
         }
+
+        public void avaliarConsequências()
+        {
+            int estagioAvaliacao = 0;
+            bool avaliacao = false;
+
+            while (avaliacao != true)
+            {
+                switch (estagioAvaliacao)
+                {
+                    case 0: //Inicia estágio de avaliação de movimentos;
+                        //avaliarMovimento(tabuleiro);
+                        estagioAvaliacao += 1;
+                        break;
+                    case 1: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
+                        //adicionarPrioridades();
+                        estagioAvaliacao += 1;
+                        break;
+                    case 2: //Inicia estágio de ordenação da Fila de Prioridades.
+                        //ordenarPrioridades();
+                        estagioAvaliacao += 1;
+                        break;
+                    case 3: //Inicia o estágio de movimentação com a jogada prioritária.
+                        //mover();
+                        avaliacao = true;
+                        break;
+                }
+            }
+        }
     }
-    
 }
+
+
+/* Máquina de Estados que vai alterar as etapas da avaliação de consequências. Estágios:
+
+Um método de condicionais que determinam as pontuações de todas as jogadas possíveis no tabuleiro;
+Um método de adição à Fila de Prioridades;
+Um método de ordenação da Fila de Prioridades;
+Um método que joga a jogada prioritária;
+ */

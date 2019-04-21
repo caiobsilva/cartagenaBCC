@@ -18,5 +18,12 @@ namespace Cartagena
             _cor = cor;
             this.local = local;
         }
+
+        public Pirata copiar()
+        {
+            Pirata p = new Pirata(_cor,local);
+            return p;
+        }
+        
     }
 }

@@ -13,6 +13,7 @@
         <e p="Form2.Designer.cs" t="Include" />
         <e p="Form2.cs" t="Include" />
         <e p="Form2.resx" t="Include" />
+        <e p="Jogada.cs" t="Include" />
         <e p="Jogador.cs" t="Include" />
         <e p="Partida.cs" t="Include" />
         <e p="Pirata.cs" t="Include" />

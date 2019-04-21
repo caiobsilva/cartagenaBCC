@@ -27,6 +27,32 @@ namespace Cartagena
         
         }
 
+        public Tabuleiro(Tabuleiro tabuleiro)
+        {
+            int index = 0;
+            foreach (Posicao posicao in tabuleiro.Posicoes)
+            {
+                Posicoes[index] = posicao.copiar();   
+                index++;
+            }
+        }
+        
+        public bool existemPiratasAntesDe(int local)
+        {
+            bool existem = false;
+            
+            for (;local > 0; local--)
+            {
+                if (Posicoes[local].numeroPiratas() > 0)
+                {
+                    existem = true;
+                    break;
+                }
+            }
+
+            return existem;
+        }
+
     }
 
     public class Posicao
@@ -54,6 +80,18 @@ namespace Cartagena
             }
             
         }
+        
+        public Posicao(string tipo, List<Pirata> piratas)
+        {
+            
+            _tipo = tipo;
+            piratas = new List<Pirata>();
+            foreach (Pirata p in piratas)
+            {
+                piratas.Add(p);
+            }
+            
+        }
 
         public Posicao(string tipo)
         {
@@ -65,6 +103,16 @@ namespace Cartagena
         {
             return piratas.Count;
         }
+
+        public Posicao copiar()
+        {
+            Posicao p = new Posicao(tipo,piratas);
+            return p;
+        }
+
+        
+        
+        
     }
 
 }

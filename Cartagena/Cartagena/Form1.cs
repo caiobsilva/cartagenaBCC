@@ -291,6 +291,10 @@ namespace Cartagena
             
             // Função para atualizar os datos em todas as jogadas [NÃO FOI TESTADA]
             partidaAtiva.atualizarDados();
+            
+            // prioridades = partidaAtiva.gerarPrioridades();
+            
+            partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
 
             // Printando todos os piratas da Kuriso
             Console.WriteLine(partidaAtiva.Kurisu.ToString());

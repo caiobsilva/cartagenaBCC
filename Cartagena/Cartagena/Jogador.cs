@@ -256,6 +256,7 @@ namespace Cartagena
             }
         }
 
+        //Adiciona e ordena as jogadas na Fila de Prioridade.
         private void adicionarNaListaPrioridade(List<Jogada> jogadasPossiveis)
         {
             

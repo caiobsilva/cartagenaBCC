@@ -52,7 +52,6 @@ namespace Cartagena
 
             return existem;
         }
-
     }
 
     public class Posicao
@@ -109,10 +108,5 @@ namespace Cartagena
             Posicao p = new Posicao(tipo,piratas);
             return p;
         }
-
-        
-        
-        
     }
-
 }

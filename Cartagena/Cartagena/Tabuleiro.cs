@@ -42,7 +42,7 @@ namespace Cartagena
         {
             bool existem = false;
             
-            for (;local > 0; local--)
+            for (local -= 1 ; local > 0 ; local--)
             {
                 if (Posicoes[local].numeroPiratas() > 0)
                 {

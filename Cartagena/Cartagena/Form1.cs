@@ -295,7 +295,12 @@ namespace Cartagena
             // prioridades = partidaAtiva.gerarPrioridades();
             
             partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
+            
+            // função temporaria de mover aleatoriamente
+            moverAleatoriamente();
 
+            // Printando o tabuleiro
+            Console.WriteLine(partidaAtiva.tabuleiro.ToString());
             // Printando todos os piratas da Kuriso
             Console.WriteLine(partidaAtiva.Kurisu.ToString());
             // Printando todos os piratas dos inimigos
@@ -307,8 +312,6 @@ namespace Cartagena
                 }
             }
             
-            // função temporaria de mover aleatoriamente
-            moverAleatoriamente();
         }
 
         void moverAleatoriamente()

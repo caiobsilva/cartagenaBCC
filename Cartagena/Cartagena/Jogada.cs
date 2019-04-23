@@ -1,3 +1,5 @@
+using System;
+
 namespace Cartagena
 {
     public class Jogada
@@ -23,24 +25,24 @@ namespace Cartagena
 
         public Jogada(Tabuleiro tabuleiro, Pirata pirata, int l)
         {
-            _tabuleiro = tabuleiro;
-            _pirata = pirata;
-            _carta = null;
+            _tabuleiro = new Tabuleiro(tabuleiro);
+            _pirata = pirata.copiar();
+            _carta = "volta";
             _indexPirata = l;
         }
         
         public void simularJogada()
         {
-            if (carta == null)
+            Console.WriteLine(pirata.ToString());
+            if (carta == "volta")
             {
                 int localAntigo = pirata.local, localNovo;
 
-                for (int i = localAntigo - 1; i > 0; i--)
+                for (localNovo = localAntigo - 1; localNovo > 0; localNovo--)
                 {
-                    if (tabuleiro.Posicoes[i].numeroPiratas() > 0 &&
-                        tabuleiro.Posicoes[i].numeroPiratas() < 3)
+                    if (tabuleiro.Posicoes[localNovo].numeroPiratas() > 0 &&
+                        tabuleiro.Posicoes[localNovo].numeroPiratas() < 3)
                     {
-                        localNovo = i;
                         tabuleiro.Posicoes[localAntigo].piratas.Remove(pirata);
                         pirata.local = localNovo;
                         tabuleiro.Posicoes[localNovo].piratas.Add(pirata);
@@ -52,7 +54,7 @@ namespace Cartagena
             else
             {
                 int localNovo, localAntigo = pirata.local;
-
+                
                 // Acha o novo local do pirata
                 for (localNovo = localAntigo; localNovo < tabuleiro.Posicoes.Length - 1; localNovo++)
                 {
@@ -64,6 +66,7 @@ namespace Cartagena
                 tabuleiro.Posicoes[localAntigo].piratas.Remove(pirata);
                 pirata.local = localNovo;
                 tabuleiro.Posicoes[localNovo].piratas.Add(pirata);
+                
             }
         }
         

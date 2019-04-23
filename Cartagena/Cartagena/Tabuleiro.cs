@@ -29,10 +29,11 @@ namespace Cartagena
 
         public Tabuleiro(Tabuleiro tabuleiro)
         {
+            this.Posicoes = new Posicao[38];
             int index = 0;
             foreach (Posicao posicao in tabuleiro.Posicoes)
             {
-                Posicoes[index] = posicao.copiar();   
+                this.Posicoes[index] = posicao.copiar();   
                 index++;
             }
         }
@@ -51,6 +52,16 @@ namespace Cartagena
             }
 
             return existem;
+        }
+
+        public override string ToString()
+        {
+            string toString = "";
+            foreach (Posicao posicao in Posicoes)
+            {
+                toString += posicao.ToString() + " ";
+            }
+            return toString;
         }
     }
 
@@ -84,10 +95,10 @@ namespace Cartagena
         {
             
             _tipo = tipo;
-            piratas = new List<Pirata>();
+            this.piratas = new List<Pirata>();
             foreach (Pirata p in piratas)
             {
-                piratas.Add(p);
+                this.piratas.Add(p.copiar());
             }
             
         }
@@ -107,6 +118,12 @@ namespace Cartagena
         {
             Posicao p = new Posicao(tipo,piratas);
             return p;
+        }
+
+        public override string ToString()
+        {
+            string toString = "[" + tipo + "]"; 
+            return toString;
         }
     }
 }

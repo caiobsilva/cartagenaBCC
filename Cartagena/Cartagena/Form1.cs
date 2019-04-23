@@ -299,9 +299,12 @@ namespace Cartagena
             // Printando todos os piratas da Kuriso
             Console.WriteLine(partidaAtiva.Kurisu.ToString());
             // Printando todos os piratas dos inimigos
-            foreach (Inimigo inimigo in partidaAtiva.inimigos)
+            if (partidaAtiva.inimigos.Count > 0)
             {
-                Console.WriteLine(inimigo.ToString());
+                foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                {
+                    Console.WriteLine(inimigo.ToString());
+                }
             }
             
             // função temporaria de mover aleatoriamente

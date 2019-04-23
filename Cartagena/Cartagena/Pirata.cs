@@ -21,9 +21,13 @@ namespace Cartagena
 
         public Pirata copiar()
         {
-            Pirata p = new Pirata(_cor,local);
+            Pirata p = new Pirata(cor,local);
             return p;
         }
-        
+
+        public override string ToString()
+        {
+            return local.ToString() + " " + cor;
+        }
     }
 }

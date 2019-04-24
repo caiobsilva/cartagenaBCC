@@ -290,7 +290,7 @@ namespace Cartagena
             if (idJogador != partidaAtiva.Kurisu.id) return;
             
             // Função para atualizar os datos em todas as jogadas [NÃO FOI TESTADA]
-            partidaAtiva.atualizarDados();
+             partidaAtiva.atualizarDados();
             
             // prioridades = partidaAtiva.gerarPrioridades();
             
@@ -307,7 +307,7 @@ namespace Cartagena
             if (partidaAtiva.inimigos.Count > 0)
             {
                 foreach (Inimigo inimigo in partidaAtiva.inimigos)
-                {
+                {    
                     Console.WriteLine(inimigo.ToString());
                 }
             }

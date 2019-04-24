@@ -33,7 +33,6 @@ namespace Cartagena
         
         public void simularJogada()
         {
-            Console.WriteLine(pirata.ToString());
             if (carta == "volta")
             {
                 int localAntigo = pirata.local, localNovo;

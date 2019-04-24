@@ -77,19 +77,19 @@ namespace Cartagena
             }
             
             // Atualizando os piratas
-            foreach (Inimigo inimigo in inimigos)
+            foreach (Inimigo inimigo in _inimigos)
             {
                 int index = 0;
                 inimigo.piratas = new Pirata[6];
                 
                 string[] posicoes, jogadas;
-                string vez = Jogo.VerificarVez(id);
-                jogadas = vez.Split('\r');
+                string vez = Jogo.VerificarVez(_id);
+                jogadas = vez.Split('\n');
                 
                 for (int i = 1; i < jogadas.Length - 1; i++)
                 {
                     
-                    jogadas[i] = jogadas[i].Replace("\n", "");
+                    jogadas[i] = jogadas[i].Replace("\r", "");
                     
                     posicoes = jogadas[i].Split(',');
                     
@@ -97,16 +97,17 @@ namespace Cartagena
                         idJogador = Convert.ToInt16(posicoes[1]),
                         numeroPiratas = Convert.ToInt16(posicoes[2]);
 
-                    if (idJogador != inimigo.id) { break; }
-                    
-                    for (int j = 0; j <  numeroPiratas ; j++)
+                    if (idJogador == inimigo.id)
                     {
-                        Pirata pirata = new Pirata(inimigo.cor, posicao);
-                        inimigo.piratas[index] = pirata;
-                        index++;
-                        tabuleiro.Posicoes[posicao].piratas.Add(pirata);
+                        for (int j = 0; j <  numeroPiratas ; j++)
+                        {
+                            Pirata pirata = new Pirata(inimigo.cor, posicao);
+                            inimigo.piratas[index] = pirata;
+                            index++;
+                            tabuleiro.Posicoes[posicao].piratas.Add(pirata);
+                        }
+                        Console.WriteLine("Esta entrando para o inimigo " + inimigo.nome);
                     }
-                    
                 }
             }
         }

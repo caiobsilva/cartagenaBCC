@@ -46,7 +46,7 @@ namespace Cartagena
         public override string ToString()
         {
             string toString;
-            toString = nome + ": ";
+            toString = _nome + ": ";
             foreach (Pirata pirata in piratas)
             {
                 toString += (pirata.local.ToString() + " ");

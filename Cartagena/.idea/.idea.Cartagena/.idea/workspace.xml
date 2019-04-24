@@ -24,15 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5452cf98-ef6e-40f8-9fc6-26665d822ece" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.vs/Cartagena/v16/Server/sqlite3/storage.ide-shm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/Cartagena/v16/Server/sqlite3/storage.ide-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Cartagena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cartagena/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Jogador.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Jogador.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Partida.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Partida.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Tabuleiro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Tabuleiro.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Cartagena/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Cartagena/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/Cartagena.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Cartagena.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/bin/Debug/CartagenaServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/bin/Debug/CartagenaServer.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CartagenaServer.dll" beforeDir="false" afterPath="$PROJECT_DIR$/CartagenaServer.dll" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +122,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cartagena/Partida.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-570">
+            <state relative-caret-position="-627">
               <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
               <folding>
                 <marker date="1556104235743" expanded="false" signature="6:138" ph="..." />
@@ -377,12 +380,12 @@
       <workItem from="1555793049453" duration="8081000" />
       <workItem from="1555804161601" duration="1499000" />
       <workItem from="1555947403971" duration="7898000" />
-      <workItem from="1556022433273" duration="16752000" />
+      <workItem from="1556022433273" duration="17445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78017000" />
+    <option name="totallyTimeSpent" value="78710000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,7 +398,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="36" width="1920" height="1044" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -409,11 +411,11 @@
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.46376812" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32998884" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.69453734" />
       <window_info anchor="bottom" id="NuGet" order="8" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" />
-      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.13377926" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.43366778" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -729,7 +731,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Cartagena/Partida.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
+        <state relative-caret-position="-627">
           <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
           <folding>
             <marker date="1556104235743" expanded="false" signature="6:138" ph="..." />

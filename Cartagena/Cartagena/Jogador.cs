@@ -46,10 +46,10 @@ namespace Cartagena
         public override string ToString()
         {
             string toString;
-            toString = _nome + ": ";
+            toString = _nome + " (" + _cor + ")" + ": ";
             foreach (Pirata pirata in piratas)
             {
-                toString += (pirata.local.ToString() + " ");
+                toString += pirata.local.ToString() + " ";
             }
 
             return toString;
@@ -161,6 +161,11 @@ namespace Cartagena
                 }
             }
 
+        }
+
+        public void pularJogada()
+        {
+            Jogo.Jogar(id, senha);
         }
 
         public void atualizarCartas()

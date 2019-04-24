@@ -69,28 +69,44 @@ namespace Cartagena
                 posicao.piratas = new List<Pirata>();
             }
             
-            // Colocando os piratas da Kurisu de volta
-            foreach (Pirata pirata in Kurisu.piratas)
+            // Atualizando os piratas da Kurisu
+            Kurisu.piratas = new Pirata[6];
+            int index = 0;
+            string[] posicoes, jogadas;
+            string vez = Jogo.VerificarVez(_id);
+            jogadas = vez.Split('\n');
+            
+            for (int i = 1; i < jogadas.Length - 1; i++)
             {
-                int local = pirata.local;
-                tabuleiro.Posicoes[local].piratas.Add(pirata);
+                
+                jogadas[i] = jogadas[i].Replace("\r", "");
+                
+                posicoes = jogadas[i].Split(',');
+                
+                int posicao  = Convert.ToInt16(posicoes[0]),
+                    idJogador = Convert.ToInt16(posicoes[1]),
+                    numeroPiratas = Convert.ToInt16(posicoes[2]);
+
+                if (idJogador == Kurisu.id)
+                {
+                    for (int j = 0; j <  numeroPiratas ; j++)
+                    {
+                        Pirata pirata = new Pirata(Kurisu.cor, posicao);
+                        Kurisu.piratas[index] = pirata;
+                        index++;
+                        tabuleiro.Posicoes[posicao].piratas.Add(pirata);
+                    }
+                }
             }
             
             // Atualizando os piratas
             foreach (Inimigo inimigo in _inimigos)
             {
-                int index = 0;
+                index = 0;
                 inimigo.piratas = new Pirata[6];
-                
-                string[] posicoes, jogadas;
-                string vez = Jogo.VerificarVez(_id);
-                jogadas = vez.Split('\n');
                 
                 for (int i = 1; i < jogadas.Length - 1; i++)
                 {
-                    
-                    jogadas[i] = jogadas[i].Replace("\r", "");
-                    
                     posicoes = jogadas[i].Split(',');
                     
                     int posicao  = Convert.ToInt16(posicoes[0]),
@@ -106,7 +122,6 @@ namespace Cartagena
                             index++;
                             tabuleiro.Posicoes[posicao].piratas.Add(pirata);
                         }
-                        Console.WriteLine("Esta entrando para o inimigo " + inimigo.nome);
                     }
                 }
             }

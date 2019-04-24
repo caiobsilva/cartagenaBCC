@@ -122,7 +122,14 @@ namespace Cartagena
 
         public override string ToString()
         {
-            string toString = "[" + tipo + "]"; 
+            string toString = "[" + tipo + " ";
+            
+            foreach (Pirata p in piratas)
+            {
+                toString += "| Pirata " + p.cor + " |";
+            }
+
+            toString += "]";
             return toString;
         }
     }

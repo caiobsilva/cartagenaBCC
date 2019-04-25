@@ -1,6 +1,6 @@
 ﻿namespace Cartagena
 {
-    partial class Form1
+    partial class Cartagena
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cartagena));
             this.txtJogadorID = new System.Windows.Forms.TextBox();
             this.txtJogadorSenha = new System.Windows.Forms.TextBox();
             this.lblIDJogador = new System.Windows.Forms.Label();
@@ -345,7 +345,7 @@
             this.btnIniciarKuriso.Name = "btnIniciarKuriso";
             this.btnIniciarKuriso.Size = new System.Drawing.Size(57, 39);
             this.btnIniciarKuriso.TabIndex = 36;
-            this.btnIniciarKuriso.Text = "Iniciar Kuriso";
+            this.btnIniciarKuriso.Text = "Iniciar Kurisu";
             this.btnIniciarKuriso.UseVisualStyleBackColor = true;
             this.btnIniciarKuriso.Click += new System.EventHandler(this.btnIniciarKuriso_Click);
             // 
@@ -360,14 +360,15 @@
             // 
             // timerVerificarVez
             // 
-            this.timerVerificarVez.Interval = 4000;
+            this.timerVerificarVez.Interval = 1500;
             this.timerVerificarVez.Tick += new System.EventHandler(this.timerVerificarVez_Tick);
             // 
-            // Form1
+            // Cartagena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 456);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(873, 461);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnIniciarKuriso);
             this.Controls.Add(this.pcbTabuleiro);
@@ -400,10 +401,13 @@
             this.Controls.Add(this.lblIDJogador);
             this.Controls.Add(this.txtJogadorSenha);
             this.Controls.Add(this.txtJogadorID);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(543, 465);
-            this.Name = "Form1";
+            this.Name = "Cartagena";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.Text = "Cartagena";
+            this.Text = "Kurisu-Varsóvia";
+            this.TransparencyKey = System.Drawing.Color.DimGray;
             ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

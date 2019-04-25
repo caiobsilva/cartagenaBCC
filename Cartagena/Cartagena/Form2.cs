@@ -45,13 +45,13 @@ namespace Cartagena {
         private Brush retornaCor(string id) {
             //Ordem das cores:
             //Vermelho, Verde, Amarelo, Azul, Marrom. Do primeiro ao último (menor id para o maior).
-            if (id == Form1.idJogadores[0])
+            if (id == Cartagena.idJogadores[0])
                 return Brushes.Red;
-            else if (id == Form1.idJogadores[1])
+            else if (id == Cartagena.idJogadores[1])
                 return Brushes.Green;
-            else if (id == Form1.idJogadores[2])
+            else if (id == Cartagena.idJogadores[2])
                 return Brushes.Yellow;
-            else if (id == Form1.idJogadores[3])
+            else if (id == Cartagena.idJogadores[3])
                 return Brushes.Blue;
             else
                 return Brushes.Brown;
@@ -61,7 +61,7 @@ namespace Cartagena {
         public void Tabuleiro() {
             PictureBox[] pictureTabuleiro = new PictureBox[38];
 
-            string[] cartas = Form1.cartasTabuleiro;
+            string[] cartas = Cartagena.cartasTabuleiro;
 
             string[] piratasTabuleiro = new string[38];
             
@@ -99,7 +99,7 @@ namespace Cartagena {
                 //Primeiro, divida os ids e os passe (um a um) como parâmetro para a função "retornaCor".
                 //Brush pincel = retornaCor("0");
                 //Segundo, desenhar a quantidade de piratas na posição atual (com a cor do jogador) no pictureTabuleiro[i]. Um código exemplo abaixo (ele está funcionando):
-                string temp = Form1.tabuleiro[i];
+                string temp = Cartagena.tabuleiro[i];
                 Brush pincel;
                 if (i == 0 || i == 37) {
                     pincel = Brushes.DarkRed;

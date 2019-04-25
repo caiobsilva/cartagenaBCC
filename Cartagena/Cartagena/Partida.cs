@@ -62,7 +62,6 @@ namespace Cartagena
 
         public void atualizarDados()
         {
-            
             // Limpando os piratas das posições
             foreach (Posicao posicao in tabuleiro.Posicoes)
             {
@@ -126,6 +125,5 @@ namespace Cartagena
                 }
             }
         }
-        
     }
 }

@@ -11,7 +11,7 @@ using CartagenaServer;
 
 namespace Cartagena
 {
-    public partial class Form1 : Form
+    public partial class Cartagena : Form
     {
         public static string[] cartasTabuleiro = new string[38];
         public static string[] idJogadores = new string[5];
@@ -19,7 +19,7 @@ namespace Cartagena
 
         Partida partidaAtiva;
 
-        public Form1()
+        public Cartagena()
         {
             InitializeComponent();
             lblVersao.Text += Jogo.Versao;
@@ -257,6 +257,8 @@ namespace Cartagena
 
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("\nKurisu iniciada.\n");
+
             // Iniciar todas as variaveis aqui
             partidaAtiva = new Partida(
                 Convert.ToInt32(txtPartidaID.Text), // ID partida
@@ -319,8 +321,6 @@ namespace Cartagena
 
         void moverAleatoriamente()
         {
-            
-            
             Random r = new Random();
 
             int x = r.Next(0, 6);

@@ -73,8 +73,6 @@ namespace Cartagena
                 new Pirata(_cor)
             };
         }
-
-
     }
 
     public class Kurisu : Jogador
@@ -125,7 +123,6 @@ namespace Cartagena
 
             // Joga o pirata
             Jogo.Jogar(id, senha, localAntigo, carta);
-
 
             // Acha o novo local do pirata
             for (localNovo = localAntigo; localNovo < tabuleiro.Posicoes.Length - 1; localNovo++)
@@ -200,7 +197,7 @@ namespace Cartagena
                         estagioAvaliacao += 1;
                         break;
                     case 1: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
-                        adicionarNaListaPrioridade(jogadasPossiveis);
+                        adicionarNaListaPrioridade(jogadasPossiveis, 0);
                         estagioAvaliacao += 1;
                         break;
                     case 2: //Inicia o estágio de movimentação com a jogada prioritária.
@@ -246,11 +243,8 @@ namespace Cartagena
                         jogadas.Add(jogada);
                     }
                 }
-
                 index++;
             }
-
-
             return jogadas;
         }
     
@@ -262,23 +256,13 @@ namespace Cartagena
         }
 
         //Adiciona e ordena as jogadas na Fila de Prioridade.
-        private void adicionarNaListaPrioridade(List<Jogada> jogadasPossiveis)
+        private void adicionarNaListaPrioridade(List<Jogada> jogadasPossiveis, int prioridade)
         {
-            
-            
+            FilaPrioridade filaPrioridades = new FilaPrioridade();
+            foreach (Jogada jogadaPossivel in jogadasPossiveis)
+            {
+                filaPrioridades.adicionar(jogadaPossivel, prioridade);
+            }
         }
-        
     }
-    
-    
-    
 }
-
-
-/* Máquina de Estados que vai alterar as etapas da avaliação de consequências. Estágios:
-
-Um método de condicionais que determinam as pontuações de todas as jogadas possíveis no tabuleiro;
-Um método de adição à Fila de Prioridades;
-Um método de ordenação da Fila de Prioridades;
-Um método que joga a jogada prioritária;
- */

@@ -105,7 +105,7 @@ namespace Cartagena
             String iniciadorID;
             //O método IniciarPartida do Jogo retorna o id do jogador que iniciou a partida. 
             iniciadorID = Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text);
-            MessageBox.Show("O jogador de ID " + iniciadorID + " iniciou a partida.");
+            //MessageBox.Show("O jogador de ID " + iniciadorID + " iniciou a partida.");
         }
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
@@ -116,7 +116,7 @@ namespace Cartagena
             string[] jogador;
 
             jogador = entradaRetorno.Split(',');
-            MessageBox.Show(entradaRetorno);
+            //MessageBox.Show(entradaRetorno);
 
             txtJogadorID.Text = jogador[0].ToString();
             txtJogadorSenha.Text = jogador[1].ToString();
@@ -277,6 +277,7 @@ namespace Cartagena
             string[] dadosVerificarVez;
             string vez;
             int idJogador;
+            int temp;
 
             dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
             vez = dadosVerificarVez[0].Replace("\r", "");
@@ -284,15 +285,35 @@ namespace Cartagena
             // Verifica se a partida começou 
             if (vez == "Erro:Partida não está em andamento") return;
 
+            //Verifica se a partida acabou
+            if(dadosVerificarVez[0] == "E")
+            {
+                timerVerificarVez.Enabled = false;
+                lsbLog.Items.Clear();
+                lsbLog.Items.Add("Jogador Vencedor: " + dadosVerificarVez[1]);
+                return;
+            }
+
             dadosVerificarVez = vez.Split(',');
 
             idJogador = Convert.ToInt16(dadosVerificarVez[1]);
-            
+            temp = idJogador;
+
             // Verifica se é nossa vez
-            if (idJogador != partidaAtiva.Kurisu.id) return;
-            
-            // Função para atualizar os datos em todas as jogadas [NÃO FOI TESTADA]
-             partidaAtiva.atualizarDados();
+            if (idJogador != partidaAtiva.Kurisu.id) {
+                lsbLog.Items.Clear();
+                foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                {
+                    if (idJogador == inimigo.id)
+                    {
+                        lsbLog.Items.Add("Vez de:" + inimigo.nome);
+                    }
+                }
+                return;
+            }
+
+            // Função para atualizar os dados em todas as jogadas
+            partidaAtiva.atualizarDados();
             
             // prioridades = partidaAtiva.gerarPrioridades();
             
@@ -304,6 +325,13 @@ namespace Cartagena
             // função para atualizar as cartas
             partidaAtiva.Kurisu.atualizarCartas();
 
+            //Verifica quem esta jogando
+            lsbLog.Items.Clear();
+            lsbLog.Items.Add("Nossa vez!");
+            foreach (string carta in partidaAtiva.Kurisu.cartas)
+            {
+                lsbLog.Items.Add(carta);
+            }
             // Printando o tabuleiro
             Console.WriteLine(partidaAtiva.tabuleiro.ToString());
             // Printando todos os piratas da Kuriso

@@ -116,3 +116,16 @@ D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComple
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\mathe\CODE\Projeto Integrador\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

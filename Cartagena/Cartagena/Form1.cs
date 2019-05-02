@@ -277,7 +277,6 @@ namespace Cartagena
             string[] dadosVerificarVez;
             string vez;
             int idJogador;
-            int temp;
 
             dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
             vez = dadosVerificarVez[0].Replace("\r", "");
@@ -285,22 +284,34 @@ namespace Cartagena
             // Verifica se a partida começou 
             if (vez == "Erro:Partida não está em andamento") return;
 
+            dadosVerificarVez = vez.Split(',');
+            idJogador = Convert.ToInt16(dadosVerificarVez[1]);
+
             //Verifica se a partida acabou
-            if(dadosVerificarVez[0] == "E")
+            if (dadosVerificarVez[0] == "E")
             {
+                string nomeVencedor = partidaAtiva.Kurisu.nome;
+
                 timerVerificarVez.Enabled = false;
                 lsbLog.Items.Clear();
-                lsbLog.Items.Add("Jogador Vencedor: " + dadosVerificarVez[1]);
+
+                if (idJogador != partidaAtiva.Kurisu.id)
+                {
+                    foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                    {
+                        if (idJogador == inimigo.id)
+                            nomeVencedor = inimigo.nome;
+                    }
+
+                }
+
+                lsbLog.Items.Add("Jogador Vencedor: " + nomeVencedor);
                 return;
             }
 
-            dadosVerificarVez = vez.Split(',');
-
-            idJogador = Convert.ToInt16(dadosVerificarVez[1]);
-            temp = idJogador;
-
             // Verifica se é nossa vez
-            if (idJogador != partidaAtiva.Kurisu.id) {
+            if (idJogador != partidaAtiva.Kurisu.id)
+            {
                 lsbLog.Items.Clear();
                 foreach (Inimigo inimigo in partidaAtiva.inimigos)
                 {
@@ -314,14 +325,14 @@ namespace Cartagena
 
             // Função para atualizar os dados em todas as jogadas
             partidaAtiva.atualizarDados();
-            
+
             // prioridades = partidaAtiva.gerarPrioridades();
-            
+
             partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
-            
+
             // função temporaria de mover aleatoriamente
             moverAleatoriamente();
-            
+
             // função para atualizar as cartas
             partidaAtiva.Kurisu.atualizarCartas();
 
@@ -340,11 +351,11 @@ namespace Cartagena
             if (partidaAtiva.inimigos.Count > 0)
             {
                 foreach (Inimigo inimigo in partidaAtiva.inimigos)
-                {    
+                {
                     Console.WriteLine(inimigo.ToString());
                 }
             }
-            
+
         }
 
         void moverAleatoriamente()
@@ -363,7 +374,7 @@ namespace Cartagena
             {
                 Pirata pirata = partidaAtiva.Kurisu.piratas[x];
                 string carta = partidaAtiva.Kurisu.cartas[y];
-                
+
                 // função que recebe o pirata, carta e o tabuleiro e já cuida da jogada.
                 partidaAtiva.Kurisu.jogar(pirata, carta, partidaAtiva.tabuleiro);
             }
@@ -379,7 +390,7 @@ namespace Cartagena
                         if (partidaAtiva.tabuleiro.existemPiratasAntesDe(pirata.local))
                         {
                             // função que recebe o pirata e o tabuleiro e já cuida de voltar para tras.
-                            partidaAtiva.Kurisu.voltarPirata(pirata,partidaAtiva.tabuleiro);
+                            partidaAtiva.Kurisu.voltarPirata(pirata, partidaAtiva.tabuleiro);
                             break;
                         }
                         partidaAtiva.Kurisu.pularJogada();

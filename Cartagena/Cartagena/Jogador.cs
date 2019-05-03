@@ -116,8 +116,11 @@ namespace Cartagena
 
         }
 
-        public void jogar(Pirata pirata, string carta, Tabuleiro tabuleiro)
+        public void jogar(Jogada jogada, Tabuleiro tabuleiro)
         {
+            Pirata pirata = piratas[jogada.indexPirata];
+            string carta = jogada.carta;
+            
             int localNovo, localAntigo = pirata.local;
             cartas.Remove(carta);
 
@@ -138,8 +141,9 @@ namespace Cartagena
 
         }
 
-        public void voltarPirata(Pirata pirata, Tabuleiro tabuleiro)
+        public void voltarPirata(Jogada jogada, Tabuleiro tabuleiro)
         {
+            Pirata pirata = piratas[jogada.indexPirata];
             int localAntigo = pirata.local, localNovo;
 
 
@@ -181,11 +185,12 @@ namespace Cartagena
             }
         }
 
-        public void avaliarConsequências(Tabuleiro tabuleiro)
+        public Jogada avaliarConsequências(Tabuleiro tabuleiro)
         {
             int estagioAvaliacao = 0;
             bool avaliacao = false;
-
+            Jogada jogada;
+            FilaPrioridade prioridades = new FilaPrioridade();
             List<Jogada> jogadasPossiveis = gerarJogadas(tabuleiro);
 
             while (avaliacao != true)
@@ -197,15 +202,19 @@ namespace Cartagena
                         estagioAvaliacao += 1;
                         break;
                     case 1: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
-                        adicionarNaListaPrioridade(jogadasPossiveis, 0);
+                        prioridades = adicionarNaListaPrioridade(jogadasPossiveis);
+                        Console.WriteLine(prioridades.ToString());
                         estagioAvaliacao += 1;
                         break;
                     case 2: //Inicia o estágio de movimentação com a jogada prioritária.
-                        //mover();
                         avaliacao = true;
                         break;
                 }
             }
+
+            jogada = prioridades.remover();
+            return jogada;
+
         }
 
         private List<Jogada> gerarJogadas(Tabuleiro tabuleiro)
@@ -249,20 +258,24 @@ namespace Cartagena
         }
     
         private void avaliarJogada(List<Jogada> jogadasPossiveis){
+            Random r = new Random();
             foreach (Jogada jogada in jogadasPossiveis)
             {
-                
+                jogada.pontuacao = r.Next(0, 10);
             }
         }
 
         //Adiciona e ordena as jogadas na Fila de Prioridade.
-        private void adicionarNaListaPrioridade(List<Jogada> jogadasPossiveis, int prioridade)
+        private FilaPrioridade adicionarNaListaPrioridade(List<Jogada> jogadasPossiveis)
         {
             FilaPrioridade filaPrioridades = new FilaPrioridade();
             foreach (Jogada jogadaPossivel in jogadasPossiveis)
             {
-                filaPrioridades.adicionar(jogadaPossivel, prioridade);
+                filaPrioridades.adicionar(jogadaPossivel, jogadaPossivel.pontuacao);
             }
+
+            return filaPrioridades;
+
         }
     }
 }

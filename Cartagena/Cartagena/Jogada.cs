@@ -21,6 +21,7 @@ namespace Cartagena
             _pirata = pirata.copiar();
             _carta = carta;
             _indexPirata = l;
+            pontuacao = 0;
         }
 
         public Jogada(Tabuleiro tabuleiro, Pirata pirata, int l)
@@ -29,6 +30,7 @@ namespace Cartagena
             _pirata = pirata.copiar();
             _carta = "volta";
             _indexPirata = l;
+            pontuacao = 0;
         }
         
         public void simularJogada()

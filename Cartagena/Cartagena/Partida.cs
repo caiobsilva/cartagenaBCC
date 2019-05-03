@@ -60,7 +60,7 @@ namespace Cartagena
             Atualiza os dados do tabuleiro
         */
 
-        public void atualizarDados()
+        public void atualizarDados(string vez)
         {
             // Limpando os piratas das posições
             foreach (Posicao posicao in tabuleiro.Posicoes)
@@ -72,7 +72,6 @@ namespace Cartagena
             Kurisu.piratas = new Pirata[6];
             int index = 0;
             string[] posicoes, jogadas;
-            string vez = Jogo.VerificarVez(_id);
             jogadas = vez.Split('\n');
             
             for (int i = 1; i < jogadas.Length - 1; i++)
@@ -125,5 +124,7 @@ namespace Cartagena
                 }
             }
         }
+        
+        
     }
 }

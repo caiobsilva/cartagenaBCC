@@ -275,10 +275,11 @@ namespace Cartagena
         private void timerVerificarVez_Tick(object sender, EventArgs e)
         {
             string[] dadosVerificarVez;
-            string vez;
+            string vez, dados;
             int idJogador;
 
-            dadosVerificarVez = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text)).Split('\n');
+            dados = Jogo.VerificarVez(Convert.ToInt16(txtPartidaID.Text));
+            dadosVerificarVez = dados.Split('\n');
             vez = dadosVerificarVez[0].Replace("\r", "");
 
             // Verifica se a partida começou 
@@ -309,6 +310,10 @@ namespace Cartagena
                 return;
             }
 
+            
+            // Função para atualizar os dados em todas as jogadas
+            partidaAtiva.atualizarDados(dados);
+            
             // Verifica se é nossa vez
             if (idJogador != partidaAtiva.Kurisu.id)
             {
@@ -323,39 +328,60 @@ namespace Cartagena
                 return;
             }
 
-            // Função para atualizar os dados em todas as jogadas
-            partidaAtiva.atualizarDados();
+            timerVerificarVez.Enabled = false;
+            
+            Jogar();
 
-            // prioridades = partidaAtiva.gerarPrioridades();
+        }
 
-            partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
-
-            // função temporaria de mover aleatoriamente
-            moverAleatoriamente();
-
-            // função para atualizar as cartas
-            partidaAtiva.Kurisu.atualizarCartas();
-
-            //Verifica quem esta jogando
-            lsbLog.Items.Clear();
-            lsbLog.Items.Add("Nossa vez!");
-            foreach (string carta in partidaAtiva.Kurisu.cartas)
+        void Jogar()
+        {
+            for (int i = 0; i < 3; i++)
             {
-                lsbLog.Items.Add(carta);
-            }
-            // Printando o tabuleiro
-            Console.WriteLine(partidaAtiva.tabuleiro.ToString());
-            // Printando todos os piratas da Kuriso
-            Console.WriteLine(partidaAtiva.Kurisu.ToString());
-            // Printando todos os piratas dos inimigos
-            if (partidaAtiva.inimigos.Count > 0)
-            {
-                foreach (Inimigo inimigo in partidaAtiva.inimigos)
+
+                // prioridades = partidaAtiva.gerarPrioridades();
+                Jogada jogada = partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
+
+                if (jogada.carta == "volta")
                 {
-                    Console.WriteLine(inimigo.ToString());
+                    partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
                 }
+                else
+                {
+                    partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
+                }
+
+                // função temporaria de mover aleatoriamente
+                //moverAleatoriamente();
+
+                // função para atualizar as cartas
+                partidaAtiva.Kurisu.atualizarCartas();
+
+                // avisa que estamos jogando
+                lsbLog.Items.Clear();
+                lsbLog.Items.Add("Nossa vez!");
+                foreach (string carta in partidaAtiva.Kurisu.cartas)
+                {
+                    lsbLog.Items.Add(carta);
+                }
+                
+                // Printando o tabuleiro
+                Console.WriteLine(partidaAtiva.tabuleiro.ToString());
+                // Printando todos os piratas da Kuriso
+                Console.WriteLine(partidaAtiva.Kurisu.ToString());
+                // Printando todos os piratas dos inimigos
+                if (partidaAtiva.inimigos.Count > 0)
+                {
+                    foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                    {
+                        Console.WriteLine(inimigo.ToString());
+                    }
+                }
+
             }
 
+            timerVerificarVez.Enabled = true;
+            
         }
 
         void moverAleatoriamente()
@@ -376,7 +402,7 @@ namespace Cartagena
                 string carta = partidaAtiva.Kurisu.cartas[y];
 
                 // função que recebe o pirata, carta e o tabuleiro e já cuida da jogada.
-                partidaAtiva.Kurisu.jogar(pirata, carta, partidaAtiva.tabuleiro);
+                //partidaAtiva.Kurisu.jogar(pirata, carta, partidaAtiva.tabuleiro);
             }
             else
             {
@@ -390,7 +416,7 @@ namespace Cartagena
                         if (partidaAtiva.tabuleiro.existemPiratasAntesDe(pirata.local))
                         {
                             // função que recebe o pirata e o tabuleiro e já cuida de voltar para tras.
-                            partidaAtiva.Kurisu.voltarPirata(pirata, partidaAtiva.tabuleiro);
+                            //partidaAtiva.Kurisu.voltarPirata(pirata, partidaAtiva.tabuleiro);
                             break;
                         }
                         partidaAtiva.Kurisu.pularJogada();

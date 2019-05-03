@@ -27,11 +27,10 @@ namespace Cartagena
                 int atual = jogadas[0].chave;
                 int index = 0;
                 //Encontra posição que a entrada deverá ser inserida.
-                for (int i = 1; i < jogadas.Count; i++)
+                while (atual < entrada.chave)
                 {
-                    while (atual < entrada.chave)
-                        atual = jogadas[i].chave;
-                        index = i;
+                    index++;
+                    atual = jogadas[index].chave;
                 }
                 //Insere na posição específica.
                 jogadas.Insert(index, entrada);
@@ -46,6 +45,18 @@ namespace Cartagena
             //Remove o elemento de maior prioridade da fila.
             jogadas.RemoveAt(jogadas.Count - 1);
             return temp;
+        }
+
+        public override string ToString()
+        {
+            string toString = "";
+
+            foreach (Entrada jogada in jogadas)
+            {
+                toString += jogada.chave.ToString() + " ";
+            }
+            
+            return toString;
         }
     }
 }

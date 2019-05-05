@@ -336,13 +336,26 @@ namespace Cartagena
 
         void Jogar()
         {
+            
+            // avisa que estamos jogando
+            lsbLog.Items.Clear();
+            lsbLog.Items.Add("Nossa vez!");
+            foreach (string carta in partidaAtiva.Kurisu.cartas)
+            {
+                lsbLog.Items.Add(carta);
+            }
+            
             for (int i = 0; i < 3; i++)
             {
 
                 // prioridades = partidaAtiva.gerarPrioridades();
                 Jogada jogada = partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
 
-                if (jogada.carta == "volta")
+                if (jogada.carta == "pular")
+                {
+                    partidaAtiva.Kurisu.pularJogada();
+                }
+                else if (jogada.carta == "volta")
                 {
                     partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
                 }
@@ -357,13 +370,6 @@ namespace Cartagena
                 // função para atualizar as cartas
                 partidaAtiva.Kurisu.atualizarCartas();
 
-                // avisa que estamos jogando
-                lsbLog.Items.Clear();
-                lsbLog.Items.Add("Nossa vez!");
-                foreach (string carta in partidaAtiva.Kurisu.cartas)
-                {
-                    lsbLog.Items.Add(carta);
-                }
                 
                 // Printando o tabuleiro
                 Console.WriteLine(partidaAtiva.tabuleiro.ToString());

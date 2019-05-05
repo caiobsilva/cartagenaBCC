@@ -40,11 +40,16 @@ namespace Cartagena
         //Retorna a jogada de maior prioridade.
         public Jogada remover()
         {
-            //Recebe a jogada de maior prioridade.
-            Jogada temp = jogadas[jogadas.Count - 1].jogada;
-            //Remove o elemento de maior prioridade da fila.
-            jogadas.RemoveAt(jogadas.Count - 1);
+            Jogada temp = null;
+            if (jogadas.Any())
+            {
+                //Recebe a jogada de maior prioridade.
+                temp = jogadas[jogadas.Count - 1].jogada;
+                //Remove o elemento de maior prioridade da fila.
+                jogadas.RemoveAt(jogadas.Count - 1);
+            }
             return temp;
+            
         }
 
         public override string ToString()

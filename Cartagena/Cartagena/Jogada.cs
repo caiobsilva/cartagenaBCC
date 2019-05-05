@@ -33,6 +33,13 @@ namespace Cartagena
             pontuacao = 0;
         }
         
+        public Jogada(Tabuleiro tabuleiro)
+        {
+            _tabuleiro = new Tabuleiro(tabuleiro);
+            _carta = "pular";
+            pontuacao = 0;
+        }
+        
         public void simularJogada()
         {
             if (carta == "volta")

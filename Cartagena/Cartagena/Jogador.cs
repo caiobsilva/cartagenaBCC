@@ -203,7 +203,6 @@ namespace Cartagena
                         break;
                     case 1: //Inicia estágio de adicionar jogadas à Fila de Prioridades.
                         prioridades = adicionarNaListaPrioridade(jogadasPossiveis);
-                        Console.WriteLine(prioridades.ToString());
                         estagioAvaliacao += 1;
                         break;
                     case 2: //Inicia o estágio de movimentação com a jogada prioritária.
@@ -221,11 +220,15 @@ namespace Cartagena
         {
             List<Jogada> jogadas = new List<Jogada>();
             int index = 0;
+            
+            // Adiciona a jogada de pular
+            jogadas.Add(new Jogada(tabuleiro));
+            
             foreach (Pirata pirata in piratas)
             {
-                // 1
                 Jogada jogada;
-
+                // 1
+                
                 if (pirata.local == 37)
                 {
                     continue;
@@ -261,7 +264,7 @@ namespace Cartagena
             Random r = new Random();
             foreach (Jogada jogada in jogadasPossiveis)
             {
-                jogada.pontuacao = r.Next(0, 10);
+                jogada.pontuacao += r.Next(0, 10);
             }
         }
 

@@ -364,9 +364,6 @@ namespace Cartagena
                     partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
                 }
 
-                // função temporaria de mover aleatoriamente
-                //moverAleatoriamente();
-
                 // função para atualizar as cartas
                 partidaAtiva.Kurisu.atualizarCartas();
 
@@ -389,47 +386,6 @@ namespace Cartagena
             timerVerificarVez.Enabled = true;
             
         }
-
-        void moverAleatoriamente()
-        {
-            Random r = new Random();
-
-            int x = r.Next(0, 6);
-            while (partidaAtiva.Kurisu.piratas[x].local == 37)
-            {
-                x = r.Next(0, 6);
-            }
-            int y = r.Next(0, partidaAtiva.Kurisu.cartas.Count);
-
-            // Se ele tem mais que duas cartas vai jogar para frente se não vai voltar
-            if (partidaAtiva.Kurisu.cartas.Count > 0)
-            {
-                Pirata pirata = partidaAtiva.Kurisu.piratas[x];
-                string carta = partidaAtiva.Kurisu.cartas[y];
-
-                // função que recebe o pirata, carta e o tabuleiro e já cuida da jogada.
-                //partidaAtiva.Kurisu.jogar(pirata, carta, partidaAtiva.tabuleiro);
-            }
-            else
-            {
-                // For loop para achar o pirata que temos mais avançado
-                for (int i = 36; i > 0; i--)
-                {
-                    // Se achou o pirata vai colocar ele em uma variavel e usar voltar para tras.
-                    if (partidaAtiva.Kurisu.piratasEm(i).Count > 0)
-                    {
-                        Pirata pirata = partidaAtiva.Kurisu.piratasEm(i)[0];
-                        if (partidaAtiva.tabuleiro.existemPiratasAntesDe(pirata.local))
-                        {
-                            // função que recebe o pirata e o tabuleiro e já cuida de voltar para tras.
-                            //partidaAtiva.Kurisu.voltarPirata(pirata, partidaAtiva.tabuleiro);
-                            break;
-                        }
-                        partidaAtiva.Kurisu.pularJogada();
-                        break;
-                    }
-                }
-            }
-        }
+        
     }
 }

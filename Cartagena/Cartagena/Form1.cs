@@ -115,13 +115,16 @@ namespace Cartagena
             
             string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaID.Text), txtJogadorNome.Text,
                 txtPartidaSenha.Text);
-            
-            string[] jogador;
 
-            jogador = entradaRetorno.Split(',');
-
-            txtJogadorID.Text = jogador[0].ToString();
-            txtJogadorSenha.Text = jogador[1].ToString();
+            if (LidarErros(entradaRetorno))
+            {
+                string[] jogador;
+    
+                jogador = entradaRetorno.Split(',');
+    
+                txtJogadorID.Text = jogador[0].ToString();
+                txtJogadorSenha.Text = jogador[1].ToString();
+            }
         }
 
         //Método de criação de Partida.

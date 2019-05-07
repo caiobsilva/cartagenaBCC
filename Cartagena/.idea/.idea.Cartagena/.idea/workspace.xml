@@ -23,20 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5452cf98-ef6e-40f8-9fc6-26665d822ece" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Cartagena/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Cartagena/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/Jogador.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/Jogador.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/bin/Debug/Cartagena.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.Cartagena.resources" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.Cartagena.resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csproj.GenerateResource.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Cartagena/obj/Debug/Cartagena.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="5452cf98-ef6e-40f8-9fc6-26665d822ece" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +35,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cartagena/Form1.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-317">
+            <state relative-caret-position="1520">
               <caret line="283" column="9" selection-start-line="283" selection-start-column="9" selection-end-line="283" selection-end-column="9" />
               <folding>
                 <marker date="1557097412524" expanded="false" signature="6:236" ph="..." />
@@ -111,7 +98,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cartagena/Partida.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2096">
+            <state relative-caret-position="1976">
               <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
               <folding>
                 <marker date="1557093299722" expanded="false" signature="6:138" ph="..." />
@@ -139,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cartagena/Jogador.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="168" column="56" lean-forward="true" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
+            <state relative-caret-position="2736">
+              <caret line="168" column="56" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
               <folding>
                 <marker date="1557093884388" expanded="false" signature="6:70" ph="..." />
                 <marker date="1557093884388" expanded="true" signature="91:8486" ph="{...}" />
@@ -193,7 +180,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cartagena/Jogada.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
+            <state relative-caret-position="494">
               <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
               <folding>
                 <marker date="1557004556515" expanded="true" signature="34:2721" ph="{...}" />
@@ -215,7 +202,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Cartagena/FilaPrioridade.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
+            <state relative-caret-position="988">
               <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
               <folding>
                 <marker date="1557002721590" expanded="false" signature="6:115" ph="..." />
@@ -289,7 +276,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -307,6 +293,7 @@
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="AssemblyExplorer" />
       <pane id="FileSystemExplorer" />
     </panes>
   </component>
@@ -369,11 +356,12 @@
       <workItem from="1556022433273" duration="17445000" />
       <workItem from="1556885576080" duration="10066000" />
       <workItem from="1556999237623" duration="4494000" />
+      <workItem from="1557231421712" duration="636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98008000" />
+    <option name="totallyTimeSpent" value="98644000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,11 +373,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="1920" y="40" width="1920" height="1040" extended-state="6" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15487674" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15702036" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
@@ -399,11 +387,11 @@
       <window_info anchor="bottom" id="Database Changes" order="4" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.50839865" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34619507" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3449048" />
       <window_info anchor="bottom" id="NuGet" order="8" />
       <window_info anchor="bottom" id="Message" order="9" />
       <window_info anchor="bottom" id="Find" order="10" />
-      <window_info anchor="bottom" id="Run" order="11" weight="0.55095184" />
+      <window_info active="true" anchor="bottom" id="Run" order="11" visible="true" weight="0.1724524" />
       <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
@@ -578,126 +566,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Cartagena/Jogada.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-          <folding>
-            <marker date="1557004556515" expanded="true" signature="34:2721" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="60:2719" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="590:785" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="851:1048" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1100:1228" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1273:2704" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1317:1968" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1469:1937" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1639:1919" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="1985:2694" ph="{...}" />
-            <marker date="1557004556515" expanded="true" signature="2224:2412" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cartagena/FilaPrioridade.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-          <folding>
-            <marker date="1557002721590" expanded="false" signature="6:115" ph="..." />
-            <marker date="1557002721590" expanded="true" signature="136:1939" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="163:1937" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="340:1195" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="753:1185" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="960:1075" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="1276:1656" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="1349:1608" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="1699:1931" ph="{...}" />
-            <marker date="1557002721590" expanded="true" signature="1792:1879" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cartagena/Jogador.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="168" column="56" lean-forward="true" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
-          <folding>
-            <marker date="1557093884388" expanded="false" signature="6:70" ph="..." />
-            <marker date="1557093884388" expanded="true" signature="91:8486" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="118:1225" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="311:363" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="391:445" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="472:525" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="577:906" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="699:858" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="758:844" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="949:1219" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1092:1179" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1261:1688" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1323:1682" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1453:1671" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1723:8484" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1831:1886" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="1956:2798" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="2114:2332" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="2525:2787" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="2689:2773" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="2861:3750" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="3332:3504" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="3820:4536" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="3998:4525" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="4140:4511" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="4571:4648" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="4687:5161" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="4889:5151" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="5053:5137" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="5226:6314" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="5508:6231" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="5564:6217" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="6378:7770" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="6633:7732" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="6756:6822" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="6912:7216" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="6983:7198" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="7237:7693" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="7460:7675" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="7841:8024" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="7935:8014" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="8176:8478" ph="{...}" />
-            <marker date="1557093884388" expanded="true" signature="8317:8430" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cartagena/Partida.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2096">
-          <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
-          <folding>
-            <marker date="1557093299722" expanded="false" signature="6:138" ph="..." />
-            <marker date="1557093299722" expanded="true" signature="159:4503" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="179:4501" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="880:2030" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="1208:1936" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="1603:1783" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="1804:1922" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="2040:2096" ph="/* Atualiza os dados do tabuleiro ... */" />
-            <marker date="1557093299722" expanded="true" signature="2144:4495" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="2262:2344" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="2625:3424" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="3033:3410" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="3113:3392" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="3526:4485" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="3694:4471" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="4038:4453" ph="{...}" />
-            <marker date="1557093299722" expanded="true" signature="4126:4431" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Cartagena/Form1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-317">
+        <state relative-caret-position="1520">
           <caret line="283" column="9" selection-start-line="283" selection-start-column="9" selection-end-line="283" selection-end-column="9" />
           <folding>
             <marker date="1557097412524" expanded="false" signature="6:236" ph="..." />
@@ -752,6 +623,123 @@
             <marker date="1557097412524" expanded="true" signature="14379:14593" ph="{...}" />
             <marker date="1557097412524" expanded="true" signature="14468:14575" ph="{...}" />
             <marker date="1557097412524" expanded="true" signature="14730:14871" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cartagena/Partida.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1976">
+          <caret line="124" column="8" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="8" />
+          <folding>
+            <marker date="1557093299722" expanded="false" signature="6:138" ph="..." />
+            <marker date="1557093299722" expanded="true" signature="159:4503" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="179:4501" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="880:2030" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="1208:1936" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="1603:1783" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="1804:1922" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="2040:2096" ph="/* Atualiza os dados do tabuleiro ... */" />
+            <marker date="1557093299722" expanded="true" signature="2144:4495" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="2262:2344" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="2625:3424" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="3033:3410" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="3113:3392" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="3526:4485" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="3694:4471" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="4038:4453" ph="{...}" />
+            <marker date="1557093299722" expanded="true" signature="4126:4431" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cartagena/Jogador.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2736">
+          <caret line="168" column="56" selection-start-line="168" selection-start-column="56" selection-end-line="168" selection-end-column="56" />
+          <folding>
+            <marker date="1557093884388" expanded="false" signature="6:70" ph="..." />
+            <marker date="1557093884388" expanded="true" signature="91:8486" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="118:1225" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="311:363" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="391:445" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="472:525" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="577:906" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="699:858" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="758:844" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="949:1219" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1092:1179" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1261:1688" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1323:1682" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1453:1671" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1723:8484" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1831:1886" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="1956:2798" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="2114:2332" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="2525:2787" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="2689:2773" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="2861:3750" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="3332:3504" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="3820:4536" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="3998:4525" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="4140:4511" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="4571:4648" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="4687:5161" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="4889:5151" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="5053:5137" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="5226:6314" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="5508:6231" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="5564:6217" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="6378:7770" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="6633:7732" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="6756:6822" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="6912:7216" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="6983:7198" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="7237:7693" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="7460:7675" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="7841:8024" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="7935:8014" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="8176:8478" ph="{...}" />
+            <marker date="1557093884388" expanded="true" signature="8317:8430" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cartagena/Jogada.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <marker date="1557004556515" expanded="true" signature="34:2721" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="60:2719" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="590:785" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="851:1048" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1100:1228" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1273:2704" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1317:1968" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1469:1937" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1639:1919" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="1985:2694" ph="{...}" />
+            <marker date="1557004556515" expanded="true" signature="2224:2412" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Cartagena/FilaPrioridade.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+          <folding>
+            <marker date="1557002721590" expanded="false" signature="6:115" ph="..." />
+            <marker date="1557002721590" expanded="true" signature="136:1939" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="163:1937" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="340:1195" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="753:1185" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="960:1075" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="1276:1656" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="1349:1608" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="1699:1931" ph="{...}" />
+            <marker date="1557002721590" expanded="true" signature="1792:1879" ph="{...}" />
           </folding>
         </state>
       </provider>

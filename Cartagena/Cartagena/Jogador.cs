@@ -125,8 +125,8 @@ namespace Cartagena
             cartas.Remove(carta);
 
             // Joga o pirata
-            Jogo.Jogar(id, senha, localAntigo, carta);
-
+            Cartagena.LidarErros(Jogo.Jogar(id, senha, localAntigo, carta));
+            
             // Acha o novo local do pirata
             for (localNovo = localAntigo; localNovo < tabuleiro.Posicoes.Length - 1; localNovo++)
             {
@@ -153,7 +153,7 @@ namespace Cartagena
                     tabuleiro.Posicoes[i].numeroPiratas() < 3)
                 {
                     localNovo = i;
-                    Jogo.Jogar(id, senha, pirata.local);
+                    Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local));
 
                     tabuleiro.Posicoes[localAntigo].piratas.Remove(pirata);
                     pirata.local = localNovo;
@@ -166,7 +166,7 @@ namespace Cartagena
 
         public void pularJogada()
         {
-            Jogo.Jogar(id, senha);
+            Cartagena.LidarErros(Jogo.Jogar(id, senha));
         }
 
         public void atualizarCartas()

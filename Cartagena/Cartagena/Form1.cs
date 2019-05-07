@@ -102,32 +102,40 @@ namespace Cartagena
         //Método de inicialização de partida.
         private void btnPartidaIniciar_Click(object sender, EventArgs e)
         {
-            String iniciadorID;
             //O método IniciarPartida do Jogo retorna o id do jogador que iniciou a partida. 
-            iniciadorID = Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text);
-            //MessageBox.Show("O jogador de ID " + iniciadorID + " iniciou a partida.");
+            if (txtJogadorID.Text == "" || txtJogadorSenha.Text == "") { return; }
+            
+            LidarErros(Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text));
         }
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
         private void btnPartidaEntrar_Click(object sender, EventArgs e)
         {
+            if ( txtPartidaID.Text == "" || txtJogadorNome.Text == "" || txtPartidaSenha.Text == "") { return; }
+            
             string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaID.Text), txtJogadorNome.Text,
                 txtPartidaSenha.Text);
+            
             string[] jogador;
 
             jogador = entradaRetorno.Split(',');
-            //MessageBox.Show(entradaRetorno);
 
             txtJogadorID.Text = jogador[0].ToString();
             txtJogadorSenha.Text = jogador[1].ToString();
-            //jogador[2] é a cor do jogador na partida.
         }
 
         //Método de criação de Partida.
         private void btnPartidaCriar_Click(object sender, EventArgs e)
         {
-            int partidaID = Convert.ToInt32(Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text));
-            txtPartidaID.Text = partidaID.ToString();
+            if( txtPartidaNome.Text == "" ) {return;}
+            
+            int partidaID;
+            string partida = Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text);
+            if (LidarErros(partida))
+            {
+                partidaID = Convert.ToInt32(partida);
+                txtPartidaID.Text = partidaID.ToString();
+            }
         }
 
         //Método de listagem de Partidas.
@@ -165,14 +173,20 @@ namespace Cartagena
         //Método de listagem de jogadores
         private void btnJogadoresListar_Click(object sender, EventArgs e)
         {
+            if (txtPartidaID.Text == "") { return; }
+            
             int partidaID = Convert.ToInt32(txtPartidaID.Text);
-            string[] jogadores = Jogo.ListarJogadores(partidaID).Split('\r');
-
-            lsbLog.Items.Clear();
-            for (int i = 0; i < jogadores.Length - 1; i++)
+            string retorno = Jogo.ListarJogadores(partidaID);
+            if (LidarErros(retorno))
             {
-                jogadores[i].Replace("\r", "");
-                lsbLog.Items.Add(jogadores[i]);
+                string[] jogadores = retorno.Split('\r');
+    
+                lsbLog.Items.Clear();
+                for (int i = 0; i < jogadores.Length - 1; i++)
+                {
+                    jogadores[i].Replace("\r", "");
+                    lsbLog.Items.Add(jogadores[i]);
+                }
             }
         }
 
@@ -244,21 +258,31 @@ namespace Cartagena
         //Método de verificar vez.
         private void btnVerificarVez_Click(object sender, EventArgs e)
         {
-            string vez = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
-            string[] jogadas = vez.Split('\r');
-            lsbLog.Items.Clear();
-            for (int i = 0; i < jogadas.Length - 1; i++)
+            if (txtPartidaID.Text == "")
             {
-                jogadas[i].Replace("\n", "");
-                Console.WriteLine(jogadas[i]);
-                lsbLog.Items.Add(jogadas[i]);
+                MessageBox.Show("Campo invalido!");
+                return;
             }
+            
+            string retorno = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
+
+            if (LidarErros(retorno))
+            {
+                string[] jogadas = retorno.Split('\r');
+                lsbLog.Items.Clear();
+                for (int i = 0; i < jogadas.Length - 1; i++)
+                {
+                    jogadas[i].Replace("\n", "");
+                    Console.WriteLine(jogadas[i]);
+                    lsbLog.Items.Add(jogadas[i]);
+                }
+            }
+            
         }
 
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
-        {
-            Console.WriteLine("\nKurisu iniciada.\n");
-
+        {   
+            
             // Iniciar todas as variaveis aqui
             partidaAtiva = new Partida(
                 Convert.ToInt32(txtPartidaID.Text), // ID partida
@@ -270,6 +294,8 @@ namespace Cartagena
             );
             // Iniciando timer
             timerVerificarVez.Enabled = true;
+            
+            Console.WriteLine("\nKurisu iniciada.\n");
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -385,6 +411,15 @@ namespace Cartagena
 
             timerVerificarVez.Enabled = true;
             
+        }
+
+        public static bool LidarErros(string erro)
+        {
+            if (!erro.Contains("ERRO:")) { return true; }
+
+            MessageBox.Show(erro);
+            return false;
+
         }
         
     }

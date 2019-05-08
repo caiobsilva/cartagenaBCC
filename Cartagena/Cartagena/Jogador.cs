@@ -277,5 +277,17 @@ namespace Cartagena
             return filaPrioridades;
 
         }
+
+        public int[] piratasInterface()
+        {
+            int[] posicaoPirata = new int[6];
+            int i = 0;
+            foreach (Pirata pirata in piratas)
+            {
+                posicaoPirata[i] = pirata.local;
+                i++;
+            }
+            return posicaoPirata;
+        }
     }
 }

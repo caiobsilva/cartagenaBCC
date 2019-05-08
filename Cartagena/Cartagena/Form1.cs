@@ -16,7 +16,7 @@ namespace Cartagena
         public static string[] cartasTabuleiro = new string[38];
         public static string[] idJogadores = new string[5];
         public static string[] tabuleiro = new string[38];
-        public static PictureBox[] casaTabuleiro = new PictureBox[38];
+        public PictureBox[] casaTabuleiro = new PictureBox[38];
 
         Partida partidaAtiva;
 
@@ -241,6 +241,7 @@ namespace Cartagena
             formDois.Tabuleiro();
             formDois.Show();*/
             criarInterfaceTabuleiro();
+            desenharPiratas();
 
         }
 
@@ -504,5 +505,27 @@ namespace Cartagena
             }
         }
 
+        public void desenhar(Graphics g, string identificador)
+        {
+            if (identificador == "kurisu")
+            {
+                Brush pincel = Brushes.BlueViolet;
+                Pen pen = new Pen(Color.OrangeRed, 2);
+                g.DrawRectangle(pen, 0,0,10,10);
+                g.DrawString("kurisu", Font, pincel, 0, 0);
+            }
+        }
+
+        public void desenharPiratas() //O problema esta em acessar o vetor de pictureBoxes.
+        {
+            casaTabuleiro[1].BackColor = Color.Black;
+            int[] piratasKurisu = new int[6];
+            piratasKurisu = partidaAtiva.Kurisu.piratasInterface(); // Esta recebendo a posicao!
+            for(int j = 0; j < 6; j++)
+            {
+            Graphics g = casaTabuleiro[piratasKurisu[j]].CreateGraphics();
+            desenhar(g, "kurisu");
+            }
+        }
     }
 }

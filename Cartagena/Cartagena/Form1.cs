@@ -16,6 +16,7 @@ namespace Cartagena
         public static string[] cartasTabuleiro = new string[38];
         public static string[] idJogadores = new string[5];
         public static string[] tabuleiro = new string[38];
+        public static PictureBox[] casaTabuleiro = new PictureBox[38];
 
         Partida partidaAtiva;
 
@@ -236,9 +237,11 @@ namespace Cartagena
             mostrarCartasTabuleiro();
             quebraCaracteresIdJogadores();
             quebraLinhaPosicoes();
-            Form2 formDois = new Form2();
+            /*Form2 formDois = new Form2();
             formDois.Tabuleiro();
-            formDois.Show();
+            formDois.Show();*/
+            criarInterfaceTabuleiro();
+
         }
 
         //Método de verificar vez.
@@ -425,5 +428,60 @@ namespace Cartagena
                 }
             }
         }
+
+        // Parte interface abaixo
+
+        public void criarInterfaceTabuleiro()
+        {
+            int positionX = 320;
+            int positionY = 12;
+            int row = 0;
+            bool inverteRow = false;
+
+            for (int i = 0; i < 38; i++)
+            {
+                var picBox = new PictureBox();
+
+                if (i == 0 || i == 37) { picBox.BackColor = Color.Black; }
+                if (i >= 1 && i <= 6) { picBox.Image = Image.FromFile(@"../../res/chave.png"); }
+                if (i >= 7 && i <= 12) { picBox.Image = Image.FromFile(@"../../res/esqueleto.png"); }
+                if (i >= 13 && i <= 18) { picBox.Image = Image.FromFile(@"../../res/faca.png"); }
+                if (i >= 19 && i <= 24) { picBox.Image = Image.FromFile(@"../../res/garrafa.png"); }
+                if (i >= 25 && i <= 30) { picBox.Image = Image.FromFile(@"../../res/pistola.png"); }
+                if (i >= 31 && i <= 36) { picBox.Image = Image.FromFile(@"../../res/tricornio.png"); }
+
+                if (row == 6 )
+                {
+                    positionY = positionY + 60;
+                    positionX = 320;
+                    row = 0;
+                    //if (!inverteRow) { inverteRow = true; }
+                    //if (inverteRow) { inverteRow = false; }
+                }
+                if (row < 6 && !inverteRow)
+                {
+                    picBox.Location = new Point(positionX, positionY);
+                    if (row < 6) { positionX = positionX + 60; }
+                    row++;
+                }
+                /*if(row < 6 && inverteRow)
+                {
+                    picBox.Location = new Point(positionX-60, positionY);
+                    if (row < 6) { positionX = positionX - 60; }
+                    row++;
+                }*/
+
+                picBox.Name = "casa"+i;
+                picBox.Height = 100;
+                picBox.Width = 50;
+                //picBox.TabIndex = 98;
+                picBox.TabStop = false;
+
+                casaTabuleiro[i] = picBox;
+                this.Controls.Add(picBox);
+
+            }
+        }
+
     }
 }

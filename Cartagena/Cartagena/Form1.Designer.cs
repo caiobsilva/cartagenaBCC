@@ -59,11 +59,9 @@
             this.btnPular = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnVerificarVez = new System.Windows.Forms.Button();
-            this.pcbTabuleiro = new System.Windows.Forms.PictureBox();
             this.btnIniciarKuriso = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
             this.timerVerificarVez = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -330,15 +328,6 @@
             this.btnVerificarVez.UseVisualStyleBackColor = true;
             this.btnVerificarVez.Click += new System.EventHandler(this.btnVerificarVez_Click);
             // 
-            // pcbTabuleiro
-            // 
-            this.pcbTabuleiro.Image = ((System.Drawing.Image)(resources.GetObject("pcbTabuleiro.Image")));
-            this.pcbTabuleiro.Location = new System.Drawing.Point(344, 12);
-            this.pcbTabuleiro.Name = "pcbTabuleiro";
-            this.pcbTabuleiro.Size = new System.Drawing.Size(501, 286);
-            this.pcbTabuleiro.TabIndex = 35;
-            this.pcbTabuleiro.TabStop = false;
-            // 
             // btnIniciarKuriso
             // 
             this.btnIniciarKuriso.Location = new System.Drawing.Point(796, 351);
@@ -365,13 +354,11 @@
             // 
             // Cartagena
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(873, 461);
+            this.ClientSize = new System.Drawing.Size(874, 461);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnIniciarKuriso);
-            this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPular);
@@ -403,12 +390,12 @@
             this.Controls.Add(this.txtJogadorID);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(543, 465);
+            this.MaximumSize = new System.Drawing.Size(890, 500);
+            this.MinimumSize = new System.Drawing.Size(890, 500);
             this.Name = "Cartagena";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Kurisu-Varsóvia";
             this.TransparencyKey = System.Drawing.Color.DimGray;
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,7 +432,6 @@
         private System.Windows.Forms.Button btnPular;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnVerificarVez;
-        private System.Windows.Forms.PictureBox pcbTabuleiro;
         private System.Windows.Forms.Button btnIniciarKuriso;
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Timer timerVerificarVez;

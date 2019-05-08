@@ -127,7 +127,6 @@ C:/Users/mathe/CODE/Projeto Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debu
 C:/Users/mathe/CODE/Projeto Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.csproj.CopyComplete
 C:/Users/mathe/CODE/Projeto Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.exe
 C:/Users/mathe/CODE/Projeto Integrador/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.pdb
->>>>>>> 1958d30559122aadd05bdff566c57c1348e6822b
 /home/lucas/Documents/cartagenaBCC/Cartagena/Cartagena/obj/Debug/Cartagena.Cartagena.resources
 /home/lucas/Documents/cartagenaBCC/Cartagena/Cartagena/bin/Debug/CartagenaServer.dll
 C:\Users\mathe\CODE\PI-Interface\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config

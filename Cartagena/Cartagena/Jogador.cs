@@ -121,46 +121,19 @@ namespace Cartagena
             Pirata pirata = piratas[jogada.indexPirata];
             string carta = jogada.carta;
             
-            int localNovo, localAntigo = pirata.local;
             cartas.Remove(carta);
 
             // Joga o pirata
-            Cartagena.LidarErros(Jogo.Jogar(id, senha, localAntigo, carta));
+            Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local, carta));
             
-            // Acha o novo local do pirata
-            for (localNovo = localAntigo; localNovo < tabuleiro.Posicoes.Length - 1; localNovo++)
-            {
-                if (carta == tabuleiro.Posicoes[localNovo].tipo &&
-                    tabuleiro.Posicoes[localNovo].piratas.Count == 0) break;
-            }
-
-            // Remove o pirata do lugar antigo e coloca no novo.
-            tabuleiro.Posicoes[localAntigo].piratas.Remove(pirata);
-            pirata.local = localNovo;
-            tabuleiro.Posicoes[localNovo].piratas.Add(pirata);
-
         }
 
         public void voltarPirata(Jogada jogada, Tabuleiro tabuleiro)
         {
+
             Pirata pirata = piratas[jogada.indexPirata];
-            int localAntigo = pirata.local, localNovo;
 
-
-            for (int i = localAntigo - 1; i > 0; i--)
-            {
-                if (tabuleiro.Posicoes[i].numeroPiratas() > 0 &&
-                    tabuleiro.Posicoes[i].numeroPiratas() < 3)
-                {
-                    localNovo = i;
-                    Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local));
-
-                    tabuleiro.Posicoes[localAntigo].piratas.Remove(pirata);
-                    pirata.local = localNovo;
-                    tabuleiro.Posicoes[localNovo].piratas.Add(pirata);
-                    break;
-                }
-            }
+            Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local));
 
         }
 
@@ -265,6 +238,26 @@ namespace Cartagena
             foreach (Jogada jogada in jogadasPossiveis)
             {
                 jogada.pontuacao += r.Next(0, 10);
+                if(jogada.carta == "pular") { continue; }
+
+                Pirata pirata = jogada.pirata;
+                Tabuleiro tabuleiro = jogada.tabuleiro;
+
+                if (tabuleiro.Posicoes[pirata.local].numeroPiratas() > 2)
+                {
+                    jogada.pontuacao += 5;
+                }
+
+                if (pirata.local == 37)
+                {
+                    jogada.pontuacao += 10;
+                }
+
+                if (cartas.Count > 5 && jogada.carta == "voltar")
+                {
+                    jogada.pontuacao = 0;
+                }
+
             }
         }
 
@@ -280,5 +273,23 @@ namespace Cartagena
             return filaPrioridades;
 
         }
+        
+        public override string ToString()
+        {
+            string toString;
+            toString = _nome + " (" + _cor + ")" + ": ";
+            foreach (Pirata pirata in piratas)
+            {
+                toString += pirata.local.ToString() + " ";
+            }
+            toString += " | Cartas: ";
+            foreach (string carta in cartas)
+            {
+                toString += carta + " ";
+            }
+
+            return toString;
+        }
+        
     }
 }

@@ -44,7 +44,7 @@ namespace Cartagena
             
             for (local -= 1 ; local > 0 ; local--)
             {
-                if (Posicoes[local].numeroPiratas() > 0)
+                if (Posicoes[local].numeroPiratas() > 0 && Posicoes[local].numeroPiratas() < 3)
                 {
                     existem = true;
                     break;

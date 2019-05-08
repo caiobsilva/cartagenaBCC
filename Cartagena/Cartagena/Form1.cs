@@ -343,6 +343,19 @@ namespace Cartagena
             // Função para atualizar os dados em todas as jogadas
             partidaAtiva.atualizarDados(dados);
             
+            // Printando o tabuleiro
+            Console.WriteLine(partidaAtiva.tabuleiro.ToString());
+            // Printando todos os piratas da Kuriso
+            Console.WriteLine(partidaAtiva.Kurisu.ToString());
+            // Printando todos os piratas dos inimigos
+            if (partidaAtiva.inimigos.Count > 0)
+            {
+                foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                {
+                    Console.WriteLine(inimigo.ToString());
+                }
+            }
+            
             // Verifica se é nossa vez
             if (idJogador != partidaAtiva.Kurisu.id)
             {
@@ -357,10 +370,7 @@ namespace Cartagena
                 return;
             }
 
-            timerVerificarVez.Enabled = false;
-            
             Jogar();
-
         }
 
         void Jogar()
@@ -368,52 +378,31 @@ namespace Cartagena
             
             // avisa que estamos jogando
             lsbLog.Items.Clear();
-            lsbLog.Items.Add("Nossa vez!");
+            lsbLog.Items.Add("Nossa vez!\n");
             foreach (string carta in partidaAtiva.Kurisu.cartas)
             {
                 lsbLog.Items.Add(carta);
             }
             
-            for (int i = 0; i < 3; i++)
+
+            // prioridades = partidaAtiva.gerarPrioridades();
+            Jogada jogada = partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
+
+            if (jogada.carta == "pular")
             {
-
-                // prioridades = partidaAtiva.gerarPrioridades();
-                Jogada jogada = partidaAtiva.Kurisu.avaliarConsequências(partidaAtiva.tabuleiro);
-
-                if (jogada.carta == "pular")
-                {
-                    partidaAtiva.Kurisu.pularJogada();
-                }
-                else if (jogada.carta == "volta")
-                {
-                    partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
-                }
-                else
-                {
-                    partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
-                }
-
-                // função para atualizar as cartas
-                partidaAtiva.Kurisu.atualizarCartas();
-
-                
-                // Printando o tabuleiro
-                Console.WriteLine(partidaAtiva.tabuleiro.ToString());
-                // Printando todos os piratas da Kuriso
-                Console.WriteLine(partidaAtiva.Kurisu.ToString());
-                // Printando todos os piratas dos inimigos
-                if (partidaAtiva.inimigos.Count > 0)
-                {
-                    foreach (Inimigo inimigo in partidaAtiva.inimigos)
-                    {
-                        Console.WriteLine(inimigo.ToString());
-                    }
-                }
-
+                partidaAtiva.Kurisu.pularJogada();
+            }
+            else if (jogada.carta == "volta")
+            {
+                partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
+            }
+            else
+            {
+                partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
             }
 
-            timerVerificarVez.Enabled = true;
-            
+            // função para atualizar as cartas
+            partidaAtiva.Kurisu.atualizarCartas();
         }
 
         public static bool LidarErros(string erro)

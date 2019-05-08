@@ -142,3 +142,14 @@ C:\Users\mathe\CODE\PI-Interface\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cart
 C:\Users\mathe\CODE\PI-Interface\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
 C:\Users\mathe\CODE\PI-Interface\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 C:\Users\mathe\CODE\PI-Interface\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojResolveAssemblyReference.cache
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.Cache
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\matheus.esantos\TemPi\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

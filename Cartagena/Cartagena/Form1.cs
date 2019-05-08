@@ -431,6 +431,8 @@ namespace Cartagena
 
         // Parte interface abaixo
 
+        // Cria o vetor de pictureBoxes, de acordo com o tabuleiro.
+        //Funciona somente quando há um partida instanciada!
         public void criarInterfaceTabuleiro()
         {
             int positionX = 320;
@@ -442,13 +444,33 @@ namespace Cartagena
             {
                 var picBox = new PictureBox();
 
-                if (i == 0 || i == 37) { picBox.BackColor = Color.Black; }
-                if (i >= 1 && i <= 6) { picBox.BackgroundImage = Image.FromFile(@"../../res/chave.png"); }
-                if (i >= 7 && i <= 12) { picBox.BackgroundImage = Image.FromFile(@"../../res/esqueleto.png"); }
-                if (i >= 13 && i <= 18) { picBox.BackgroundImage = Image.FromFile(@"../../res/faca.png"); }
-                if (i >= 19 && i <= 24) { picBox.BackgroundImage = Image.FromFile(@"../../res/garrafa.png"); }
-                if (i >= 25 && i <= 30) { picBox.BackgroundImage = Image.FromFile(@"../../res/pistola.png"); }
-                if (i >= 31 && i <= 36) { picBox.BackgroundImage = Image.FromFile(@"../../res/tricornio.png"); }
+                switch (partidaAtiva.tabuleiro.Posicoes[i].tipo)
+                {
+                    case "C":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/chave.png");
+                        break;
+                    case "E":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
+                        break;
+                    case "F":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/faca.png");
+                        break;
+                    case "G":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
+                        break;
+                    case "P":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/pistola.png");
+                        break;
+                    case "T":
+                        picBox.BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
+                        break;
+                    case "Prisão":
+                        picBox.BackColor = Color.Black;
+                        break;
+                    case "Barco":
+                        picBox.BackColor = Color.Black;
+                        break;
+                }
 
                 if (row == 6 )
                 {

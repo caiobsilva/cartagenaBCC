@@ -443,20 +443,19 @@ namespace Cartagena
                 var picBox = new PictureBox();
 
                 if (i == 0 || i == 37) { picBox.BackColor = Color.Black; }
-                if (i >= 1 && i <= 6) { picBox.Image = Image.FromFile(@"../../res/chave.png"); }
-                if (i >= 7 && i <= 12) { picBox.Image = Image.FromFile(@"../../res/esqueleto.png"); }
-                if (i >= 13 && i <= 18) { picBox.Image = Image.FromFile(@"../../res/faca.png"); }
-                if (i >= 19 && i <= 24) { picBox.Image = Image.FromFile(@"../../res/garrafa.png"); }
-                if (i >= 25 && i <= 30) { picBox.Image = Image.FromFile(@"../../res/pistola.png"); }
-                if (i >= 31 && i <= 36) { picBox.Image = Image.FromFile(@"../../res/tricornio.png"); }
+                if (i >= 1 && i <= 6) { picBox.BackgroundImage = Image.FromFile(@"../../res/chave.png"); }
+                if (i >= 7 && i <= 12) { picBox.BackgroundImage = Image.FromFile(@"../../res/esqueleto.png"); }
+                if (i >= 13 && i <= 18) { picBox.BackgroundImage = Image.FromFile(@"../../res/faca.png"); }
+                if (i >= 19 && i <= 24) { picBox.BackgroundImage = Image.FromFile(@"../../res/garrafa.png"); }
+                if (i >= 25 && i <= 30) { picBox.BackgroundImage = Image.FromFile(@"../../res/pistola.png"); }
+                if (i >= 31 && i <= 36) { picBox.BackgroundImage = Image.FromFile(@"../../res/tricornio.png"); }
 
                 if (row == 6 )
                 {
+                    if (inverteRow==false) { inverteRow = true; positionX = 620; }
+                    else if (inverteRow==true) { inverteRow = false; positionX = 320; }
                     positionY = positionY + 60;
-                    positionX = 320;
                     row = 0;
-                    //if (!inverteRow) { inverteRow = true; }
-                    //if (inverteRow) { inverteRow = false; }
                 }
                 if (row < 6 && !inverteRow)
                 {
@@ -464,16 +463,16 @@ namespace Cartagena
                     if (row < 6) { positionX = positionX + 60; }
                     row++;
                 }
-                /*if(row < 6 && inverteRow)
+                if(row < 6 && inverteRow)
                 {
-                    picBox.Location = new Point(positionX-60, positionY);
+                    picBox.Location = new Point(positionX, positionY);
                     if (row < 6) { positionX = positionX - 60; }
                     row++;
-                }*/
+                }
 
                 picBox.Name = "casa"+i;
-                picBox.Height = 100;
-                picBox.Width = 50;
+                picBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                picBox.Size = new Size(50, 50);
                 //picBox.TabIndex = 98;
                 picBox.TabStop = false;
 

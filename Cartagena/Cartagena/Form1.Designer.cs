@@ -211,14 +211,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(406, 301);
+            this.label1.Location = new System.Drawing.Point(775, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 17;
             // 
             // btnCartasListar
             // 
-            this.btnCartasListar.Location = new System.Drawing.Point(429, 360);
+            this.btnCartasListar.Location = new System.Drawing.Point(798, 113);
             this.btnCartasListar.Name = "btnCartasListar";
             this.btnCartasListar.Size = new System.Drawing.Size(66, 54);
             this.btnCartasListar.TabIndex = 18;
@@ -238,7 +238,7 @@
             // 
             // btnAndar
             // 
-            this.btnAndar.Location = new System.Drawing.Point(632, 322);
+            this.btnAndar.Location = new System.Drawing.Point(713, 311);
             this.btnAndar.Name = "btnAndar";
             this.btnAndar.Size = new System.Drawing.Size(82, 55);
             this.btnAndar.TabIndex = 20;
@@ -257,7 +257,7 @@
             "Garrafa",
             "Pistola",
             "Tricórnio"});
-            this.cboCartas.Location = new System.Drawing.Point(517, 393);
+            this.cboCartas.Location = new System.Drawing.Point(735, 271);
             this.cboCartas.Name = "cboCartas";
             this.cboCartas.Size = new System.Drawing.Size(100, 21);
             this.cboCartas.TabIndex = 21;
@@ -265,7 +265,7 @@
             // lblCartas
             // 
             this.lblCartas.AutoSize = true;
-            this.lblCartas.Location = new System.Drawing.Point(514, 377);
+            this.lblCartas.Location = new System.Drawing.Point(732, 255);
             this.lblCartas.Name = "lblCartas";
             this.lblCartas.Size = new System.Drawing.Size(32, 13);
             this.lblCartas.TabIndex = 22;
@@ -274,7 +274,7 @@
             // lblPosicao
             // 
             this.lblPosicao.AutoSize = true;
-            this.lblPosicao.Location = new System.Drawing.Point(514, 322);
+            this.lblPosicao.Location = new System.Drawing.Point(732, 200);
             this.lblPosicao.Name = "lblPosicao";
             this.lblPosicao.Size = new System.Drawing.Size(45, 13);
             this.lblPosicao.TabIndex = 23;
@@ -282,7 +282,7 @@
             // 
             // txtPirataPosicao
             // 
-            this.txtPirataPosicao.Location = new System.Drawing.Point(517, 338);
+            this.txtPirataPosicao.Location = new System.Drawing.Point(735, 216);
             this.txtPirataPosicao.Name = "txtPirataPosicao";
             this.txtPirataPosicao.Size = new System.Drawing.Size(100, 20);
             this.txtPirataPosicao.TabIndex = 24;
@@ -290,7 +290,7 @@
             // btnMostrarTabuleiro
             // 
             this.btnMostrarTabuleiro.AllowDrop = true;
-            this.btnMostrarTabuleiro.Location = new System.Drawing.Point(344, 360);
+            this.btnMostrarTabuleiro.Location = new System.Drawing.Point(713, 113);
             this.btnMostrarTabuleiro.Name = "btnMostrarTabuleiro";
             this.btnMostrarTabuleiro.Size = new System.Drawing.Size(79, 54);
             this.btnMostrarTabuleiro.TabIndex = 28;
@@ -300,7 +300,7 @@
             // 
             // btnPular
             // 
-            this.btnPular.Location = new System.Drawing.Point(632, 383);
+            this.btnPular.Location = new System.Drawing.Point(713, 372);
             this.btnPular.Name = "btnPular";
             this.btnPular.Size = new System.Drawing.Size(145, 31);
             this.btnPular.TabIndex = 32;
@@ -310,7 +310,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(720, 322);
+            this.btnVoltar.Location = new System.Drawing.Point(801, 311);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(57, 55);
             this.btnVoltar.TabIndex = 33;
@@ -320,7 +320,7 @@
             // 
             // btnVerificarVez
             // 
-            this.btnVerificarVez.Location = new System.Drawing.Point(344, 322);
+            this.btnVerificarVez.Location = new System.Drawing.Point(713, 75);
             this.btnVerificarVez.Name = "btnVerificarVez";
             this.btnVerificarVez.Size = new System.Drawing.Size(151, 32);
             this.btnVerificarVez.TabIndex = 34;
@@ -330,7 +330,7 @@
             // 
             // btnIniciarKuriso
             // 
-            this.btnIniciarKuriso.Location = new System.Drawing.Point(796, 351);
+            this.btnIniciarKuriso.Location = new System.Drawing.Point(758, 12);
             this.btnIniciarKuriso.Name = "btnIniciarKuriso";
             this.btnIniciarKuriso.Size = new System.Drawing.Size(57, 39);
             this.btnIniciarKuriso.TabIndex = 36;

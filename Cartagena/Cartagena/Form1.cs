@@ -106,6 +106,9 @@ namespace Cartagena
             if (txtJogadorID.Text == "" || txtJogadorSenha.Text == "") { return; }
             
             LidarErros(Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text));
+            
+            MessageBox.Show("Partida iniciada!");
+
         }
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
@@ -285,21 +288,24 @@ namespace Cartagena
         }
 
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
-        {   
+        {
+            if (txtPartidaID.Text != "" && LidarErros(Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text))))
+            {
+                // Iniciar todas as variaveis aqui
+                partidaAtiva = new Partida(
+                    Convert.ToInt32(txtPartidaID.Text), // ID partida
+                    txtPartidaNome.Text, // Nome da partida
+                    txtPartidaSenha.Text, // Senha da partida
+                    Convert.ToInt32(txtJogadorID.Text), // ID jogador
+                    txtJogadorNome.Text, // Nome do jogador
+                    txtJogadorSenha.Text // Senha do jogador
+                );
+                // Iniciando timer
+                timerVerificarVez.Enabled = true;
+                
+                Console.WriteLine("\nKurisu iniciada.\n");
+            }
             
-            // Iniciar todas as variaveis aqui
-            partidaAtiva = new Partida(
-                Convert.ToInt32(txtPartidaID.Text), // ID partida
-                txtPartidaNome.Text, // Nome da partida
-                txtPartidaSenha.Text, // Senha da partida
-                Convert.ToInt32(txtJogadorID.Text), // ID jogador
-                txtJogadorNome.Text, // Nome do jogador
-                txtJogadorSenha.Text // Senha do jogador
-            );
-            // Iniciando timer
-            timerVerificarVez.Enabled = true;
-            
-            Console.WriteLine("\nKurisu iniciada.\n");
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -396,7 +402,7 @@ namespace Cartagena
             {
                 partidaAtiva.Kurisu.pularJogada();
             }
-            else if (jogada.carta == "volta")
+            else if (jogada.carta == "voltar")
             {
                 partidaAtiva.Kurisu.voltarPirata(jogada);
             }

@@ -256,9 +256,9 @@ namespace Cartagena
                     jogada.pontuacao += 7;
                 }
                 
-                if (piratas[jogada.indexPirata].local < 10)
+                if (piratas[jogada.indexPirata].local < 10 && jogada.carta != "voltar")
                 {
-                    jogada.pontuacao += 3;
+                    jogada.pontuacao += 7;
                 }
 
                 if (pirata.local - piratas[jogada.indexPirata].local > diferenca)

@@ -253,7 +253,7 @@ namespace Cartagena
                     jogada.pontuacao += 10;
                 }
 
-                if (cartas.Count > 5 && jogada.carta == "voltar")
+                if (cartas.Count > 5 && jogada.carta == "volta")
                 {
                     jogada.pontuacao = 0;
                 }

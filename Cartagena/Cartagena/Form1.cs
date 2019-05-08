@@ -240,8 +240,9 @@ namespace Cartagena
             int jogadorID = Convert.ToInt32(txtJogadorID.Text);
             string jogadorSenha = txtJogadorSenha.Text;
 
-            Jogo.Jogar(jogadorID, jogadorSenha);
-
+            string pular = Jogo.Jogar(jogadorID, jogadorSenha);
+            LidarErros(pular);
+            Console.WriteLine(pular);
             lsbLog.Items.Add("Jogada pulada!");
         }
 
@@ -320,6 +321,7 @@ namespace Cartagena
             //Verifica se a partida acabou
             if (dadosVerificarVez[0] == "E")
             {
+
                 string nomeVencedor = partidaAtiva.Kurisu.nome;
 
                 timerVerificarVez.Enabled = false;
@@ -330,9 +332,10 @@ namespace Cartagena
                     foreach (Inimigo inimigo in partidaAtiva.inimigos)
                     {
                         if (idJogador == inimigo.id)
+                        {
                             nomeVencedor = inimigo.nome;
+                        }
                     }
-
                 }
 
                 lsbLog.Items.Add("Jogador Vencedor: " + nomeVencedor);
@@ -371,6 +374,7 @@ namespace Cartagena
             }
 
             Jogar();
+            
         }
 
         void Jogar()
@@ -394,11 +398,11 @@ namespace Cartagena
             }
             else if (jogada.carta == "volta")
             {
-                partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
+                partidaAtiva.Kurisu.voltarPirata(jogada);
             }
             else
             {
-                partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
+                partidaAtiva.Kurisu.jogar(jogada);
             }
 
             // função para atualizar as cartas
@@ -407,7 +411,7 @@ namespace Cartagena
 
         public static bool LidarErros(string erro)
         {
-            if (!erro.Contains("ERRO:")) { return true; }
+            if (!erro.Contains("ERRO:") && !erro.Contains("Erro:")) { return true; }
 
             MessageBox.Show(erro);
             return false;

@@ -116,29 +116,33 @@ namespace Cartagena
 
         }
 
-        public void jogar(Jogada jogada, Tabuleiro tabuleiro)
+        public void jogar(Jogada jogada)
         {
             Pirata pirata = piratas[jogada.indexPirata];
             string carta = jogada.carta;
             
             cartas.Remove(carta);
 
+            
             // Joga o pirata
             Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local, carta));
+            Console.WriteLine("Carta: "+ carta + " | Pirata foi para frente! | Pirata: " + pirata.ToString());
             
         }
 
-        public void voltarPirata(Jogada jogada, Tabuleiro tabuleiro)
+        public void voltarPirata(Jogada jogada)
         {
 
             Pirata pirata = piratas[jogada.indexPirata];
 
+            Console.WriteLine("Pirata voltou!");
             Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local));
 
         }
 
         public void pularJogada()
         {
+            Console.WriteLine("Jogada pulada!");
             Cartagena.LidarErros(Jogo.Jogar(id, senha));
         }
 
@@ -233,19 +237,50 @@ namespace Cartagena
             return jogadas;
         }
     
-        private void avaliarJogada(List<Jogada> jogadasPossiveis){
-            Random r = new Random();
+        private void avaliarJogada(List<Jogada> jogadasPossiveis)
+        {
+
+            Jogada maiorPosicao = jogadasPossiveis[0];
+            int diferenca = 0;
+            
             foreach (Jogada jogada in jogadasPossiveis)
             {
-                jogada.pontuacao += r.Next(0, 10);
                 if(jogada.carta == "pular") { continue; }
+                if (cartas.Count > 5 && jogada.carta == "voltar") { continue; }
 
                 Pirata pirata = jogada.pirata;
                 Tabuleiro tabuleiro = jogada.tabuleiro;
-
-                if (tabuleiro.Posicoes[pirata.local].numeroPiratas() > 2)
+                
+                if (piratas[jogada.indexPirata].local == 0)
                 {
-                    jogada.pontuacao += 5;
+                    jogada.pontuacao += 7;
+                }
+                
+                if (piratas[jogada.indexPirata].local < 10)
+                {
+                    jogada.pontuacao += 3;
+                }
+
+                if (pirata.local - piratas[jogada.indexPirata].local > diferenca)
+                {
+                    maiorPosicao = jogada;
+                }
+
+                if (tabuleiro.Posicoes[pirata.local].numeroPiratas() > 2 && cartas.Count < 3)
+                {
+                    jogada.pontuacao += 8;
+                }
+
+                if (tabuleiro.Posicoes[pirata.local].numeroPiratas() == 2)
+                {
+                    if (cartas.Count < 2)
+                    {
+                        jogada.pontuacao += 7;
+                    }
+                    else
+                    {
+                        jogada.pontuacao += 4;
+                    }
                 }
 
                 if (pirata.local == 37)
@@ -253,12 +288,16 @@ namespace Cartagena
                     jogada.pontuacao += 10;
                 }
 
-                if (cartas.Count > 5 && jogada.carta == "voltar")
+                if (cartas.Count == 1 && jogada.carta == "voltar")
                 {
-                    jogada.pontuacao = 0;
+                    jogada.pontuacao += 4;
                 }
-
+                
+                
             }
+
+            maiorPosicao.pontuacao += 6;
+
         }
 
         //Adiciona e ordena as jogadas na Fila de Prioridade.

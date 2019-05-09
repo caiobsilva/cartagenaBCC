@@ -1,7 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using CartagenaServer;
-
 namespace Cartagena
 {
     public class Jogador
@@ -41,6 +47,58 @@ namespace Cartagena
             }
 
             return piratasNaPosicao;
+        }
+
+        public void desenharKurisu(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Pen pen;
+            Console.WriteLine("entrou");
+
+            switch (cor){
+                case "Vermelho":
+                    pen = new Pen(Brushes.IndianRed);
+                    pen.Width = 8.0F;
+                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    break;
+                case "Verde":
+                    pen = new Pen(Brushes.MediumSeaGreen);
+                    pen.Width = 8.0F;
+                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    break;
+                case "Amarelo":
+                    pen = new Pen(Brushes.LightGoldenrodYellow);
+                    pen.Width = 8.0F;
+                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    break;
+                case "Azul":
+                    pen = new Pen(Brushes.AliceBlue);
+                    pen.Width = 8.0F;
+                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    break;
+                case "Marrom":
+                    pen = new Pen(Brushes.RosyBrown);
+                    pen.Width = 8.0F;
+                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    break;
+            }
+        }
+
+        public void desenharPiratas(Tabuleiro tabuleiro, PictureBox[] casaTabuleiro)
+        {
+            foreach (Posicao posicao in tabuleiro.Posicoes)
+            {
+                foreach (Pirata pi in posicao.piratas)
+                {
+                    Console.WriteLine("entrou piratas");
+
+                    Graphics g = casaTabuleiro[pi.local].CreateGraphics();
+                    casaTabuleiro[pi.local].Paint += new System.Windows.Forms.PaintEventHandler(this.desenharKurisu);
+                    // draw pixel
+                }
+
+            }
+
         }
 
         public override string ToString()
@@ -276,18 +334,6 @@ namespace Cartagena
 
             return filaPrioridades;
 
-        }
-
-        public int[] piratasInterface()
-        {
-            int[] posicaoPirata = new int[6];
-            int i = 0;
-            foreach (Pirata pirata in piratas)
-            {
-                posicaoPirata[i] = pirata.local;
-                i++;
-            }
-            return posicaoPirata;
         }
     }
 }

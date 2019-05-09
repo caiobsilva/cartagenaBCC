@@ -240,8 +240,6 @@ namespace Cartagena
             /*Form2 formDois = new Form2();
             formDois.Tabuleiro();
             formDois.Show();*/
-            criarInterfaceTabuleiro();
-            desenharPiratas();
 
         }
 
@@ -272,8 +270,9 @@ namespace Cartagena
                 txtJogadorNome.Text, // Nome do jogador
                 txtJogadorSenha.Text // Senha do jogador
             );
-            // Iniciando timer
-            timerVerificarVez.Enabled = true;
+            criarInterfaceTabuleiro(); // Cria interface grafica do tabuleiro
+            
+            timerVerificarVez.Enabled = true; // Iniciando timer
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -314,7 +313,14 @@ namespace Cartagena
                 return;
             }
 
-            
+            // LIMPAR
+
+            partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+            foreach (Inimigo i in partidaAtiva.inimigos)
+            {
+                i.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+            }
+
             // Função para atualizar os dados em todas as jogadas
             partidaAtiva.atualizarDados(dados);
             
@@ -443,33 +449,33 @@ namespace Cartagena
 
             for (int i = 0; i < 38; i++)
             {
-                var picBox = new PictureBox();
-
+                //PictureBox picBox = new PictureBox();
+                casaTabuleiro[i] = new PictureBox();
                 switch (partidaAtiva.tabuleiro.Posicoes[i].tipo)
                 {
                     case "C":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/chave.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/chave.png");
                         break;
                     case "E":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
                         break;
                     case "F":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/faca.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/faca.png");
                         break;
                     case "G":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
                         break;
                     case "P":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/pistola.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/pistola.png");
                         break;
                     case "T":
-                        picBox.BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
                         break;
                     case "Prisão":
-                        picBox.BackColor = Color.Black;
+                        casaTabuleiro[i].BackColor = Color.Black;
                         break;
                     case "Barco":
-                        picBox.BackColor = Color.Black;
+                        casaTabuleiro[i].BackColor = Color.Black;
                         break;
                 }
 
@@ -482,50 +488,27 @@ namespace Cartagena
                 }
                 if (row < 6 && !inverteRow)
                 {
-                    picBox.Location = new Point(positionX, positionY);
+                    casaTabuleiro[i].Location = new Point(positionX, positionY);
                     if (row < 6) { positionX = positionX + 60; }
                     row++;
                 }
                 if(row < 6 && inverteRow)
                 {
-                    picBox.Location = new Point(positionX, positionY);
+                    casaTabuleiro[i].Location = new Point(positionX, positionY);
                     if (row < 6) { positionX = positionX - 60; }
                     row++;
                 }
 
-                picBox.Name = "casa"+i;
-                picBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                picBox.Size = new Size(50, 50);
+                casaTabuleiro[i].Name = "casa"+i;
+                casaTabuleiro[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                casaTabuleiro[i].Size = new Size(50, 50);
                 //picBox.TabIndex = 98;
-                picBox.TabStop = false;
-
-                casaTabuleiro[i] = picBox;
-                this.Controls.Add(picBox);
+                casaTabuleiro[i].TabStop = false;
 
             }
+                this.Controls.AddRange(casaTabuleiro);
         }
 
-        public void desenhar(Graphics g, string identificador)
-        {
-            if (identificador == "kurisu")
-            {
-                Brush pincel = Brushes.BlueViolet;
-                Pen pen = new Pen(Color.OrangeRed, 2);
-                g.DrawRectangle(pen, 0,0,10,10);
-                g.DrawString("kurisu", Font, pincel, 0, 0);
-            }
-        }
-
-        public void desenharPiratas() //O problema esta em acessar o vetor de pictureBoxes.
-        {
-            casaTabuleiro[1].BackColor = Color.Black;
-            int[] piratasKurisu = new int[6];
-            piratasKurisu = partidaAtiva.Kurisu.piratasInterface(); // Esta recebendo a posicao!
-            for(int j = 0; j < 6; j++)
-            {
-            Graphics g = casaTabuleiro[piratasKurisu[j]].CreateGraphics();
-            desenhar(g, "kurisu");
-            }
-        }
+        
     }
 }

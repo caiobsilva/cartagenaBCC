@@ -50,9 +50,9 @@ namespace Cartagena
                     break;
                 }
             }
-
             return existem;
         }
+
 
         public override string ToString()
         {
@@ -73,7 +73,7 @@ namespace Cartagena
 
         public Posicao(string tipo, Pirata[] piratasKuriso, List<Inimigo> inimigos)
         {
-            
+
             _tipo = tipo;
             piratas = new List<Pirata>();
             foreach (Pirata p in piratasKuriso)
@@ -85,22 +85,22 @@ namespace Cartagena
                 foreach (Pirata p in inimigo.piratas)
                 {
                     piratas.Add(p);
-                    
+
                 }
             }
-            
+
         }
-        
+
         public Posicao(string tipo, List<Pirata> piratas)
         {
-            
+
             _tipo = tipo;
             this.piratas = new List<Pirata>();
             foreach (Pirata p in piratas)
             {
                 this.piratas.Add(p.copiar());
             }
-            
+
         }
 
         public Posicao(string tipo)
@@ -116,18 +116,20 @@ namespace Cartagena
 
         public Posicao copiar()
         {
-            Posicao p = new Posicao(tipo,piratas);
+            Posicao p = new Posicao(tipo, piratas);
             return p;
         }
 
         public override string ToString()
         {
             string toString = "[" + tipo;
-            
+
             foreach (Pirata p in piratas)
             {
                 toString += " (" + p.cor + ") ";
             }
+
+            
 
             toString += "]";
             return toString;

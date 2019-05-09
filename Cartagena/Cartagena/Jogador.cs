@@ -243,7 +243,7 @@ namespace Cartagena
 
             Jogada maiorPosicao = jogadasPossiveis[0];
             int diferenca = 0, menor = 0, media = 0, index = 0, diferencaMenor = 38;
-            int indexMenor = 0;
+            int indexMenor = piratas.Length-1;
             Tabuleiro tab = jogadasPossiveis[0].tabuleiro;
             foreach (var p in piratas)
             {
@@ -254,14 +254,18 @@ namespace Cartagena
                     menor = index;
                 }
 
-                if (p.local - tab.posicaoPirataAnterior(p.local) <= diferencaMenor
-                    && p.local != 37)
-                {
-                    diferencaMenor = p.local - tab.posicaoPirataAnterior(p.local);
-                    indexMenor = index;
-                }
                 index++;
                 
+            }
+
+            for (int i = piratas.Length-1; i > 0 ; i--)
+            {
+                if (piratas[i].local != 37 && 
+                    piratas[i].local - tab.posicaoPirataAnterior(piratas[i].local) <= diferencaMenor )
+                {
+                    diferencaMenor = piratas[i].local - tab.posicaoPirataAnterior(piratas[i].local);
+                    indexMenor = i;
+                }
             }
             
             media /= 6;

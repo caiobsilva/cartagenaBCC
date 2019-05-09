@@ -116,29 +116,34 @@ namespace Cartagena
 
         }
 
-        public void jogar(Jogada jogada, Tabuleiro tabuleiro)
+        public void jogar(Jogada jogada)
         {
             Pirata pirata = piratas[jogada.indexPirata];
             string carta = jogada.carta;
             
             cartas.Remove(carta);
 
+            
             // Joga o pirata
+            //Console.WriteLine("Carta: "+ carta + " | Pirata foi para frente! | Pirata: " + pirata.ToString());
             Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local, carta));
+            
             
         }
 
-        public void voltarPirata(Jogada jogada, Tabuleiro tabuleiro)
+        public void voltarPirata(Jogada jogada)
         {
 
             Pirata pirata = piratas[jogada.indexPirata];
 
+            //Console.WriteLine("Pirata voltou!");
             Cartagena.LidarErros(Jogo.Jogar(id, senha, pirata.local));
 
         }
 
         public void pularJogada()
         {
+            Console.WriteLine("Jogada pulada!");
             Cartagena.LidarErros(Jogo.Jogar(id, senha));
         }
 
@@ -233,32 +238,108 @@ namespace Cartagena
             return jogadas;
         }
     
-        private void avaliarJogada(List<Jogada> jogadasPossiveis){
-            Random r = new Random();
+        private void avaliarJogada(List<Jogada> jogadasPossiveis)
+        {
+
+            Jogada maiorPosicao = jogadasPossiveis[0];
+            int diferenca = 0, menor = 0, media = 0, index = 0, diferencaMenor = 38;
+            int indexMenor = 0;
+            Tabuleiro tab = jogadasPossiveis[0].tabuleiro;
+            foreach (var p in piratas)
+            {
+                
+                media += p.local;
+                if(p.local < piratas[menor].local)
+                {
+                    menor = index;
+                }
+
+                if (p.local - tab.posicaoPirataAnterior(p.local) <= diferencaMenor
+                    && p.local != 37)
+                {
+                    diferencaMenor = p.local - tab.posicaoPirataAnterior(p.local);
+                    indexMenor = index;
+                }
+                index++;
+                
+            }
+            
+            media /= 6;
+            
             foreach (Jogada jogada in jogadasPossiveis)
             {
-                jogada.pontuacao += r.Next(0, 10);
                 if(jogada.carta == "pular") { continue; }
+                if (cartas.Count > 5 && jogada.carta == "voltar") { continue; }
 
                 Pirata pirata = jogada.pirata;
                 Tabuleiro tabuleiro = jogada.tabuleiro;
-
-                if (tabuleiro.Posicoes[pirata.local].numeroPiratas() > 2)
+                
+                if (piratas[jogada.indexPirata].local == 0)
                 {
-                    jogada.pontuacao += 5;
+                    jogada.pontuacao += 7;
                 }
 
-                if (pirata.local == 37)
+                if (pirata.local - piratas[jogada.indexPirata].local > diferenca)
                 {
-                    jogada.pontuacao += 10;
+                    maiorPosicao = jogada;
+                    diferenca = pirata.local - piratas[jogada.indexPirata].local;
                 }
 
-                if (cartas.Count > 5 && jogada.carta == "volta")
+                if (cartas.Count < 3 && jogada.carta == "voltar")
                 {
-                    jogada.pontuacao = 0;
+                    // Ganhando duas cartas                    
+                    if (tabuleiro.Posicoes[pirata.local].numeroPiratas() > 2)
+                    {
+                        jogada.pontuacao += 2;
+                    }
+
+                    if (piratas[jogada.indexPirata].local > media)
+                    {
+                        jogada.pontuacao += 2;
+                    }
+                    
+                    // Sem cartas                    
+                    if (cartas.Count == 0)
+                    {
+                        jogada.pontuacao += 3;
+                    }
+
+                    if (piratas[jogada.indexPirata].local == indexMenor)
+                    {
+                        jogada.pontuacao += 4;
+                    }
+                    
+                    jogada.pontuacao += 4;
+                    
                 }
 
+                if (jogada.carta != "voltar")
+                {
+                    if (jogada.indexPirata == menor)
+                    {
+                        jogada.pontuacao += 6;
+                    }
+                    
+                    if (piratas[jogada.indexPirata].local < media)
+                    {
+                        jogada.pontuacao += 6;
+                    }
+    
+                    if (piratas[jogada.indexPirata].local < 17)
+                    {
+                        jogada.pontuacao += 5;
+                    }
+                    
+                    if (pirata.local == 37)
+                    {
+                        jogada.pontuacao += 10;
+                    }
+                }
+                
             }
+
+            maiorPosicao.pontuacao += 6;
+
         }
 
         //Adiciona e ordena as jogadas na Fila de Prioridade.

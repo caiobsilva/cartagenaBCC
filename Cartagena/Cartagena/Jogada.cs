@@ -28,7 +28,7 @@ namespace Cartagena
         {
             _tabuleiro = new Tabuleiro(tabuleiro);
             _pirata = pirata.copiar();
-            _carta = "volta";
+            _carta = "voltar";
             _indexPirata = l;
             pontuacao = 0;
         }
@@ -42,7 +42,7 @@ namespace Cartagena
         
         public void simularJogada()
         {
-            if (carta == "volta")
+            if (carta == "voltar")
             {
                 int localAntigo = pirata.local, localNovo;
 

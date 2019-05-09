@@ -106,6 +106,9 @@ namespace Cartagena
             if (txtJogadorID.Text == "" || txtJogadorSenha.Text == "") { return; }
             
             LidarErros(Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text));
+            
+            MessageBox.Show("Partida iniciada!");
+
         }
 
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
@@ -240,8 +243,9 @@ namespace Cartagena
             int jogadorID = Convert.ToInt32(txtJogadorID.Text);
             string jogadorSenha = txtJogadorSenha.Text;
 
-            Jogo.Jogar(jogadorID, jogadorSenha);
-
+            string pular = Jogo.Jogar(jogadorID, jogadorSenha);
+            LidarErros(pular);
+            Console.WriteLine(pular);
             lsbLog.Items.Add("Jogada pulada!");
         }
 
@@ -284,21 +288,24 @@ namespace Cartagena
         }
 
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
-        {   
+        {
+            if (txtPartidaID.Text != "" && LidarErros(Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text))))
+            {
+                // Iniciar todas as variaveis aqui
+                partidaAtiva = new Partida(
+                    Convert.ToInt32(txtPartidaID.Text), // ID partida
+                    txtPartidaNome.Text, // Nome da partida
+                    txtPartidaSenha.Text, // Senha da partida
+                    Convert.ToInt32(txtJogadorID.Text), // ID jogador
+                    txtJogadorNome.Text, // Nome do jogador
+                    txtJogadorSenha.Text // Senha do jogador
+                );
+                // Iniciando timer
+                timerVerificarVez.Enabled = true;
+                
+                Console.WriteLine("\nKurisu iniciada.\n");
+            }
             
-            // Iniciar todas as variaveis aqui
-            partidaAtiva = new Partida(
-                Convert.ToInt32(txtPartidaID.Text), // ID partida
-                txtPartidaNome.Text, // Nome da partida
-                txtPartidaSenha.Text, // Senha da partida
-                Convert.ToInt32(txtJogadorID.Text), // ID jogador
-                txtJogadorNome.Text, // Nome do jogador
-                txtJogadorSenha.Text // Senha do jogador
-            );
-            // Iniciando timer
-            timerVerificarVez.Enabled = true;
-            
-            Console.WriteLine("\nKurisu iniciada.\n");
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -320,6 +327,7 @@ namespace Cartagena
             //Verifica se a partida acabou
             if (dadosVerificarVez[0] == "E")
             {
+
                 string nomeVencedor = partidaAtiva.Kurisu.nome;
 
                 timerVerificarVez.Enabled = false;
@@ -330,9 +338,10 @@ namespace Cartagena
                     foreach (Inimigo inimigo in partidaAtiva.inimigos)
                     {
                         if (idJogador == inimigo.id)
+                        {
                             nomeVencedor = inimigo.nome;
+                        }
                     }
-
                 }
 
                 lsbLog.Items.Add("Jogador Vencedor: " + nomeVencedor);
@@ -371,6 +380,7 @@ namespace Cartagena
             }
 
             Jogar();
+            
         }
 
         void Jogar()
@@ -392,13 +402,13 @@ namespace Cartagena
             {
                 partidaAtiva.Kurisu.pularJogada();
             }
-            else if (jogada.carta == "volta")
+            else if (jogada.carta == "voltar")
             {
-                partidaAtiva.Kurisu.voltarPirata(jogada, partidaAtiva.tabuleiro);
+                partidaAtiva.Kurisu.voltarPirata(jogada);
             }
             else
             {
-                partidaAtiva.Kurisu.jogar(jogada, partidaAtiva.tabuleiro);
+                partidaAtiva.Kurisu.jogar(jogada);
             }
 
             // função para atualizar as cartas
@@ -407,7 +417,7 @@ namespace Cartagena
 
         public static bool LidarErros(string erro)
         {
-            if (!erro.Contains("ERRO:")) { return true; }
+            if (!erro.Contains("ERRO:") && !erro.Contains("Erro:")) { return true; }
 
             MessageBox.Show(erro);
             return false;

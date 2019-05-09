@@ -49,7 +49,7 @@ namespace Cartagena
             return piratasNaPosicao;
         }
 
-        public void desenharKurisu(object sender, System.Windows.Forms.PaintEventArgs e)
+        public void desenharKurisu(object sender, System.Windows.Forms.PaintEventArgs e) 
         {
             Graphics g = e.Graphics;
             Pen pen;
@@ -57,27 +57,27 @@ namespace Cartagena
 
             switch (cor){
                 case "Vermelho":
-                    pen = new Pen(Brushes.IndianRed);
+                    pen = new Pen(Brushes.Red);
                     pen.Width = 8.0F;
                     g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
                     break;
                 case "Verde":
-                    pen = new Pen(Brushes.MediumSeaGreen);
+                    pen = new Pen(Brushes.Green);
                     pen.Width = 8.0F;
                     g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
                     break;
                 case "Amarelo":
-                    pen = new Pen(Brushes.LightGoldenrodYellow);
+                    pen = new Pen(Brushes.Yellow);
                     pen.Width = 8.0F;
                     g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
                     break;
                 case "Azul":
-                    pen = new Pen(Brushes.AliceBlue);
+                    pen = new Pen(Brushes.Blue);
                     pen.Width = 8.0F;
                     g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
                     break;
                 case "Marrom":
-                    pen = new Pen(Brushes.RosyBrown);
+                    pen = new Pen(Brushes.Brown);
                     pen.Width = 8.0F;
                     g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
                     break;
@@ -86,14 +86,17 @@ namespace Cartagena
 
         public void desenharPiratas(Tabuleiro tabuleiro, PictureBox[] casaTabuleiro)
         {
+            PictureBox[] posicaoTabuleiro = casaTabuleiro;
+
             foreach (Posicao posicao in tabuleiro.Posicoes)
             {
-                foreach (Pirata pi in posicao.piratas)
+                foreach (Pirata pirata in posicao.piratas)
                 {
                     Console.WriteLine("entrou piratas");
 
-                    Graphics g = casaTabuleiro[pi.local].CreateGraphics();
-                    casaTabuleiro[pi.local].Paint += new System.Windows.Forms.PaintEventHandler(this.desenharKurisu);
+                    posicaoTabuleiro[pirata.local].Invalidate();
+                    Graphics g = posicaoTabuleiro[pirata.local].CreateGraphics();
+                    posicaoTabuleiro[pirata.local].Paint += new System.Windows.Forms.PaintEventHandler(this.desenharKurisu);
                     // draw pixel
                 }
 

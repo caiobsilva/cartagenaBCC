@@ -315,6 +315,12 @@ namespace Cartagena
 
             // LIMPAR
 
+            for(int limpar = 0; limpar < casaTabuleiro.Length; limpar++)
+            {
+                Graphics g = casaTabuleiro[limpar].CreateGraphics();
+                g.Clear(Color.Transparent);
+            }
+
             partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
             foreach (Inimigo i in partidaAtiva.inimigos)
             {
@@ -454,22 +460,22 @@ namespace Cartagena
                 switch (partidaAtiva.tabuleiro.Posicoes[i].tipo)
                 {
                     case "C":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/chave.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/chave.png");
                         break;
                     case "E":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/esqueleto.png");
                         break;
                     case "F":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/faca.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/faca.png");
                         break;
                     case "G":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/garrafa.png");
                         break;
                     case "P":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/pistola.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/pistola.png");
                         break;
                     case "T":
-                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
+                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/tricornio.png");
                         break;
                     case "Prisão":
                         casaTabuleiro[i].BackColor = Color.Black;

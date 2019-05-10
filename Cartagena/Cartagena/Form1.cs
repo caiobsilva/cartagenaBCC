@@ -273,6 +273,7 @@ namespace Cartagena
             criarInterfaceTabuleiro(); // Cria interface grafica do tabuleiro
             
             timerVerificarVez.Enabled = true; // Iniciando timer
+            timerAtulizaInterface.Enabled = true; //Inicia o timer da interface grafica.
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -313,23 +314,11 @@ namespace Cartagena
                 return;
             }
 
-            // LIMPAR
-
-            for(int limpar = 0; limpar < casaTabuleiro.Length; limpar++)
-            {
-                Graphics g = casaTabuleiro[limpar].CreateGraphics();
-                g.Clear(Color.Transparent);
-            }
-
-            partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
-            foreach (Inimigo i in partidaAtiva.inimigos)
-            {
-                i.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
-            }
-
             // Função para atualizar os dados em todas as jogadas
             partidaAtiva.atualizarDados(dados);
-            
+            // Desenha os piratas no tabuleiro
+            partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+
             // Verifica se é nossa vez
             if (idJogador != partidaAtiva.Kurisu.id)
             {
@@ -460,22 +449,22 @@ namespace Cartagena
                 switch (partidaAtiva.tabuleiro.Posicoes[i].tipo)
                 {
                     case "C":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/chave.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/chave.png");
                         break;
                     case "E":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/esqueleto.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
                         break;
                     case "F":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/faca.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/faca.png");
                         break;
                     case "G":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/garrafa.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
                         break;
                     case "P":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/pistola.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/pistola.png");
                         break;
                     case "T":
-                        casaTabuleiro[i].Image = Image.FromFile(@"../../res/tricornio.png");
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
                         break;
                     case "Prisão":
                         casaTabuleiro[i].BackColor = Color.Black;
@@ -515,6 +504,16 @@ namespace Cartagena
                 this.Controls.AddRange(casaTabuleiro);
         }
 
-        
+        private void timerAtulizaInterface_Tick(object sender, EventArgs e)
+        {
+            // LIMPAR INTERFACE
+            for (int limpar = 0; limpar < 38; limpar++)
+            {
+                casaTabuleiro[limpar].Invalidate();
+            }
+
+            // Desenha os piratas no tabuleiro
+            //partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+        }
     }
 }

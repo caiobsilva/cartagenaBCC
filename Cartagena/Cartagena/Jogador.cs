@@ -48,38 +48,35 @@ namespace Cartagena
 
             return piratasNaPosicao;
         }
+        Pen penRed = new Pen(Brushes.OrangeRed);
+        Pen penGreen = new Pen(Brushes.Green);
+        Pen penYellow = new Pen(Brushes.Yellow);
+        Pen penBlue = new Pen(Brushes.Blue);
+        Pen penBrown = new Pen(Brushes.Brown);
 
-        public void desenharKurisu(object sender, System.Windows.Forms.PaintEventArgs e) 
+        public void desenhar(Graphics g, string playerCor,int xPirata) 
         {
-            Graphics g = e.Graphics;
-            Pen pen;
-            Console.WriteLine("entrou");
 
-            switch (cor){
+            switch (playerCor){
                 case "Vermelho":
-                    pen = new Pen(Brushes.Red);
-                    pen.Width = 8.0F;
-                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    penRed.Width = 8.0F;
+                    g.DrawRectangle(penRed, new Rectangle(xPirata, 5, 6, 6));
                     break;
                 case "Verde":
-                    pen = new Pen(Brushes.Green);
-                    pen.Width = 8.0F;
-                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    penGreen.Width = 8.0F;
+                    g.DrawRectangle(penGreen, new Rectangle(xPirata, 15, 6, 6));
                     break;
                 case "Amarelo":
-                    pen = new Pen(Brushes.Yellow);
-                    pen.Width = 8.0F;
-                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    penYellow.Width = 8.0F;
+                    g.DrawRectangle(penYellow, new Rectangle(xPirata, 25, 6, 6));
                     break;
                 case "Azul":
-                    pen = new Pen(Brushes.Blue);
-                    pen.Width = 8.0F;
-                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    penBlue.Width = 8.0F;
+                    g.DrawRectangle(penBlue, new Rectangle(xPirata, 35, 6, 6));
                     break;
                 case "Marrom":
-                    pen = new Pen(Brushes.Brown);
-                    pen.Width = 8.0F;
-                    g.DrawRectangle(pen, new Rectangle(0, 0, 5, 5));
+                    penBrown.Width = 8.0F;
+                    g.DrawRectangle(penBrown, new Rectangle(xPirata, 45, 6, 6));
                     break;
             }
         }
@@ -90,13 +87,13 @@ namespace Cartagena
 
             foreach (Posicao posicao in tabuleiro.Posicoes)
             {
+                int xPirata = 5;
                 foreach (Pirata pirata in posicao.piratas)
                 {
-                    Console.WriteLine("entrou piratas");
-
-                    posicaoTabuleiro[pirata.local].Invalidate();
+                    string playerCor = pirata.cor;
                     Graphics g = posicaoTabuleiro[pirata.local].CreateGraphics();
-                    posicaoTabuleiro[pirata.local].Paint += new System.Windows.Forms.PaintEventHandler(this.desenharKurisu);
+                    this.desenhar(g,playerCor, xPirata);
+                    xPirata += 7;
                     // draw pixel
                 }
 

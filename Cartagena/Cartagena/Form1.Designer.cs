@@ -62,6 +62,7 @@
             this.btnIniciarKuriso = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
             this.timerVerificarVez = new System.Windows.Forms.Timer(this.components);
+            this.timerAtulizaInterface = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -352,6 +353,11 @@
             this.timerVerificarVez.Interval = 1500;
             this.timerVerificarVez.Tick += new System.EventHandler(this.timerVerificarVez_Tick);
             // 
+            // timerAtulizaInterface
+            // 
+            this.timerAtulizaInterface.Interval = 2000;
+            this.timerAtulizaInterface.Tick += new System.EventHandler(this.timerAtulizaInterface_Tick);
+            // 
             // Cartagena
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -435,6 +441,7 @@
         private System.Windows.Forms.Button btnIniciarKuriso;
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Timer timerVerificarVez;
+        private System.Windows.Forms.Timer timerAtulizaInterface;
     }
 }
 

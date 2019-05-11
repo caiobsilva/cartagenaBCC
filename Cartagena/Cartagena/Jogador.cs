@@ -16,8 +16,13 @@ namespace Cartagena
         protected string _nome { get; set; }
         protected string _cor { get; set; }
 
-        public Pirata[] piratas;
+        Pen penRed = new Pen(Brushes.OrangeRed);
+        Pen penGreen = new Pen(Brushes.Green);
+        Pen penYellow = new Pen(Brushes.Yellow);
+        Pen penBlue = new Pen(Brushes.Blue);
+        Pen penBrown = new Pen(Brushes.Brown);
 
+        public Pirata[] piratas;
 
         public int id
         {
@@ -48,35 +53,29 @@ namespace Cartagena
 
             return piratasNaPosicao;
         }
-        Pen penRed = new Pen(Brushes.OrangeRed);
-        Pen penGreen = new Pen(Brushes.Green);
-        Pen penYellow = new Pen(Brushes.Yellow);
-        Pen penBlue = new Pen(Brushes.Blue);
-        Pen penBrown = new Pen(Brushes.Brown);
-
-        public void desenhar(Graphics g, string playerCor,int xPirata) 
+        
+        public void desenhar(Graphics g, string playerCor,int xPirata, int yPirata) 
         {
-
             switch (playerCor){
                 case "Vermelho":
                     penRed.Width = 8.0F;
-                    g.DrawRectangle(penRed, new Rectangle(xPirata, 5, 6, 6));
+                    g.DrawRectangle(penRed, new Rectangle(xPirata, yPirata, 5, 5));
                     break;
                 case "Verde":
                     penGreen.Width = 8.0F;
-                    g.DrawRectangle(penGreen, new Rectangle(xPirata, 15, 6, 6));
+                    g.DrawRectangle(penGreen, new Rectangle(xPirata, yPirata, 5, 5));
                     break;
                 case "Amarelo":
                     penYellow.Width = 8.0F;
-                    g.DrawRectangle(penYellow, new Rectangle(xPirata, 25, 6, 6));
+                    g.DrawRectangle(penYellow, new Rectangle(xPirata, yPirata, 5, 5));
                     break;
                 case "Azul":
                     penBlue.Width = 8.0F;
-                    g.DrawRectangle(penBlue, new Rectangle(xPirata, 35, 6, 6));
+                    g.DrawRectangle(penBlue, new Rectangle(xPirata, yPirata, 5, 5));
                     break;
                 case "Marrom":
                     penBrown.Width = 8.0F;
-                    g.DrawRectangle(penBrown, new Rectangle(xPirata, 45, 6, 6));
+                    g.DrawRectangle(penBrown, new Rectangle(xPirata, yPirata, 5, 5));
                     break;
             }
         }
@@ -87,14 +86,18 @@ namespace Cartagena
 
             foreach (Posicao posicao in tabuleiro.Posicoes)
             {
-                int xPirata = 5;
+                int xPirata = 5, yPirata = 5;
                 foreach (Pirata pirata in posicao.piratas)
                 {
-                    string playerCor = pirata.cor;
-                    Graphics g = posicaoTabuleiro[pirata.local].CreateGraphics();
-                    this.desenhar(g,playerCor, xPirata);
-                    xPirata += 7;
-                    // draw pixel
+                    if (pirata.local == 0 || pirata.local == 37) { }
+                    else
+                    {
+                        string playerCor = pirata.cor;
+                        Graphics g = posicaoTabuleiro[pirata.local].CreateGraphics();
+                        this.desenhar(g,playerCor, xPirata,yPirata);
+                        xPirata += 15;
+                        yPirata +=15;
+                    }
                 }
 
             }

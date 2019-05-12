@@ -59,11 +59,10 @@
             this.btnPular = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnVerificarVez = new System.Windows.Forms.Button();
-            this.pcbTabuleiro = new System.Windows.Forms.PictureBox();
             this.btnIniciarKuriso = new System.Windows.Forms.Button();
             this.lblVersao = new System.Windows.Forms.Label();
             this.timerVerificarVez = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).BeginInit();
+            this.timerAtulizaInterface = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -213,14 +212,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(406, 301);
+            this.label1.Location = new System.Drawing.Point(775, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 17;
             // 
             // btnCartasListar
             // 
-            this.btnCartasListar.Location = new System.Drawing.Point(429, 360);
+            this.btnCartasListar.Location = new System.Drawing.Point(798, 113);
             this.btnCartasListar.Name = "btnCartasListar";
             this.btnCartasListar.Size = new System.Drawing.Size(66, 54);
             this.btnCartasListar.TabIndex = 18;
@@ -240,7 +239,7 @@
             // 
             // btnAndar
             // 
-            this.btnAndar.Location = new System.Drawing.Point(632, 322);
+            this.btnAndar.Location = new System.Drawing.Point(713, 311);
             this.btnAndar.Name = "btnAndar";
             this.btnAndar.Size = new System.Drawing.Size(82, 55);
             this.btnAndar.TabIndex = 20;
@@ -259,7 +258,7 @@
             "Garrafa",
             "Pistola",
             "Tricórnio"});
-            this.cboCartas.Location = new System.Drawing.Point(517, 393);
+            this.cboCartas.Location = new System.Drawing.Point(735, 271);
             this.cboCartas.Name = "cboCartas";
             this.cboCartas.Size = new System.Drawing.Size(100, 21);
             this.cboCartas.TabIndex = 21;
@@ -267,7 +266,7 @@
             // lblCartas
             // 
             this.lblCartas.AutoSize = true;
-            this.lblCartas.Location = new System.Drawing.Point(514, 377);
+            this.lblCartas.Location = new System.Drawing.Point(732, 255);
             this.lblCartas.Name = "lblCartas";
             this.lblCartas.Size = new System.Drawing.Size(32, 13);
             this.lblCartas.TabIndex = 22;
@@ -276,7 +275,7 @@
             // lblPosicao
             // 
             this.lblPosicao.AutoSize = true;
-            this.lblPosicao.Location = new System.Drawing.Point(514, 322);
+            this.lblPosicao.Location = new System.Drawing.Point(732, 200);
             this.lblPosicao.Name = "lblPosicao";
             this.lblPosicao.Size = new System.Drawing.Size(45, 13);
             this.lblPosicao.TabIndex = 23;
@@ -284,7 +283,7 @@
             // 
             // txtPirataPosicao
             // 
-            this.txtPirataPosicao.Location = new System.Drawing.Point(517, 338);
+            this.txtPirataPosicao.Location = new System.Drawing.Point(735, 216);
             this.txtPirataPosicao.Name = "txtPirataPosicao";
             this.txtPirataPosicao.Size = new System.Drawing.Size(100, 20);
             this.txtPirataPosicao.TabIndex = 24;
@@ -292,7 +291,7 @@
             // btnMostrarTabuleiro
             // 
             this.btnMostrarTabuleiro.AllowDrop = true;
-            this.btnMostrarTabuleiro.Location = new System.Drawing.Point(344, 360);
+            this.btnMostrarTabuleiro.Location = new System.Drawing.Point(713, 113);
             this.btnMostrarTabuleiro.Name = "btnMostrarTabuleiro";
             this.btnMostrarTabuleiro.Size = new System.Drawing.Size(79, 54);
             this.btnMostrarTabuleiro.TabIndex = 28;
@@ -302,7 +301,7 @@
             // 
             // btnPular
             // 
-            this.btnPular.Location = new System.Drawing.Point(632, 383);
+            this.btnPular.Location = new System.Drawing.Point(713, 372);
             this.btnPular.Name = "btnPular";
             this.btnPular.Size = new System.Drawing.Size(145, 31);
             this.btnPular.TabIndex = 32;
@@ -312,7 +311,7 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(720, 322);
+            this.btnVoltar.Location = new System.Drawing.Point(801, 311);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(57, 55);
             this.btnVoltar.TabIndex = 33;
@@ -322,7 +321,7 @@
             // 
             // btnVerificarVez
             // 
-            this.btnVerificarVez.Location = new System.Drawing.Point(344, 322);
+            this.btnVerificarVez.Location = new System.Drawing.Point(713, 75);
             this.btnVerificarVez.Name = "btnVerificarVez";
             this.btnVerificarVez.Size = new System.Drawing.Size(151, 32);
             this.btnVerificarVez.TabIndex = 34;
@@ -330,18 +329,9 @@
             this.btnVerificarVez.UseVisualStyleBackColor = true;
             this.btnVerificarVez.Click += new System.EventHandler(this.btnVerificarVez_Click);
             // 
-            // pcbTabuleiro
-            // 
-            this.pcbTabuleiro.Image = ((System.Drawing.Image)(resources.GetObject("pcbTabuleiro.Image")));
-            this.pcbTabuleiro.Location = new System.Drawing.Point(344, 12);
-            this.pcbTabuleiro.Name = "pcbTabuleiro";
-            this.pcbTabuleiro.Size = new System.Drawing.Size(501, 286);
-            this.pcbTabuleiro.TabIndex = 35;
-            this.pcbTabuleiro.TabStop = false;
-            // 
             // btnIniciarKuriso
             // 
-            this.btnIniciarKuriso.Location = new System.Drawing.Point(796, 351);
+            this.btnIniciarKuriso.Location = new System.Drawing.Point(758, 12);
             this.btnIniciarKuriso.Name = "btnIniciarKuriso";
             this.btnIniciarKuriso.Size = new System.Drawing.Size(57, 39);
             this.btnIniciarKuriso.TabIndex = 36;
@@ -363,15 +353,18 @@
             this.timerVerificarVez.Interval = 1500;
             this.timerVerificarVez.Tick += new System.EventHandler(this.timerVerificarVez_Tick);
             // 
+            // timerAtulizaInterface
+            // 
+            this.timerAtulizaInterface.Interval = 2000;
+            this.timerAtulizaInterface.Tick += new System.EventHandler(this.timerAtulizaInterface_Tick);
+            // 
             // Cartagena
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(873, 461);
+            this.ClientSize = new System.Drawing.Size(874, 461);
             this.Controls.Add(this.lblVersao);
             this.Controls.Add(this.btnIniciarKuriso);
-            this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.btnVerificarVez);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPular);
@@ -403,12 +396,12 @@
             this.Controls.Add(this.txtJogadorID);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(543, 465);
+            this.MaximumSize = new System.Drawing.Size(890, 500);
+            this.MinimumSize = new System.Drawing.Size(890, 500);
             this.Name = "Cartagena";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Kurisu-Varsóvia";
             this.TransparencyKey = System.Drawing.Color.DimGray;
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -445,10 +438,10 @@
         private System.Windows.Forms.Button btnPular;
         private System.Windows.Forms.Button btnVoltar;
         private System.Windows.Forms.Button btnVerificarVez;
-        private System.Windows.Forms.PictureBox pcbTabuleiro;
         private System.Windows.Forms.Button btnIniciarKuriso;
         private System.Windows.Forms.Label lblVersao;
         private System.Windows.Forms.Timer timerVerificarVez;
+        private System.Windows.Forms.Timer timerAtulizaInterface;
     }
 }
 

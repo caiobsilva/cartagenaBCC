@@ -16,6 +16,7 @@ namespace Cartagena
         public static string[] cartasTabuleiro = new string[38];
         public static string[] idJogadores = new string[5];
         public static string[] tabuleiro = new string[38];
+        public PictureBox[] casaTabuleiro = new PictureBox[38];
 
         Partida partidaAtiva;
 
@@ -257,9 +258,10 @@ namespace Cartagena
             mostrarCartasTabuleiro();
             quebraCaracteresIdJogadores();
             quebraLinhaPosicoes();
-            Form2 formDois = new Form2();
+            /*Form2 formDois = new Form2();
             formDois.Tabuleiro();
-            formDois.Show();
+            formDois.Show();*/
+
         }
 
         //Método de verificar vez.
@@ -289,23 +291,21 @@ namespace Cartagena
 
         private void btnIniciarKuriso_Click(object sender, EventArgs e)
         {
-            if (txtPartidaID.Text != "" && LidarErros(Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text))))
-            {
-                // Iniciar todas as variaveis aqui
-                partidaAtiva = new Partida(
-                    Convert.ToInt32(txtPartidaID.Text), // ID partida
-                    txtPartidaNome.Text, // Nome da partida
-                    txtPartidaSenha.Text, // Senha da partida
-                    Convert.ToInt32(txtJogadorID.Text), // ID jogador
-                    txtJogadorNome.Text, // Nome do jogador
-                    txtJogadorSenha.Text // Senha do jogador
-                );
-                // Iniciando timer
-                timerVerificarVez.Enabled = true;
-                
-                Console.WriteLine("\nKurisu iniciada.\n");
-            }
+            Console.WriteLine("\nKurisu iniciada.\n");
+
+            // Iniciar todas as variaveis aqui
+            partidaAtiva = new Partida(
+                Convert.ToInt32(txtPartidaID.Text), // ID partida
+                txtPartidaNome.Text, // Nome da partida
+                txtPartidaSenha.Text, // Senha da partida
+                Convert.ToInt32(txtJogadorID.Text), // ID jogador
+                txtJogadorNome.Text, // Nome do jogador
+                txtJogadorSenha.Text // Senha do jogador
+            );
+            criarInterfaceTabuleiro(); // Cria interface grafica do tabuleiro
             
+            timerVerificarVez.Enabled = true; // Iniciando timer
+            timerAtulizaInterface.Enabled = true; //Inicia o timer da interface grafica.
         }
 
         private void timerVerificarVez_Tick(object sender, EventArgs e)
@@ -348,23 +348,11 @@ namespace Cartagena
                 return;
             }
 
-            
             // Função para atualizar os dados em todas as jogadas
             partidaAtiva.atualizarDados(dados);
-            
-            // Printando o tabuleiro
-            Console.WriteLine(partidaAtiva.tabuleiro.ToString());
-            // Printando todos os piratas da Kuriso
-            Console.WriteLine(partidaAtiva.Kurisu.ToString());
-            // Printando todos os piratas dos inimigos
-            if (partidaAtiva.inimigos.Count > 0)
-            {
-                foreach (Inimigo inimigo in partidaAtiva.inimigos)
-                {
-                    Console.WriteLine(inimigo.ToString());
-                }
-            }
-            
+            // Desenha os piratas no tabuleiro
+            partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+
             // Verifica se é nossa vez
             if (idJogador != partidaAtiva.Kurisu.id)
             {
@@ -423,6 +411,90 @@ namespace Cartagena
             return false;
 
         }
-        
+
+        // Parte interface abaixo
+
+        // Cria o vetor de pictureBoxes, de acordo com o tabuleiro.
+        //Funciona somente quando há um partida instanciada!
+        public void criarInterfaceTabuleiro()
+        {
+            int positionX = 320;
+            int positionY = 12;
+            int row = 0;
+            bool inverteRow = false;
+
+            for (int i = 1; i < 37; i++)
+            {
+                //PictureBox picBox = new PictureBox();
+                casaTabuleiro[i] = new PictureBox();
+                switch (partidaAtiva.tabuleiro.Posicoes[i].tipo)
+                {
+                    case "C":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/chave.png");
+                        break;
+                    case "E":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
+                        break;
+                    case "F":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/faca.png");
+                        break;
+                    case "G":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
+                        break;
+                    case "P":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/pistola.png");
+                        break;
+                    case "T":
+                        casaTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
+                        break;
+                    case "Prisão":
+                        casaTabuleiro[i].BackColor = Color.Black;
+                        break;
+                    case "Barco":
+                        casaTabuleiro[i].BackColor = Color.Black;
+                        break;
+                }
+
+                if (row == 6 )
+                {
+                    if (inverteRow==false) { inverteRow = true; positionX = 620; }
+                    else if (inverteRow==true) { inverteRow = false; positionX = 320; }
+                    positionY = positionY + 60;
+                    row = 0;
+                }
+                if (row < 6 && !inverteRow)
+                {
+                    casaTabuleiro[i].Location = new Point(positionX, positionY);
+                    if (row < 6) { positionX = positionX + 60; }
+                    row++;
+                }
+                if(row < 6 && inverteRow)
+                {
+                    casaTabuleiro[i].Location = new Point(positionX, positionY);
+                    if (row < 6) { positionX = positionX - 60; }
+                    row++;
+                }
+
+                casaTabuleiro[i].Name = "casa"+i;
+                casaTabuleiro[i].SizeMode = PictureBoxSizeMode.StretchImage;
+                casaTabuleiro[i].Size = new Size(50, 50);
+                //picBox.TabIndex = 98;
+                casaTabuleiro[i].TabStop = false;
+
+            }
+                this.Controls.AddRange(casaTabuleiro);
+        }
+
+        private void timerAtulizaInterface_Tick(object sender, EventArgs e)
+        {
+            // LIMPAR INTERFACE
+            for (int limpar = 1; limpar < 37; limpar++)
+            {
+                casaTabuleiro[limpar].Invalidate();
+            }
+
+            // Desenha os piratas no tabuleiro
+            //partidaAtiva.Kurisu.desenharPiratas(partidaAtiva.tabuleiro, casaTabuleiro);
+        }
     }
 }

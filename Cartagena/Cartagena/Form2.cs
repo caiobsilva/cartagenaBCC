@@ -72,22 +72,22 @@ namespace Cartagena {
 
                 switch (cartas[i]) {
                     case "C":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/chave.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/chave.png");
                         break;
                     case "E":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/esqueleto.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/esqueleto.png");
                         break;
                     case "F":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/faca.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/faca.png");
                         break;
                     case "G":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/garrafa.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/garrafa.png");
                         break;
                     case "P":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/pistola.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/pistola.png");
                         break;
                     case "T":
-                        pictureTabuleiro[i].Image = Image.FromFile(@"../../res/tricornio.png");
+                        pictureTabuleiro[i].BackgroundImage = Image.FromFile(@"../../res/tricornio.png");
                         break;
                     default:
                         pictureTabuleiro[i].BackColor = Color.Black;

@@ -442,7 +442,7 @@ namespace Cartagena
             int row = 0;
             bool inverteRow = false;
 
-            for (int i = 0; i < 38; i++)
+            for (int i = 1; i < 37; i++)
             {
                 //PictureBox picBox = new PictureBox();
                 casaTabuleiro[i] = new PictureBox();
@@ -507,7 +507,7 @@ namespace Cartagena
         private void timerAtulizaInterface_Tick(object sender, EventArgs e)
         {
             // LIMPAR INTERFACE
-            for (int limpar = 0; limpar < 38; limpar++)
+            for (int limpar = 1; limpar < 37; limpar++)
             {
                 casaTabuleiro[limpar].Invalidate();
             }

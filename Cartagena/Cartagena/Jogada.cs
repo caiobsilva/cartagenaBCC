@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Cartagena
 {
@@ -14,6 +15,7 @@ namespace Cartagena
         public Pirata pirata { get { return _pirata; } }
         public int indexPirata { get { return _indexPirata; } }
         public int pontuacao { get; set; }
+        public List<Jogada> jogadasFuturas;
 
         public Jogada(Tabuleiro tabuleiro, Pirata pirata, string carta, int l)
         {

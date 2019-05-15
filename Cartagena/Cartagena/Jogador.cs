@@ -232,6 +232,11 @@ namespace Cartagena
             FilaPrioridade prioridades = new FilaPrioridade();
             List<Jogada> jogadasPossiveis = gerarJogadas(tabuleiro);
 
+            foreach(Jogada j in jogadasPossiveis)
+            {
+                // Mudar o gerarJogadas de maneira que seja possível gerar mais jogadas.
+            }
+
             while (avaliacao != true)
             {
                 switch (estagioAvaliacao)

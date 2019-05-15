@@ -104,7 +104,11 @@ namespace Cartagena
         private void btnPartidaIniciar_Click(object sender, EventArgs e)
         {
             //O método IniciarPartida do Jogo retorna o id do jogador que iniciou a partida. 
-            if (txtJogadorID.Text == "" || txtJogadorSenha.Text == "") { return; }
+            if (txtJogadorID.Text == "" || txtJogadorSenha.Text == "")
+            {
+                MessageBox.Show("Campo invalido!");
+                return;
+            }
             
             LidarErros(Jogo.IniciarPartida(Convert.ToInt32(txtJogadorID.Text), txtJogadorSenha.Text));
             
@@ -115,7 +119,11 @@ namespace Cartagena
         //Método de criação de jogador. O jogador é criado quando entra em uma sala. Em cada sala o seu ID, Nome e Senha (de jogador) serão diferentes.
         private void btnPartidaEntrar_Click(object sender, EventArgs e)
         {
-            if ( txtPartidaID.Text == "" || txtJogadorNome.Text == "" || txtPartidaSenha.Text == "") { return; }
+            if (txtPartidaID.Text == "" || txtJogadorNome.Text == "" || txtPartidaSenha.Text == "")
+            {
+                MessageBox.Show("Campo invalido!");
+                return;
+            }
             
             string entradaRetorno = Jogo.EntrarPartida(Convert.ToInt32(txtPartidaID.Text), txtJogadorNome.Text,
                 txtPartidaSenha.Text);
@@ -134,7 +142,11 @@ namespace Cartagena
         //Método de criação de Partida.
         private void btnPartidaCriar_Click(object sender, EventArgs e)
         {
-            if( txtPartidaNome.Text == "" ) {return;}
+            if (txtPartidaNome.Text == "")
+            {
+                MessageBox.Show("Campo invalido!");
+                return;
+            }
             
             int partidaID;
             string partida = Jogo.CriarPartida(txtPartidaNome.Text, txtPartidaSenha.Text);
@@ -180,7 +192,11 @@ namespace Cartagena
         //Método de listagem de jogadores
         private void btnJogadoresListar_Click(object sender, EventArgs e)
         {
-            if (txtPartidaID.Text == "") { return; }
+            if (txtPartidaID.Text == "")
+            {
+                MessageBox.Show("Campo invalido!");
+                return;
+            }
             
             int partidaID = Convert.ToInt32(txtPartidaID.Text);
             string retorno = Jogo.ListarJogadores(partidaID);
@@ -328,22 +344,11 @@ namespace Cartagena
             if (dadosVerificarVez[0] == "E")
             {
 
-                string nomeVencedor = partidaAtiva.Kurisu.nome;
-
                 timerVerificarVez.Enabled = false;
                 lsbLog.Items.Clear();
-
-                if (idJogador != partidaAtiva.Kurisu.id)
-                {
-                    foreach (Inimigo inimigo in partidaAtiva.inimigos)
-                    {
-                        if (idJogador == inimigo.id)
-                        {
-                            nomeVencedor = inimigo.nome;
-                        }
-                    }
-                }
-
+                
+                string nomeVencedor = verificarVencedor(dados);
+        
                 lsbLog.Items.Add("Jogador Vencedor: " + nomeVencedor);
                 return;
             }
@@ -409,6 +414,51 @@ namespace Cartagena
 
             MessageBox.Show(erro);
             return false;
+
+        }
+            
+        public string verificarVencedor(string vez)
+        {
+
+            string[] posicoes, jogadas;
+            jogadas = vez.Split('\n');
+            string vencedor = null;
+            
+            int i = vez.Length-1;
+            
+            jogadas[i] = jogadas[i].Replace("\r", "");
+            
+            posicoes = jogadas[i].Split(',');
+            
+            while( Convert.ToInt16(posicoes[0]) == 37 )
+            {
+                jogadas[i] = jogadas[i].Replace("\r", "");
+                posicoes = jogadas[i].Split(',');
+                
+                if (Convert.ToInt16(posicoes[2]) == 6)
+                {
+                    if (Convert.ToInt16(posicoes[1]) == partidaAtiva.Kurisu.id)
+                    {
+                        vencedor = partidaAtiva.Kurisu.nome;
+                        break;
+                    }
+                    foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                    {
+                        
+                        if (Convert.ToInt16(posicoes[1]) == inimigo.id)
+                        {
+                            vencedor = inimigo.nome;
+                            break;
+                        }   
+                        
+                    }
+                }
+
+                i--;
+                
+            }
+
+            return vencedor;
 
         }
 

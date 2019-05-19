@@ -62,7 +62,6 @@
             this.timerAtulizaInterface = new System.Windows.Forms.Timer(this.components);
             this.pcbPrisao = new System.Windows.Forms.PictureBox();
             this.pcbBarco = new System.Windows.Forms.PictureBox();
-            this.pcbTabuleiro = new System.Windows.Forms.PictureBox();
             this.pcbChave = new System.Windows.Forms.PictureBox();
             this.pcbEsq = new System.Windows.Forms.PictureBox();
             this.pcbFaca = new System.Windows.Forms.PictureBox();
@@ -77,7 +76,6 @@
             this.lblTric = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrisao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBarco)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbChave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsq)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFaca)).BeginInit();
@@ -353,7 +351,7 @@
             this.pcbPrisao.Image = ((System.Drawing.Image)(resources.GetObject("pcbPrisao.Image")));
             this.pcbPrisao.Location = new System.Drawing.Point(340, 12);
             this.pcbPrisao.Name = "pcbPrisao";
-            this.pcbPrisao.Size = new System.Drawing.Size(370, 80);
+            this.pcbPrisao.Size = new System.Drawing.Size(350, 80);
             this.pcbPrisao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbPrisao.TabIndex = 38;
             this.pcbPrisao.TabStop = false;
@@ -363,21 +361,10 @@
             this.pcbBarco.Image = ((System.Drawing.Image)(resources.GetObject("pcbBarco.Image")));
             this.pcbBarco.Location = new System.Drawing.Point(340, 442);
             this.pcbBarco.Name = "pcbBarco";
-            this.pcbBarco.Size = new System.Drawing.Size(370, 97);
+            this.pcbBarco.Size = new System.Drawing.Size(350, 97);
             this.pcbBarco.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbBarco.TabIndex = 39;
             this.pcbBarco.TabStop = false;
-            // 
-            // pcbTabuleiro
-            // 
-            this.pcbTabuleiro.BackColor = System.Drawing.Color.Transparent;
-            this.pcbTabuleiro.Image = ((System.Drawing.Image)(resources.GetObject("pcbTabuleiro.Image")));
-            this.pcbTabuleiro.Location = new System.Drawing.Point(340, 92);
-            this.pcbTabuleiro.Name = "pcbTabuleiro";
-            this.pcbTabuleiro.Size = new System.Drawing.Size(370, 350);
-            this.pcbTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbTabuleiro.TabIndex = 40;
-            this.pcbTabuleiro.TabStop = false;
             // 
             // pcbChave
             // 
@@ -504,7 +491,6 @@
             this.Controls.Add(this.pcbFaca);
             this.Controls.Add(this.pcbEsq);
             this.Controls.Add(this.pcbChave);
-            this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.pcbBarco);
             this.Controls.Add(this.pcbPrisao);
             this.Controls.Add(this.lblVersao);
@@ -545,7 +531,6 @@
             this.TransparencyKey = System.Drawing.Color.DimGray;
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrisao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBarco)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbChave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbEsq)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbFaca)).EndInit();
@@ -591,7 +576,6 @@
         private System.Windows.Forms.Timer timerAtulizaInterface;
         private System.Windows.Forms.PictureBox pcbPrisao;
         private System.Windows.Forms.PictureBox pcbBarco;
-        private System.Windows.Forms.PictureBox pcbTabuleiro;
         private System.Windows.Forms.PictureBox pcbChave;
         private System.Windows.Forms.PictureBox pcbEsq;
         private System.Windows.Forms.PictureBox pcbFaca;

@@ -17,6 +17,8 @@ namespace Cartagena
         public static string[] idJogadores = new string[5];
         public static string[] tabuleiro = new string[38];
         public PictureBox[] casaTabuleiro = new PictureBox[38];
+        public const int pcbEixoX = 340; //Define a posição inicial desenho das pictureboxes no eixo X
+        public const int pcbEixoY = 92; //Define a posição inicial desenho das pictureboxes no eixo Y
 
         Partida partidaAtiva;
 
@@ -464,12 +466,12 @@ namespace Cartagena
 
         // Parte interface abaixo
 
-        // Cria o vetor de pictureBoxes, de acordo com o tabuleiro.
+        //Cria o vetor de pictureBoxes, de acordo com o tabuleiro.
         //Funciona somente quando há um partida instanciada!
         public void criarInterfaceTabuleiro()
         {
-            int positionX = 320;
-            int positionY = 12;
+            int positionX = pcbEixoX;
+            int positionY = pcbEixoY;
             int row = 0;
             bool inverteRow = false;
 
@@ -507,8 +509,8 @@ namespace Cartagena
 
                 if (row == 6 )
                 {
-                    if (inverteRow==false) { inverteRow = true; positionX = 620; }
-                    else if (inverteRow==true) { inverteRow = false; positionX = 320; }
+                    if (inverteRow==false) { inverteRow = true; positionX = pcbEixoX+300; }
+                    else if (inverteRow==true) { inverteRow = false; positionX = pcbEixoX; }
                     positionY = positionY + 60;
                     row = 0;
                 }
@@ -535,12 +537,53 @@ namespace Cartagena
                 this.Controls.AddRange(casaTabuleiro);
         }
 
+        public void contarCartas()
+        {
+            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
+            string jogadorSenha = txtJogadorSenha.Text;
+
+            string cartas = Jogo.ConsultarMao(jogadorID, jogadorSenha);
+            string[] jogadorCartas = cartas.Split('\n', ',');
+
+            for(int i = 0; i < jogadorCartas.Length - 1; i++)
+            {
+                switch (jogadorCartas[i])
+                {
+                    case "C":
+                        lblChave.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                    case "E":
+                        lblEsq.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                    case "F":
+                        lblFaca.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                    case "G":
+                        lblGar.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                    case "P":
+                        lblPist.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                    case "T":
+                        lblTric.Text = "x" + jogadorCartas[i + 1].ToString();
+                        i++;
+                        break;
+                }
+            }
+        }
+
         private void timerAtulizaInterface_Tick(object sender, EventArgs e)
         {
             // LIMPAR INTERFACE
             for (int limpar = 1; limpar < 37; limpar++)
             {
                 casaTabuleiro[limpar].Invalidate();
+                contarCartas();
             }
 
             // Desenha os piratas no tabuleiro

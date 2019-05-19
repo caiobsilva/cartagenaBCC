@@ -10,3 +10,4 @@ C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csp
 C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
 C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
+C:\Users\Caio\Documents\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache

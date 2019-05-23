@@ -1,0 +1,13 @@
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

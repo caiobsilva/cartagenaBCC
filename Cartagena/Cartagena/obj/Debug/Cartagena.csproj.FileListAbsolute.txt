@@ -30,7 +30,6 @@ D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
-D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
 D:\!Ostok\cartagenaBCC\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache

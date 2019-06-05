@@ -28,80 +28,6 @@ namespace Cartagena
             lblVersao.Text += Jogo.Versao;
         }
 
-        //Método de quebra das linhas de posicionamento dos piratas no mapa.
-        public void quebraLinhaPosicoes()
-        {
-            //Armazena o id do jogador e quantidade de piratas num determinado indice-posição.
-            string posicao, id, quantidadePiratas;
-            string temp;
-
-            string[] idJogadores = new string[5];
-
-            //Recebe a vez e as jogadas.
-            temp = Jogo.VerificarVez(Convert.ToInt32(txtPartidaID.Text));
-            string[] posicoesPiratas = temp.Split('\n');
-
-            //Recebe as distribuições de cartas no tabuleiro.
-            temp = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linha = temp.Split('\n');
-
-            for (int i = 1; i < posicoesPiratas.Length - 1; i++)
-            {
-                int index1 = posicoesPiratas[i].IndexOf(',');
-                int index2 = posicoesPiratas[i].IndexOf(',', index1 + 1);
-                posicao = posicoesPiratas[i].Substring(0, index1);
-                id = posicoesPiratas[i].Substring(index1 + 1, index2 - 2);
-                quantidadePiratas = posicoesPiratas[i].Substring(index2 + 1);
-
-                tabuleiro[Convert.ToInt32(posicao)] += id + "," + quantidadePiratas + "\n";
-            }
-
-            for (int i = 0; i < tabuleiro.Length - 1; i++)
-            {
-                if (tabuleiro[i] != null)
-                    lsbLog.Items.Add(tabuleiro[i]);
-            }
-        }
-
-        public string[] mostrarCartasTabuleiro()
-        {
-            string statusTabuleiro = Jogo.ExibirTabuleiro(Convert.ToInt32(txtPartidaID.Text));
-            string[] linhaTabuleiro = statusTabuleiro.Split('\n');
-            for (int k = 0; k < linhaTabuleiro.Length - 1; k++)
-            {
-                linhaTabuleiro[k] = linhaTabuleiro[k].Replace("\n", "");
-            }
-
-            //Percorre o vetor de 1 até 36.
-            for (int i = 1; i < linhaTabuleiro.Length - 2; i++)
-            {
-                int index = linhaTabuleiro[i].IndexOf(',');
-                string temp = linhaTabuleiro[i].Substring(index, index + 1);
-                temp = temp.Replace(",", "");
-                temp = temp.Replace("\r", "");
-                cartasTabuleiro[i] = temp;
-            }
-
-            return cartasTabuleiro;
-        }
-
-        //Método de recebimento dos identificadores dos jogadores.
-        public void quebraCaracteresIdJogadores()
-        {
-            string[] tempJogadores = Jogo.ListarJogadores(78).Split('\n');
-            for (int i = 0; i < tempJogadores.Length; i++)
-            {
-                tempJogadores[i] = tempJogadores[i].Replace("\r", "");
-                tempJogadores[i] = tempJogadores[i].Replace("\n", "");
-                int index1 = tempJogadores[i].IndexOf(',');
-                //O conteúdo de tempJogadores[1] é vazio.
-                if (index1 != -1)
-                {
-                    idJogadores[i] = tempJogadores[i].Substring(0, index1);
-                }
-            }
-        }
-
         //Método de inicialização de partida.
         private void btnPartidaIniciar_Click(object sender, EventArgs e)
         {
@@ -267,20 +193,6 @@ namespace Cartagena
             Console.WriteLine(pular);
             lsbLog.Items.Add("Jogada pulada!");
             
-        }
-
-        //Método de exibição de tabuleiro.
-        //Quando o tabuleiro for implementado, deve ser removido e trocado por um timer que executa o método automaticamente.
-        private void btnMostrarTabuleiro_Click(object sender, EventArgs e)
-        {
-            lsbLog.Items.Clear();
-            mostrarCartasTabuleiro();
-            quebraCaracteresIdJogadores();
-            quebraLinhaPosicoes();
-            /*Form2 formDois = new Form2();
-            formDois.Tabuleiro();
-            formDois.Show();*/
-
         }
 
         //Método de verificar vez.

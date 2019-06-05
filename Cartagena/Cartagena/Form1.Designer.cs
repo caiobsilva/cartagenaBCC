@@ -427,7 +427,7 @@
             this.lblChave.Name = "lblChave";
             this.lblChave.Size = new System.Drawing.Size(18, 13);
             this.lblChave.TabIndex = 47;
-            this.lblChave.Text = "0x";
+            this.lblChave.Text = "x0";
             // 
             // lblEsq
             // 
@@ -436,7 +436,7 @@
             this.lblEsq.Name = "lblEsq";
             this.lblEsq.Size = new System.Drawing.Size(18, 13);
             this.lblEsq.TabIndex = 48;
-            this.lblEsq.Text = "0x";
+            this.lblEsq.Text = "x0";
             // 
             // lblFaca
             // 
@@ -445,7 +445,7 @@
             this.lblFaca.Name = "lblFaca";
             this.lblFaca.Size = new System.Drawing.Size(18, 13);
             this.lblFaca.TabIndex = 49;
-            this.lblFaca.Text = "0x";
+            this.lblFaca.Text = "x0";
             // 
             // lblGar
             // 
@@ -454,7 +454,7 @@
             this.lblGar.Name = "lblGar";
             this.lblGar.Size = new System.Drawing.Size(18, 13);
             this.lblGar.TabIndex = 50;
-            this.lblGar.Text = "0x";
+            this.lblGar.Text = "x0";
             // 
             // lblPist
             // 
@@ -463,7 +463,7 @@
             this.lblPist.Name = "lblPist";
             this.lblPist.Size = new System.Drawing.Size(18, 13);
             this.lblPist.TabIndex = 51;
-            this.lblPist.Text = "0x";
+            this.lblPist.Text = "x0";
             // 
             // lblTric
             // 
@@ -472,12 +472,13 @@
             this.lblTric.Name = "lblTric";
             this.lblTric.Size = new System.Drawing.Size(18, 13);
             this.lblTric.TabIndex = 52;
-            this.lblTric.Text = "0x";
+            this.lblTric.Text = "x0";
             // 
             // Cartagena
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Info;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(874, 551);
             this.Controls.Add(this.lblTric);
@@ -524,7 +525,7 @@
             this.Controls.Add(this.txtJogadorID);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(10000, 8000);
+            this.MaximumSize = new System.Drawing.Size(890, 590);
             this.MinimumSize = new System.Drawing.Size(1, 1);
             this.Name = "Cartagena";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

@@ -11,3 +11,16 @@ C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Deb
 C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
 C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.exe
 C:\Users\lucas.gsantana3\Desktop\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.pdb
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe.config
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.exe
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\Cartagena.pdb
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\bin\Debug\CartagenaServer.dll
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csprojAssemblyReference.cache
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Cartagena.resources
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Form2.resources
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.Properties.Resources.resources
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.GenerateResource.cache
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CoreCompileInputs.cache
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.csproj.CopyComplete
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.exe
+C:\Users\mathe\Documents\Code\PI III\cartagenaBCC\cartagenaBCC-master\Cartagena\Cartagena\obj\Debug\Cartagena.pdb

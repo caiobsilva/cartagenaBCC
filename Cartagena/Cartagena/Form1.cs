@@ -373,7 +373,20 @@ namespace Cartagena
                 }
                 return;
             }
-
+            
+            // Printando o tabuleiro
+            Console.WriteLine(partidaAtiva.tabuleiro.ToString());
+            // Printando todos os piratas da Kuriso
+            Console.WriteLine(partidaAtiva.Kurisu.ToString());
+            // Printando todos os piratas dos inimigos
+            if (partidaAtiva.inimigos.Count > 0)
+            {
+                foreach (Inimigo inimigo in partidaAtiva.inimigos)
+                {
+                    Console.WriteLine(inimigo.ToString());
+                }
+            }
+            
             Jogar();
             
         }

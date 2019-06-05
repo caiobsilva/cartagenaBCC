@@ -425,59 +425,60 @@
             this.lblChave.AutoSize = true;
             this.lblChave.Location = new System.Drawing.Point(795, 111);
             this.lblChave.Name = "lblChave";
-            this.lblChave.Size = new System.Drawing.Size(48, 13);
+            this.lblChave.Size = new System.Drawing.Size(18, 13);
             this.lblChave.TabIndex = 47;
-            this.lblChave.Text = "lblChave";
+            this.lblChave.Text = "0x";
             // 
             // lblEsq
             // 
             this.lblEsq.AutoSize = true;
             this.lblEsq.Location = new System.Drawing.Point(795, 170);
             this.lblEsq.Name = "lblEsq";
-            this.lblEsq.Size = new System.Drawing.Size(35, 13);
+            this.lblEsq.Size = new System.Drawing.Size(18, 13);
             this.lblEsq.TabIndex = 48;
-            this.lblEsq.Text = "lblEsq";
+            this.lblEsq.Text = "0x";
             // 
             // lblFaca
             // 
             this.lblFaca.AutoSize = true;
             this.lblFaca.Location = new System.Drawing.Point(795, 230);
             this.lblFaca.Name = "lblFaca";
-            this.lblFaca.Size = new System.Drawing.Size(41, 13);
+            this.lblFaca.Size = new System.Drawing.Size(18, 13);
             this.lblFaca.TabIndex = 49;
-            this.lblFaca.Text = "lblFaca";
+            this.lblFaca.Text = "0x";
             // 
             // lblGar
             // 
             this.lblGar.AutoSize = true;
             this.lblGar.Location = new System.Drawing.Point(795, 292);
             this.lblGar.Name = "lblGar";
-            this.lblGar.Size = new System.Drawing.Size(34, 13);
+            this.lblGar.Size = new System.Drawing.Size(18, 13);
             this.lblGar.TabIndex = 50;
-            this.lblGar.Text = "lblGar";
+            this.lblGar.Text = "0x";
             // 
             // lblPist
             // 
             this.lblPist.AutoSize = true;
             this.lblPist.Location = new System.Drawing.Point(795, 349);
             this.lblPist.Name = "lblPist";
-            this.lblPist.Size = new System.Drawing.Size(34, 13);
+            this.lblPist.Size = new System.Drawing.Size(18, 13);
             this.lblPist.TabIndex = 51;
-            this.lblPist.Text = "lblPist";
+            this.lblPist.Text = "0x";
             // 
             // lblTric
             // 
             this.lblTric.AutoSize = true;
             this.lblTric.Location = new System.Drawing.Point(795, 411);
             this.lblTric.Name = "lblTric";
-            this.lblTric.Size = new System.Drawing.Size(35, 13);
+            this.lblTric.Size = new System.Drawing.Size(18, 13);
             this.lblTric.TabIndex = 52;
-            this.lblTric.Text = "lblTric";
+            this.lblTric.Text = "0x";
             // 
             // Cartagena
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(874, 551);
             this.Controls.Add(this.lblTric);
             this.Controls.Add(this.lblPist);
@@ -528,7 +529,7 @@
             this.Name = "Cartagena";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Kurisu-Varsóvia";
-            this.TransparencyKey = System.Drawing.Color.DimGray;
+            this.TransparencyKey = System.Drawing.Color.DarkViolet;
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrisao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBarco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbChave)).EndInit();

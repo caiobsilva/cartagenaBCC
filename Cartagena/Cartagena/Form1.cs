@@ -266,6 +266,7 @@ namespace Cartagena
             LidarErros(pular);
             Console.WriteLine(pular);
             lsbLog.Items.Add("Jogada pulada!");
+            
         }
 
         //Método de exibição de tabuleiro.
@@ -345,7 +346,6 @@ namespace Cartagena
             //Verifica se a partida acabou
             if (dadosVerificarVez[0] == "E")
             {
-
                 timerVerificarVez.Enabled = false;
                 lsbLog.Items.Clear();
                 
@@ -451,25 +451,23 @@ namespace Cartagena
             
         public string verificarVencedor(string vez)
         {
-
+            string vencedor = "";
             string[] posicoes, jogadas;
             jogadas = vez.Split('\n');
-            string vencedor = null;
             
-            int i = vez.Length-1;
-            
-            jogadas[i] = jogadas[i].Replace("\r", "");
-            
-            posicoes = jogadas[i].Split(',');
-            
-            while( Convert.ToInt16(posicoes[0]) == 37 )
+            for (int i = 1; i < (jogadas.Length - 1); i++)
             {
+                
                 jogadas[i] = jogadas[i].Replace("\r", "");
                 posicoes = jogadas[i].Split(',');
                 
-                if (Convert.ToInt16(posicoes[2]) == 6)
+                int posicao  = Convert.ToInt16(posicoes[0]),
+                    idJogador = Convert.ToInt16(posicoes[1]),
+                    numeroPiratas = Convert.ToInt16(posicoes[2]);
+                
+                if (posicao == 37 && numeroPiratas == 6)
                 {
-                    if (Convert.ToInt16(posicoes[1]) == partidaAtiva.Kurisu.id)
+                    if (idJogador == partidaAtiva.Kurisu.id)
                     {
                         vencedor = partidaAtiva.Kurisu.nome;
                         break;
@@ -477,7 +475,7 @@ namespace Cartagena
                     foreach (Inimigo inimigo in partidaAtiva.inimigos)
                     {
                         
-                        if (Convert.ToInt16(posicoes[1]) == inimigo.id)
+                        if (idJogador == inimigo.id)
                         {
                             vencedor = inimigo.nome;
                             break;
@@ -486,8 +484,6 @@ namespace Cartagena
                     }
                 }
 
-                i--;
-                
             }
 
             return vencedor;

@@ -74,7 +74,6 @@
             this.lblGar = new System.Windows.Forms.Label();
             this.lblPist = new System.Windows.Forms.Label();
             this.lblTric = new System.Windows.Forms.Label();
-            this.pcbTabuleiro = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPrisao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbBarco)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbChave)).BeginInit();
@@ -83,7 +82,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbGar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).BeginInit();
             this.SuspendLayout();
             // 
             // txtJogadorID
@@ -476,17 +474,6 @@
             this.lblTric.TabIndex = 52;
             this.lblTric.Text = "lblTric";
             // 
-            // pcbTabuleiro
-            // 
-            this.pcbTabuleiro.BackColor = System.Drawing.Color.Transparent;
-            this.pcbTabuleiro.Image = ((System.Drawing.Image)(resources.GetObject("pcbTabuleiro.Image")));
-            this.pcbTabuleiro.Location = new System.Drawing.Point(340, 92);
-            this.pcbTabuleiro.Name = "pcbTabuleiro";
-            this.pcbTabuleiro.Size = new System.Drawing.Size(350, 350);
-            this.pcbTabuleiro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pcbTabuleiro.TabIndex = 40;
-            this.pcbTabuleiro.TabStop = false;
-            // 
             // Cartagena
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -504,7 +491,6 @@
             this.Controls.Add(this.pcbFaca);
             this.Controls.Add(this.pcbEsq);
             this.Controls.Add(this.pcbChave);
-            this.Controls.Add(this.pcbTabuleiro);
             this.Controls.Add(this.pcbBarco);
             this.Controls.Add(this.pcbPrisao);
             this.Controls.Add(this.lblVersao);
@@ -551,7 +537,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbGar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbTric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbTabuleiro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,7 +588,6 @@
         private System.Windows.Forms.Label lblGar;
         private System.Windows.Forms.Label lblPist;
         private System.Windows.Forms.Label lblTric;
-        private System.Windows.Forms.PictureBox pcbTabuleiro;
     }
 }
 

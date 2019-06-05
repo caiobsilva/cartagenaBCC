@@ -368,7 +368,7 @@ namespace Cartagena
                 {
                     if (idJogador == inimigo.id)
                     {
-                        lsbLog.Items.Add("Vez de:" + inimigo.nome);
+                        lsbLog.Items.Add("Vez de:" + inimigo.nome + "(" + inimigo.cor + ")\n");
                     }
                 }
                 return;
@@ -383,10 +383,40 @@ namespace Cartagena
             
             // avisa que estamos jogando
             lsbLog.Items.Clear();
-            lsbLog.Items.Add("Nossa vez!\n");
+            lsbLog.Items.Add("Nossa vez! (" + partidaAtiva.Kurisu.cor + ")\n" );
+
+            int chave = 0, esqueleto = 0, faca = 0, garrafa = 0, pistola = 0, tricornio = 0;
+
             foreach (string carta in partidaAtiva.Kurisu.cartas)
             {
-                lsbLog.Items.Add(carta);
+
+                switch (carta)
+                {
+                    case "C":
+                        chave++;
+                        lblChave.Text = "x" + chave.ToString();
+                        break;
+                    case "E":
+                        esqueleto++;
+                        lblEsq.Text = "x" + esqueleto.ToString();
+                        break;
+                    case "F":
+                        faca++;
+                        lblFaca.Text = "x" + faca.ToString();
+                        break;
+                    case "G":
+                        garrafa++;
+                        lblGar.Text = "x" + garrafa.ToString();
+                        break;
+                    case "P":
+                        pistola++;
+                        lblPist.Text = "x" + pistola.ToString();
+                        break;
+                    case "T":
+                        tricornio++;
+                        lblTric.Text = "x" + tricornio.ToString();
+                        break;
+                }
             }
             
 
@@ -537,53 +567,12 @@ namespace Cartagena
                 this.Controls.AddRange(casaTabuleiro);
         }
 
-        public void contarCartas()
-        {
-            int jogadorID = Convert.ToInt32(txtJogadorID.Text);
-            string jogadorSenha = txtJogadorSenha.Text;
-
-            string cartas = Jogo.ConsultarMao(jogadorID, jogadorSenha);
-            string[] jogadorCartas = cartas.Split('\n', ',');
-
-            for(int i = 0; i < jogadorCartas.Length - 1; i++)
-            {
-                switch (jogadorCartas[i])
-                {
-                    case "C":
-                        lblChave.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                    case "E":
-                        lblEsq.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                    case "F":
-                        lblFaca.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                    case "G":
-                        lblGar.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                    case "P":
-                        lblPist.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                    case "T":
-                        lblTric.Text = "x" + jogadorCartas[i + 1].ToString();
-                        i++;
-                        break;
-                }
-            }
-        }
-
         private void timerAtulizaInterface_Tick(object sender, EventArgs e)
         {
             // LIMPAR INTERFACE
             for (int limpar = 1; limpar < 37; limpar++)
             {
                 casaTabuleiro[limpar].Invalidate();
-                contarCartas();
             }
 
             // Desenha os piratas no tabuleiro

@@ -398,6 +398,13 @@ namespace Cartagena
             lsbLog.Items.Clear();
             lsbLog.Items.Add("Nossa vez! (" + partidaAtiva.Kurisu.cor + ")\n" );
 
+            lblChave.Text = "x0";
+            lblEsq.Text = "x0";
+            lblFaca.Text = "x0";
+            lblGar.Text = "x0";
+            lblPist.Text = "x0";
+            lblTric.Text = "x0";
+
             int chave = 0, esqueleto = 0, faca = 0, garrafa = 0, pistola = 0, tricornio = 0;
 
             foreach (string carta in partidaAtiva.Kurisu.cartas)

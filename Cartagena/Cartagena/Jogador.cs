@@ -16,11 +16,11 @@ namespace Cartagena
         protected string _nome { get; set; }
         protected string _cor { get; set; }
 
-        Pen penRed = new Pen(Brushes.OrangeRed);
+        Pen penRed = new Pen(Brushes.Red);
         Pen penGreen = new Pen(Brushes.Green);
         Pen penYellow = new Pen(Brushes.Yellow);
         Pen penBlue = new Pen(Brushes.Blue);
-        Pen penBrown = new Pen(Brushes.Brown);
+        Pen penBrown = new Pen(Brushes.SaddleBrown);
 
         public Pirata[] piratas;
 
